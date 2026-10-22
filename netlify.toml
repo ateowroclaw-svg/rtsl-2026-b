@@ -1,0 +1,4 @@
+# Main site: publish the "site" folder as it is (no build step).
+[build]
+  publish = "site"
+  command = ""
