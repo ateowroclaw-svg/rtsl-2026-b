@@ -1,0 +1,72 @@
+name: Refresh RTSL data
+
+# Every hour: read the league's Google Sheet and, if anything changed, push the
+# new data to the "data" branch. Netlify publishes that branch as a free branch
+# deploy (data--<your-site>.netlify.app); the main site reads data.json from it.
+# Nothing here touches the main branch, so it never triggers a paid production deploy.
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SHEET: https://docs.google.com/spreadsheets/d/1XG75lg0PrK27zUL-6rlMAFloyrYFaaPzFHyUX7v73pI/gviz/tq?tqx=out:csv&sheet=
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Download the sheet tabs
+        run: |
+          mkdir -p work
+          curl -sSLf --retry 3 -o work/standings.csv "${SHEET}Standings"
+          curl -sSLf --retry 3 -o work/results.csv "${SHEET}Results" || rm -f work/results.csv
+          curl -sSLf --retry 3 -o work/levels.csv "${SHEET}Level%20Standings" || rm -f work/levels.csv
+
+      - name: Get the previously published data
+        run: |
+          if git fetch --depth=1 origin data 2>/dev/null; then
+            git show FETCH_HEAD:data.json > work/prev.json 2>/dev/null || rm -f work/prev.json
+          fi
+
+      - name: Build the data branch
+        id: build
+        run: |
+          r=work/results.csv;  [ -s "$r" ] || r=-
+          l=work/levels.csv;   [ -s "$l" ] || l=-
+          p=work/prev.json;    [ -s "$p" ] || p=-
+          node tools/build-data.mjs site out work/standings.csv "$r" "$l" "$p" | tee work/result.txt
+
+      - name: Publish to the data branch
+        run: |
+          cd out
+          git init -q
+          git config user.name "rtsl-data-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          git checkout -q -b data
+          if git fetch -q --depth=1 origin data 2>/dev/null; then git reset -q --soft FETCH_HEAD; fi
+          git add -A
+          if git diff --cached --quiet; then
+            if [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
+              echo "Nothing changed - no deploy."
+              exit 0
+            fi
+            echo "Manual run: publishing anyway so Netlify rebuilds the data branch."
+          fi
+          git commit -q --allow-empty -m "Data update: $(cat ../work/result.txt)"
+          git push -q origin HEAD:data
+          echo "Pushed new data."
