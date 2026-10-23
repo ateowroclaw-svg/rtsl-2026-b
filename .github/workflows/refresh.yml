@@ -53,6 +53,7 @@ jobs:
       - name: Publish to the data branch
         run: |
           cd out
+          mkdir -p site && find . -mindepth 1 -maxdepth 1 ! -name site -exec cp -r {} site/ \;
           git init -q
           git config user.name "rtsl-data-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
