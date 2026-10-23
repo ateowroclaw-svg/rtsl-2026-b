@@ -1,0 +1,1209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Standings, results and level tables of the Royale Twilight Struggle League, season 2026-B.">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>RTSL 2026-B</title>
+<style>
+/* Fonts are served from this site (no Google Fonts), so the page also works in mainland China. */
+@font-face{font-family:"Big Shoulders Display";font-style:normal;font-display:swap;font-weight:100 900;src:url(fonts/big-shoulders-display-latin-ext-wght-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-display:swap;font-weight:200 900;src:url(fonts/source-sans-3-latin-ext-wght-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-display:swap;font-weight:400;src:url(fonts/ibm-plex-mono-latin-ext-400-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-display:swap;font-weight:500;src:url(fonts/ibm-plex-mono-latin-ext-500-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-display:swap;font-weight:600;src:url(fonts/ibm-plex-mono-latin-ext-600-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Big Shoulders Display";font-style:normal;font-display:swap;font-weight:100 900;src:url(fonts/big-shoulders-display-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-display:swap;font-weight:200 900;src:url(fonts/source-sans-3-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-display:swap;font-weight:400;src:url(fonts/ibm-plex-mono-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-display:swap;font-weight:500;src:url(fonts/ibm-plex-mono-latin-500-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-display:swap;font-weight:600;src:url(fonts/ibm-plex-mono-latin-600-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+</style>
+<style>
+/* Layout: a Cold War briefing room. Header band with the season clock, then tiers stacked top-down,
+   each division a card coloured by tier as in the sheet (1 grey, 2 red, 3 yellow, 4 green). */
+:root{
+  --bg:#e9ece8; --panel:#f7f8f5; --ink:#1a1f24; --muted:#5d6670; --line:#cfd5d0;
+  --ussr:#b0302a; --usa:#2b56a3; --ussr-soft:#f3dcd9; --usa-soft:#dbe3f3;
+  --tie:#8a7a3c; --tie-soft:#eee6c8; --empty:#e1e5e1;
+  --d1:#8a9097; --d1-soft:#e3e5e8; --d2:#c4392f; --d2-soft:#f6dcd8; --d3:#d9a514; --d3-soft:#f7ebc2; --d4:#3d9a4f; --d4-soft:#d8eedc;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12161a; --panel:#1a2026; --ink:#e4e8ea; --muted:#97a1aa; --line:#2c343c;
+  --ussr:#e0675f; --usa:#7ea3e6; --ussr-soft:#3a2224; --usa-soft:#1f2b40;
+  --tie:#d2bd70; --tie-soft:#3a3420; --empty:#232a31; --d1:#a3aab2; --d1-soft:#2b3036; --d2:#e3665c; --d2-soft:#3d2423; --d3:#e8bd3c; --d3-soft:#3a321b; --d4:#5cc06f; --d4-soft:#1f3524; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12161a; --panel:#1a2026; --ink:#e4e8ea; --muted:#97a1aa; --line:#2c343c;
+  --ussr:#e0675f; --usa:#7ea3e6; --ussr-soft:#3a2224; --usa-soft:#1f2b40;
+  --tie:#d2bd70; --tie-soft:#3a3420; --empty:#232a31; --d1:#a3aab2; --d1-soft:#2b3036; --d2:#e3665c; --d2-soft:#3d2423; --d3:#e8bd3c; --d3-soft:#3a321b; --d4:#5cc06f; --d4-soft:#1f3524; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.45;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+.wrap{max-width:1180px;margin:0 auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:.01em}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:600}
+
+/* header */
+header{padding-block:32px 20px;display:grid;gap:20px;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);align-items:end;border-bottom:3px double var(--line)}
+@media (max-width:760px){header{grid-template-columns:1fr}}
+@media (max-width:560px){.track .tick .n{display:none}}
+.brand-row{display:flex;align-items:center;gap:clamp(12px,2.5vw,22px);margin-top:8px}
+.brand-row img{height:clamp(64px,11vw,108px);width:auto;flex:none}
+.brand h1{font-size:clamp(44px,8vw,84px);font-weight:900;line-height:.88;text-transform:uppercase}
+.brand h1 span{color:var(--ussr)}
+.brand h1 em{font-style:normal;color:var(--usa)}
+.brand p{margin:10px 0 0;color:var(--muted);max-width:52ch}
+.clock{display:grid;gap:10px}
+.clock .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.track{position:relative;height:30px;margin-top:4px}
+.track .bar{position:absolute;inset:12px 0 auto;height:6px;background:var(--empty);border-radius:3px;overflow:hidden}
+.track .fill{height:100%;background:linear-gradient(90deg,var(--usa),var(--ussr))}
+.track .tick{position:absolute;top:4px;width:2px;height:22px;background:var(--ink);opacity:.55}
+.track .tick b{position:absolute;top:24px;left:50%;transform:translateX(-50%);font:500 10px var(--mono);white-space:nowrap;opacity:1;color:var(--muted)}
+.track .now{position:absolute;top:2px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:var(--ink);border:2px solid var(--bg);top:9px}
+.stats{display:flex;gap:28px;flex-wrap:wrap;margin-top:14px}
+.stats div{display:grid}
+.stats strong{font:800 30px/1 var(--display)}
+
+/* toolbar */
+.toolbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:12px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tabs button,.seg button{font:600 13px var(--body);border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:6px 12px;border-radius:4px;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.toolbar input{flex:1 1 200px;min-width:0;font:15px var(--body);padding:7px 10px;border:1px solid var(--line);border-radius:4px;background:var(--panel);color:var(--ink)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--usa);outline-offset:2px}
+
+/* tiers & cards */
+.tier{margin-top:34px}
+.tier-head{display:flex;align-items:baseline;gap:14px;margin-bottom:14px}
+.tier-head h2{font-size:34px;font-weight:800;text-transform:uppercase}
+.tier-head .rule{flex:1;height:1px;background:var(--line)}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(min(100%,540px),1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:6px;min-width:0;overflow:hidden}
+.card-head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.card-head h3{font-size:26px;font-weight:800;text-transform:uppercase;line-height:1}
+[data-tier="1"]{--div:var(--d1);--div-soft:var(--d1-soft)}
+[data-tier="2"]{--div:var(--d2);--div-soft:var(--d2-soft)}
+[data-tier="3"]{--div:var(--d3);--div-soft:var(--d3-soft)}
+[data-tier="4"]{--div:var(--d4);--div-soft:var(--d4-soft)}
+.card .card-head{border-top:5px solid var(--div)}
+.tier-head h2{display:flex;align-items:center;gap:12px}
+.tier-head h2::before{content:"";width:18px;height:18px;border-radius:3px;background:var(--div);flex:none}
+.tier-head .rule{background:var(--div);opacity:.5;height:2px}
+.side{font:600 10px var(--mono);letter-spacing:.1em;padding:2px 6px;border-radius:3px;margin-left:8px;vertical-align:middle}
+.card .side{background:var(--div-soft);color:var(--ink)}
+.meta{display:flex;align-items:center;gap:10px}
+.meter{width:70px;height:5px;background:var(--empty);border-radius:3px;overflow:hidden}
+.meter i{display:block;height:100%;background:var(--muted)}
+.seg{display:flex}
+.seg button{border-radius:0;padding:4px 9px;font-size:12px}
+.seg button:first-child{border-radius:4px 0 0 4px}.seg button:last-child{border-radius:0 4px 4px 0;border-left:0}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.scroll{overflow-x:auto}
+
+table{border-collapse:collapse;width:100%}
+.st th{font:600 10px var(--body);text-transform:uppercase;letter-spacing:.1em;color:var(--muted);text-align:right;padding:8px 8px 6px}
+.st th.l{text-align:left}
+.st td{padding:6px 8px;border-top:1px solid var(--line);text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:13px;white-space:nowrap}
+.st td.name{text-align:left;font-family:var(--body);font-size:15px;font-weight:600;white-space:normal;min-width:140px}
+.st td.name{font-weight:400}
+.st td.name.done{font-weight:700}
+.h2h th.rn{font-weight:400}
+.h2h th.rn.done{font-weight:700}
+.lv td.dv{text-align:left;font-family:var(--body)}
+.dchip{display:inline-block;font:600 11px var(--mono);padding:1px 7px;border-radius:3px;background:var(--div-soft);border-left:3px solid var(--div);white-space:nowrap}
+.lchip{display:inline-block;font:600 11px var(--body);padding:1px 7px;border-radius:3px;margin-right:6px;white-space:nowrap;background:var(--empty);color:var(--ink)}
+.lchip.up{background:var(--usa-soft);color:var(--usa)}
+.lchip.down{background:var(--ussr-soft);color:var(--ussr)}
+.lchip.play{background:var(--tie-soft);color:var(--tie)}
+.lv tr.b-up td.rk{box-shadow:inset 3px 0 var(--usa)}
+.lv tr.b-down td.rk{box-shadow:inset 3px 0 var(--ussr)}
+.lv tr.b-play td.rk{box-shadow:inset 3px 0 var(--tie)}
+.lv tr.b-stay td.rk{box-shadow:inset 3px 0 var(--line)}
+.lvnote{margin:0;padding:8px 12px;font-size:12px;color:var(--muted);border-top:1px solid var(--line)}
+#mode{margin-right:6px}
+.st td.rk{color:var(--muted);width:28px;text-align:center}
+.st td.note{text-align:left;font-family:var(--body);font-size:12px;color:var(--muted);white-space:normal;min-width:120px}
+.st tr.hit td{background:var(--usa-soft)}
+.pct{display:inline-flex;align-items:center;gap:6px}
+.pct s{display:inline-block;width:38px;height:4px;background:var(--empty);border-radius:2px;overflow:hidden;text-decoration:none}
+.pct s i{display:block;height:100%;background:var(--ink);opacity:.7}
+.chip{display:inline-block;font:600 11px var(--mono);padding:1px 6px;border-radius:3px;margin-right:6px;white-space:nowrap}
+.chip.up{background:var(--usa-soft);color:var(--usa)}
+.chip.down{background:var(--ussr-soft);color:var(--ussr)}
+.chip.out{background:var(--empty);color:var(--muted)}
+.chip.ext{background:var(--tie-soft);color:var(--tie)}
+
+/* head-to-head */
+.h2h{padding:10px 10px 12px}
+.h2h table{width:auto;border-collapse:separate;border-spacing:2px}
+.h2h th{font:500 11px var(--mono);color:var(--muted);padding:2px 4px}
+.h2h th.rn{text-align:left;font:600 13px var(--body);color:var(--ink);white-space:nowrap;padding-right:8px}
+.h2h td{width:26px;height:24px;text-align:center;font:600 11px var(--mono);border-radius:3px;background:var(--empty);color:var(--muted)}
+.h2h td.W{background:var(--usa-soft);color:var(--usa)}
+.h2h td.L{background:var(--ussr-soft);color:var(--ussr)}
+.h2h td.T{background:var(--tie-soft);color:var(--tie)}
+.h2h td.self{background:transparent}
+.h2h tr.hit th.rn{color:var(--usa)}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:8px}
+.legend span{display:inline-flex;gap:5px;align-items:center}
+.legend i{width:12px;height:12px;border-radius:2px;display:inline-block}
+
+/* footer */
+.foot{margin-top:44px;display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));border-top:3px double var(--line);padding-top:24px}
+.foot h2{font-size:24px;font-weight:800;text-transform:uppercase;margin-bottom:10px}
+.foot ol,.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.foot li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dotted var(--line);padding-bottom:3px}
+.foot li span:first-child{font-family:var(--mono);color:var(--muted);font-size:13px}
+.foot p{margin:0 0 8px;color:var(--muted)}
+.empty{padding:30px 0;color:var(--muted)}
+/* results */
+.results{margin-top:44px}
+.rfilters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.rfilters select,.rfilters input{font:15px var(--body);padding:7px 10px;border:1px solid var(--line);border-radius:4px;background:var(--panel);color:var(--ink);min-width:0}
+.rfilters input{flex:1 1 220px}
+.rfilters button{font:600 13px var(--body);border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:6px 12px;border-radius:4px;cursor:pointer}
+.rsum{margin:0 0 12px;font-size:15px}
+.rsum b{font-family:var(--display);font-size:22px;font-weight:800;margin-right:6px}
+.rlist{background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.rrow{display:grid;grid-template-columns:52px 120px minmax(0,1fr) auto;gap:12px;align-items:center;padding:8px 14px;border-top:1px solid var(--line)}
+.rdate{font-size:12px;color:var(--muted)}
+.rmeta{font-size:12px;color:var(--muted);text-align:right;white-space:nowrap}
+.rmeta .vid{margin-left:8px;color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:3px;padding:1px 6px;font-size:11px}
+.rmeta .vid:hover{border-color:var(--ink)}
+.pn{font-weight:400;opacity:.85}
+.pn.usa{color:var(--usa)}.pn.ussr{color:var(--ussr)}
+.pn.win{font-weight:700;opacity:1}
+.pn.win::after{content:" ✓";font-size:12px}
+.sd{font:600 11px var(--mono);padding:1px 6px;border-radius:3px;margin-right:2px}
+.sd.usa{background:var(--usa-soft);color:var(--usa)}.sd.ussr{background:var(--ussr-soft);color:var(--ussr)}
+.rsum .sd{font-size:12px}
+.rlegend{font-size:12px;color:var(--muted);margin:-6px 0 12px;display:flex;gap:14px;flex-wrap:wrap}
+@media (max-width:640px){.rrow{grid-template-columns:auto minmax(0,1fr);gap:4px 10px}.rrow .res{grid-column:1/-1}.rmeta{grid-column:1/-1;text-align:left}}
+.rrow:first-child{border-top:0}
+.rrow .dtag{font:600 11px var(--mono);padding:2px 7px;border-radius:3px;background:var(--div-soft);border-left:4px solid var(--div);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rrow .res{min-width:0}
+.rrow .w{font-weight:700}
+.rrow .vs{color:var(--muted);font-size:13px;margin:0 6px}
+.rrow .out{display:inline-block;width:22px;text-align:center;font:600 11px var(--mono);border-radius:3px;margin-right:8px;padding:1px 0}
+.out.W{background:var(--usa-soft);color:var(--usa)}.out.L{background:var(--ussr-soft);color:var(--ussr)}.out.T{background:var(--tie-soft);color:var(--tie)}
+.rmore{padding:10px 14px;border-top:1px solid var(--line);text-align:center}
+@media (prefers-reduced-motion:no-preference){.track .fill{transition:width .8s ease}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="label">Royale Twilight Struggle League · est. 2018</div>
+      <div class="brand-row">
+        <img src="data:image/png;base64,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" alt="RTSL logo">
+        <h1>RTSL <span>2026</span>‑<em>B</em></h1>
+      </div>
+      <p>The TS league for all levels of players. Eleven divisions of eleven, each player meets every rival in their division once.</p>
+    </div>
+    <div class="clock">
+      <div class="row"><span class="label">Season clock</span><span class="mono" style="font-size:12px;color:var(--muted)">19 Jun – 23 Nov 2026 · updated <span id="asof2"></span></span></div>
+      <div class="track" id="track" aria-label="Season progress with game deadlines"></div>
+      <div class="stats" id="stats"></div>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="seg" id="mode" role="group" aria-label="Group standings by"></div>
+    <div class="tabs" id="tabs" role="group" aria-label="Filter by division tier"></div>
+    <input id="q" type="search" placeholder="Find a player…" aria-label="Find a player">
+    <span class="label" style="text-transform:none;letter-spacing:0;font-weight:400"><b style="color:var(--ink)">Bold</b> = finished all games</span>
+  </div>
+
+  <main id="main"></main>
+
+  <section class="results" id="results">
+    <div class="tier-head"><h2>Results</h2><span class="label" id="rcount"></span><span class="rule"></span></div>
+    <div class="rfilters">
+      <select id="rdiv" aria-label="Filter results by division"></select>
+      <input id="rplayer" type="search" list="rplayers" placeholder="Filter by player…" aria-label="Filter results by player">
+      <datalist id="rplayers"></datalist>
+    </div>
+    <p class="rlegend" id="rlegend" hidden><span><span class="sd usa">USA</span> blue name played USA</span><span><span class="sd ussr">USSR</span> red name played USSR</span><span>✓ bold = winner</span></p>
+    <p class="rsum" id="rsum" hidden></p>
+    <div class="rlist" id="rlist"></div>
+  </section>
+
+  <section class="foot">
+    <div>
+      <h2>Hall of Fame</h2>
+      <ol id="hof"></ol>
+    </div>
+    <div>
+      <h2>League Staff</h2>
+      <ul>
+        <li><span>Head of RTSL Union</span><b>Jarek (Ateo)</b></li>
+        <li><span>Hand of the RTSL House</span><b>Bobby (Pessoa)</b></li>
+        <li><span>Master of Data</span><b>Derek (Drock1984)</b></li>
+        <li><span>The Faceless Man</span><b>Wain (SupportRTSL)</b></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Rules in brief</h2>
+      <p>Players who fail to complete 2 games by Jul 20, 5 by Aug 31 or 7 by Sep 30 are disqualified unless an extension is granted. Unsportsmanlike conduct means disqualification from this and all future seasons.</p>
+      <p>Contact: <span class="mono" style="user-select:all">RTSL.solidarity@gmail.com</span></p>
+      <p>Data from the <a href="https://docs.google.com/spreadsheets/d/1XG75lg0PrK27zUL-6rlMAFloyrYFaaPzFHyUX7v73pI/edit" target="_blank" rel="noopener">official standings sheet</a>, checked every hour. Last change: <span id="asof"></span>. Arrows show the sheet's promotion/relegation markers.</p>
+    </div>
+  </section>
+</div>
+
+<script>
+// Matrix rows follow the sheet's header order (h). W = row player won, L = lost, T = tie, . = not played / self.
+// Standings rows (s) follow the sheet's ranking: [name, W, L, T, games left, note]
+/*DATA-START*/
+let UPDATED="2026-10-23T06:59:39.139Z";
+let DIVS=[
+{tier:1,name:"Stalin",side:"ussr",
+ h:["Weiran Xie","Onur Kulaksizoglu","Alex Lee","Patrick Gong","Jifei Li","Mathias Heinze","David Choo","Jan Wimmer","Justin Abramson","Jarib Flores","Tomas Tvaroh"],
+ m:["....LLW.LW.","..WLLLWWWLW",".L..LWLLWWW",".W...LLWWLL","WWW..WWLLWW","WWLWL.LLWWW","LLWWLW.LWWL",".LWLWWW.W.W","WLLLWLLL.LW","LWLWLLL.W.L",".LLWLLWLLW."],
+ s:[["Jifei Li",7,2,0,1,""],["Jan Wimmer",6,2,0,2,""],["Mathias Heinze",6,4,0,0,"Finished October 21"],["Onur Kulaksizoglu",5,4,0,1,""],["David Choo",5,5,0,0,"Finished October 23"],["Alex Lee",4,4,0,2,""],["Patrick Gong",3,4,0,3,""],["Weiran Xie",2,3,0,5,"Extension until October 31"],["Jarib Flores",3,6,0,1,""],["Tomas Tvaroh",3,6,0,1,""],["Justin Abramson",3,7,0,0,"👹 Finished September 2"]]},
+{tier:2,name:"Truman",side:"usa",
+ h:["Rong Yu","Zhuang Yan","Chris Xu","Dylan Provencher","Jinxi Xu","Jianshu Qian","Bartosz Wróbel","Ted Livermore","Makis Bahtsevanis","B H Ju","Ziemowit Pazderski"],
+ m:[".LLLLLLLLLL","W.LLLWWWWWL","WW.LWWLLLLL","WWW.LL.WLWL","WWLW.LW..WW","WLLWW.WLLLL","WLW.LL.WLWL","WLWL.WL.W.W","WLWW.WWL.WL","WLWLLWL.L.L","WWWWLWWLWW."],
+ s:[["Ziemowit Pazderski",8,2,0,0,"👽 Finished September 6"],["Jinxi Xu",6,2,0,2,""],["Makis Bahtsevanis",6,3,0,1,""],["Ted Livermore",5,3,0,2,""],["Zhuang Yan",6,4,0,0,"Finished October 12"],["Dylan Provencher",5,4,0,1,""],["Bartosz Wróbel",4,5,0,1,""],["Chris Xu",4,6,0,0,"Finished August 8"],["Jianshu Qian",4,6,0,0,"Finished August 8"],["B H Ju",3,6,0,1,""],["Rong Yu",0,10,0,0,"🤖 Disqualified October 10"]]},
+{tier:2,name:"Eisenhower",side:"usa",
+ h:["Jarek Grzaslewicz","Carl Young","Mark Overstreet","Katsiaryna Makouskaya","Tim Furrow","Michael Stryker","Raewon Jang","Roger Jolly","Joshua Mauer","Peter Frantz","Mike Archambault"],
+ m:[".WW.W..LWLL","L.LL...WWLL","LW.LWLLWWTL",".WW.L.LLLLW","L.LW.L.LLWL","..W.W..W.L.","..WW...LWLW","WLLWWLW.WWW","LLLWW.LL.WW","WWTWLWWLL.W","WWWLW.LLLL."],
+ s:[["Michael Stryker",3,1,0,6,"Extension until October 31"],["Roger Jolly",7,3,0,0,"Finished October 17"],["Raewon Jang",4,2,0,4,"Extension until October 31"],["Peter Frantz",6,3,1,0,"Finished September 19"],["Jarek Grzaslewicz",4,3,0,3,""],["Mark Overstreet",4,5,1,0,"Finished September 19"],["Joshua Mauer",4,5,0,1,""],["Mike Archambault",4,5,0,1,""],["Katsiaryna Makouskaya",3,5,0,2,""],["Carl Young",2,5,0,3,""],["Tim Furrow",2,6,0,2,""]]},
+{tier:3,name:"Brezhnev",side:"ussr",
+ h:["Jan Schmidt","Aleksei Lobunko","Michal Borkowicz","Jan Edvard Nodland","Antoine Danel","Nicu Oprea","Robin Bos","Guang Li","Ruben Messelink","Andrea Mancuso","Yongjun Park"],
+ m:[".LLLL.LLWWL","W.WLLWLLWWW","WL.WWL.WW.W","WWL.LWWLLWW","WWLW.WWLWLW",".LWLL.LWLLL","WW.LLW.LW.L","WWLWWLW.W.W","LLLWLWLL.LL","LL.LWW..W.L","WLLLLWWLWW."],
+ s:[["Guang Li",7,2,0,1,"👹"],["Michal Borkowicz",6,2,0,2,""],["Antoine Danel",7,3,0,0,"Finished October 2"],["Jan Edvard Nodland",6,4,0,0,"Finished October 11"],["Aleksei Lobunko",6,4,0,0,"Finished October 2"],["Yongjun Park",5,5,0,0,"Finished October 16"],["Robin Bos",4,4,0,2,""],["Andrea Mancuso",3,4,0,3,""],["Jan Schmidt",2,7,0,1,"👻"],["Nicu Oprea",2,7,0,1,"👻"],["Ruben Messelink",2,8,0,0,"👻 Finished October 19"]]},
+{tier:3,name:"JFK",side:"usa",
+ h:["Derek Miller","Marek Burkacki","Justin Nordstrom","Pavel Meshkov","Kevin Gute","David Erill","Max DuBoff","Paweł Januszewski","Frank Tarena","Enrico Ciardo","Guangheng Wu"],
+ m:[".W.WLWLWWWL","L.LLLLLLWLL",".W.LLLLLLLL","LWW.LWLLWWL","WWWW.LWWWWW","LWWLW.WWWLL","WWWWLL.L.LL","LWWWLLW.WW.","LLWLLL.L.W.","LWWLLWWLL.L","WWWWLWW..W."],
+ s:[["Kevin Gute",9,1,0,0,"👹 Finished August 26"],["Guangheng Wu",7,1,0,2,""],["Derek Miller",6,3,0,1,""],["Paweł Januszewski",6,3,0,1,""],["David Erill",6,4,0,0,"Finished September 29"],["Pavel Meshkov",5,5,0,0,"Finished July 8"],["Max DuBoff",4,5,0,1,""],["Enrico Ciardo",4,6,0,0,"Finished October 11"],["Frank Tarena",2,6,0,2,""],["Justin Nordstrom",1,8,0,1,"👻"],["Marek Burkacki",1,9,0,0,"👻 Finished July 24"]]},
+{tier:3,name:"Khrushchev",side:"ussr",
+ h:["Aaron Ng","Przemek Przemyslaw","Stan Kaatee","Giorgos Iosifidis","Aidan Archer","Anton Skott","Carlos Pintado","Asan Beisenov","Arek Sitkowski","Charlie Blackmar","Dimitris Katsoulas"],
+ m:[".WWLLLLWLWW","L.LL.LWWLWL","LW.W.LWLWWL","WWL.LLW.LWL","W..W.LLLWL.","WWWWW.WTWWW","WLLLWL.LLW.","LLW.WTW.LLL","WWLWLLWW.W.","LLLLWLLWL.L","LWWW.L.W.W."],
+ s:[["Anton Skott",9,0,1,0,"👹 Finished October 14"],["Dimitris Katsoulas",5,2,0,3,""],["Arek Sitkowski",6,3,0,1,""],["Stan Kaatee",5,4,0,1,""],["Aaron Ng",5,5,0,0,"Finished October 13"],["Giorgos Iosifidis",4,5,0,1,""],["Aidan Archer",3,4,0,3,""],["Asan Beisenov",3,5,1,1,""],["Przemek Przemyslaw",3,6,0,1,""],["Carlos Pintado",3,6,0,1,""],["Charlie Blackmar",2,8,0,0,"👻 Finished October 11"]]},
+{tier:4,name:"Carter",side:"usa",
+ h:["Jordan Cass","J.A McMahon","Jakub Węcławski","Bledson Bezerra","Sergei Sazonov","Mikolaj Solkiewicz","Bidart Larrakoetxea","Peter Davich","Daniel Simon","Robert Stegmann","Peter Heuvelman"],
+ m:[".L.WWWWLLWW","W.LLLWLLWLW",".W.W.WLWWWW","LWL.WLLLLWW","LW.L.WWLLLW","LLLWL.LLLLW","LWWWLW.LWWW","WWLWWWW.WW.","WLLWWWLL..L","LWLLWWLL..W","LLLLLLL.WL."],
+ s:[["Peter Davich",8,1,0,1,"🤖"],["Jakub Węcławski",7,1,0,2,""],["Bidart Larrakoetxea",7,3,0,0,"Finished August 5"],["Jordan Cass",6,3,0,1,""],["Sergei Sazonov",4,4,0,1,""],["Daniel Simon",4,5,0,1,""],["Robert Stegmann",4,5,0,1,""],["J.A McMahon",4,6,0,0,"Finished October 18"],["Bledson Bezerra",4,6,0,0,"Finished October 21"],["Mikolaj Solkiewicz",2,8,0,0,"Finished October 2"],["Peter Heuvelman",1,8,0,1,""]]},
+{tier:4,name:"Reagan",side:"usa",
+ h:["Jan Ostrowski","Urmas Yanis","Crow Crowlas","Michael McKibbin","Daniel Ramos","John Kim","Simon Pudsey","Nick Harinos","Koen Dijkstra","Lukas Fuchs","Károly Lukács"],
+ m:[".WWLWLL.LWW","L.WLLL.LL.L","LL.LWLWLWLW","WWW.WLWLWWW","LWLL.LLLLLW","WWWWW.WLWLW","W.LLWL.LLLW",".WWWWWW.WLW","WWLLWLWL.LW","L.WLWWWWW.L","LWLLLLLLLW."],
+ s:[["Nick Harinos",8,1,0,1,"🤖"],["Michael McKibbin",8,2,0,0,"🤖 Finished October 18"],["John Kim",8,2,0,0,"🤖 Finished October 17"],["Lukas Fuchs",6,3,0,1,""],["Jan Ostrowski",5,4,0,1,""],["Koen Dijkstra",5,5,0,0,""],["Crow Crowlas",4,6,0,0,"Finished October 6"],["Simon Pudsey",3,6,0,1,""],["Károly Lukács",2,7,0,0,"Finished October 1"],["Daniel Ramos",2,8,0,0,"Finished September 27"],["Urmas Yanis",1,7,0,2,""]]},
+{tier:4,name:"Gorbachev",side:"ussr",
+ h:["Zihang Zhou","Mike Oehler","Haydon Dennison","Francisco Sanchez","Travis Steele","JJ Alt","Hervé Duval","Patxo Sans","Marc Nuño","Juan Antonio Romera","Joris Vandenbroeck"],
+ m:[".WWWLWWW.WW","L.LWLLLLW.L","LW.LL.WW.WL","LLW.LWLWLWL","WWWW.WLLLW.","LW.LL.WL.W.","LWLWWL.WLW.","LWLLWWL.LLL",".L.WW.WW.W.","L.LLLLLWL.L","LWWW...W.W."],
+ s:[["Zihang Zhou",8,1,0,1,"🤖"],["Marc Nuño",5,1,0,4,"Extension until October 31"],["Joris Vandenbroeck",5,1,0,4,""],["Travis Steele",6,3,0,1,""],["Hervé Duval",5,4,0,1,""],["Haydon Dennison",4,4,0,2,""],["JJ Alt",3,4,0,3,""],["Francisco Sanchez",4,6,0,0,"Finished Octover 10"],["Patxo Sans",3,7,0,0,"Finished September 23"],["Mike Oehler",2,7,0,1,""],["Juan Antonio Romera",1,8,0,1,""]]},
+{tier:4,name:"Nixon",side:"usa",
+ h:["Adrian Ziarko","Ajoy Chakrabarti","Silver Zhu","Tomasz Babicz","Garreth Hawkins","Tim Engelhardt","Evangelos Iosifidis","David Young","Rafał Maksymiuk","Jim Haefele","Hicham Vanborm"],
+ m:[".W.WLLLWWW.","L.LLWWLWWWW",".W.WLWW.WWL","LWL.WLLLWWL","WLWL.WWWWLL","WLLWL.W.WLW","WWLWLL.LWLL","LL.WL.W.WL.","LLLLLLLL..L","LLLLWWWW..L",".LWWWLW.WW."],
+ s:[["Silver Zhu",6,2,0,2,""],["Hicham Vanborm",6,2,0,2,""],["Adrian Ziarko",5,3,0,2,""],["Ajoy Chakrabarti",6,4,0,0,"Finished October 4"],["Garreth Hawkins",6,4,0,0,"Finished October 14"],["Tim Engelhardt",5,4,0,1,""],["Jim Haefele",4,5,0,1,""],["David Young",3,4,0,3,""],["Tomasz Babicz",4,6,0,0,"Finished September 11"],["Evangelos Iosifidis",4,6,0,0,"Finished October 19"],["Rafał Maksymiuk",0,9,0,1,""]]},
+{tier:4,name:"Andropov",side:"ussr",
+ h:["Goos Kuijper","Markel Elortza","Pau Sala","Brad McCoy","Yauheni Mashkouski","Matt Davies","Raymond Wang","David Bartolome Duran","Balazs Ulveczki","Daniël Hogetoorn","Aleksandr Pushkarev"],
+ m:[".LLLLWLLLLL","W.LLLWLLLWL","WW.LLWLWWL.","WWW.WLWWWW.","WWWL.....LW","LLLW..LLWL.","WWWL.W.WLW.","WWLL.WL.LW.","WWLL.LWW.W.","WLWLWWLLL.W","WW..L....L."],
+ s:[["Brad McCoy",8,1,0,1,"🤖"],["Raymond Wang",6,2,0,2,""],["Yauheni Mashkouski",4,2,0,4,""],["Balazs Ulveczki",5,3,0,2,""],["Pau Sala",5,4,0,1,""],["Daniël Hogetoorn",5,5,0,0,"Finished September 20"],["David Bartolome Duran",4,4,0,2,""],["Aleksandr Pushkarev",2,2,0,6,"Extension until October 31"],["Markel Elortza",3,7,0,0,"Finished September 28"],["Matt Davies",2,6,0,2,""],["Goos Kuijper",1,9,0,0,"Withdrawn September 20"]]}
+];
+let RES=[
+["2026-06-20","C006","Bidart Larrakoetxea","Jordan Cass","USSR","Turn 9","VP Track (+20)","https://www.twitch.tv/videos/2800656422"],
+["2026-06-20","J012","Marek Burkacki","Pavel Meshkov","USSR","Turn 7","VP Track (+20)",""],
+["2026-06-20","G027","Joris Vandenbroeck","Haydon Dennison","USA","Final Scoring","Final Scoring",""],
+["2026-06-20","A029","Brad McCoy","Matt Davies","USSR","Turn 10","VP Track (+20)",""],
+["2026-06-20","N026","Jim Haefele","Silver Zhu","USSR","Turn 8","VP Track (+20)",""],
+["2026-06-21","J020","Justin Nordstrom","Pavel Meshkov","USSR","Final Scoring","Final Scoring",""],
+["2026-06-21","E007","Roger Jolly","Jarek Grzaslewicz","USA","Final Scoring","Final Scoring",""],
+["2026-06-21","A031","Brad McCoy","David Bartolome Duran","USA","Turn 8","VP Track (+20)",""],
+["2026-06-21","G034","Joris Vandenbroeck","Francisco Sanchez","USA","Final Scoring","Final Scoring","https://youtu.be/QQmnFChr8Ns"],
+["2026-06-21","C015","J.A McMahon","Bidart Larrakoetxea","USSR","Turn 4","VP Track (+20)",""],
+["2026-06-21","E055","Peter Frantz","Mike Archambault","USA","Final Scoring","Final Scoring","https://www.twitch.tv/videos/2802221515"],
+["2026-06-21","K018","Charlie Blackmar","Przemek Przemyslaw","USSR","Turn 10","Wargames",""],
+["2026-06-22","N013","Ajoy Chakrabarti","Garreth Hawkins","USA","Turn 10","Wargames",""],
+["2026-06-22","J028","Pavel Meshkov","Kevin Gute","USSR","Turn 8","VP Track (+20)","https://youtu.be/W-xvJfeH2lE"],
+["2026-06-22","J029","Pavel Meshkov","David Erill","USA","Final Scoring","Final Scoring",""],
+["2026-06-22","G014","Mike Oehler","JJ Alt","USSR","Turn 10","Wargames",""],
+["2026-06-22","S055","Jarib Flores","Tomas Tvaroh","USSR","Turn 5","VP Track (+20)",""],
+["2026-06-22","A018","Daniël Hogetoorn","Markel Elortza","USSR","Turn 4","VP Track (+20)",""],
+["2026-06-22","J039","Kevin Gute","Enrico Ciardo","USA","Turn 8","Wargames","https://youtu.be/hHq5dyMhpjE"],
+["2026-06-23","J034","Guangheng Wu","Pavel Meshkov","USA","Turn 8","VP Track (+20)","https://youtu.be/NTQndtP2Qx4"],
+["2026-06-23","E039","Tim Furrow","Peter Frantz","USA","Turn 8","VP Track (+20)",""],
+["2026-06-23","T011","Zhuang Yan","Chris Xu","USSR","Turn 9","VP Track (+20)",""],
+["2026-06-23","S026","Jarib Flores","Alex Lee","USSR","Final Scoring","Final Scoring",""],
+["2026-06-24","C001","Jordan Cass","J.A McMahon","USSR","Turn 10","Wargames","https://www.twitch.tv/videos/2803886164"],
+["2026-06-24","N023","Silver Zhu","Evangelos Iosifidis","USA","Final Scoring","Final Scoring",""],
+["2026-06-24","G002","Zihang Zhou","Haydon Dennison","USA","Final Scoring","Final Scoring",""],
+["2026-06-24","J035","Kevin Gute","David Erill","USSR","Turn 5","VP Track (+20)",""],
+["2026-06-24","T022","Chris Xu","Jianshu Qian","USA","Turn 9","Wargames",""],
+["2026-06-24","G041","JJ Alt","Hervé Duval","USA","Final Scoring","Final Scoring",""],
+["2026-06-24","C045","Mikolaj Solkiewicz","Peter Heuvelman","USA","Final Scoring","Final Scoring",""],
+["2026-06-24","S018","Jarib Flores","Onur Kulaksizoglu","USA","Final Scoring","Final Scoring",""],
+["2026-06-24","J033","Enrico Ciardo","Pavel Meshkov","USSR","Turn 8","Wargames",""],
+["2026-06-24","A011","Markel Elortza","Pau Sala","USSR","Final Scoring","Final Scoring",""],
+["2026-06-24","J023","Justin Nordstrom","Max DuBoff","USSR","Turn 9","VP Track (+20)",""],
+["2026-06-25","N048","Evangelos Iosifidis","Jim Haefele","USSR","Turn 7","VP Track (+20)",""],
+["2026-06-25","S009","Jarib Flores","Weiran Xie","USSR","Turn 3","VP Track (+20)",""],
+["2026-06-26","J040","Guangheng Wu","Kevin Gute","USSR","Turn 8","VP Track (+20)",""],
+["2026-06-26","E025","Joshua Mauer","Mark Overstreet","USSR","Final Scoring","Final Scoring","https://youtu.be/eKCjvdJtZB0"],
+["2026-06-26","E040","Mike Archambault","Tim Furrow","USA","Turn 8","DEFCON",""],
+["2026-06-26","S048","David Choo","Jarib Flores","USA","Turn 10","DEFCON",""],
+["2026-06-27","J011","Marek Burkacki","Justin Nordstrom","USSR","Final Scoring","Final Scoring",""],
+["2026-06-27","R029","Michael McKibbin","John Kim","USSR","Final Scoring","Final Scoring",""],
+["2026-06-27","E049","Raewon Jang","Mike Archambault","USA","Turn 6","VP Track (+20)","https://youtu.be/qvfb4ygH4eA"],
+["2026-06-27","G021","Haydon Dennison","Travis Steele","USSR","Turn 5","VP Track (+20)",""],
+["2026-06-27","B038","Antoine Danel","Ruben Messelink","USA","Final Scoring","Final Scoring","https://youtu.be/bnNj1di3qlM"],
+["2026-06-27","C049","Bidart Larrakoetxea","Peter Heuvelman","USA","Final Scoring","Final Scoring",""],
+["2026-06-27","A033","Daniël Hogetoorn","Brad McCoy","USSR","Final Scoring","Final Scoring",""],
+["2026-06-27","R028","Michael McKibbin","Daniel Ramos","USA","Final Scoring","Final Scoring",""],
+["2026-06-27","B032","Jan Edvard Nodland","Ruben Messelink","USSR","Turn 7","VP Track (+20)",""],
+["2026-06-27","A015","Markel Elortza","Raymond Wang","USSR","Turn 6","VP Track (+20)",""],
+["2026-06-28","A012","Markel Elortza","Brad McCoy","USSR","Turn 9","Wargames",""],
+["2026-06-28","G004","Zihang Zhou","Travis Steele","USSR","Final Scoring","Final Scoring",""],
+["2026-06-28","S023","Alex Lee","David Choo","USSR","Turn 6","Scoring Card Held",""],
+["2026-06-28","R030","Michael McKibbin","Simon Pudsey","USA","Turn 8","VP Track (+20)",""],
+["2026-06-28","K007","Asan Beisenov","Aaron Ng","USSR","Turn 7","VP Track (+20)",""],
+["2026-06-28","G033","Juan Antonio Romera","Francisco Sanchez","USSR","Turn 10","VP Track (+20)",""],
+["2026-06-28","N018","Jim Haefele","Ajoy Chakrabarti","USSR","Turn 4","VP Track (+20)",""],
+["2026-06-28","C044","Mikolaj Solkiewicz","Robert Stegmann","USSR","Final Scoring","Final Scoring",""],
+["2026-06-28","J003","Derek Miller","Pavel Meshkov","USA","Turn 10","DEFCON",""],
+["2026-06-28","K033","Charlie Blackmar","Giorgos Iosifidis","USSR","Final Scoring","Final Scoring",""],
+["2026-06-29","J036","Kevin Gute","Max DuBoff","USA","Turn 9","Wargames",""],
+["2026-06-29","S022","Alex Lee","Mathias Heinze","USA","Final Scoring","Final Scoring",""],
+["2026-06-29","S036","Jifei Li","David Choo","USA","Turn 4","DEFCON",""],
+["2026-06-29","G035","Travis Steele","JJ Alt","USA","Final Scoring","Final Scoring",""],
+["2026-06-29","C047","Bidart Larrakoetxea","Daniel Simon","USA","Turn 8","VP Track (+20)",""],
+["2026-06-30","J019","Guangheng Wu","Marek Burkacki","USA","Turn 9","VP Track (+20)","https://youtu.be/MfqYkXRfdrQ"],
+["2026-06-30","A051","David Bartolome Duran","Daniël Hogetoorn","USA","Final Scoring","Final Scoring",""],
+["2026-06-30","B039","Antoine Danel","Andrea Mancuso","USSR","Turn 5","VP Track (+20)",""],
+["2026-07-01","J001","Derek Miller","Marek Burkacki","USA","Turn 8","VP Track (+20)","https://youtu.be/M549KXlb_vk"],
+["2026-07-01","S027","Tomas Tvaroh","Alex Lee","USSR","Final Scoring","Final Scoring",""],
+["2026-07-01","A053","Balazs Ulveczki","Daniël Hogetoorn","USA","Final Scoring","Final Scoring",""],
+["2026-07-01","J032","Pavel Meshkov","Frank Tarena","USA","Turn 5","Scoring Card Held",""],
+["2026-07-02","B055","Andrea Mancuso","Yongjun Park","USSR","Turn 6","VP Track (+20)",""],
+["2026-07-02","G013","Mike Oehler","Travis Steele","USSR","Final Scoring","Final Scoring",""],
+["2026-07-02","B044","Nicu Oprea","Andrea Mancuso","USSR","Turn 5","VP Track (+20)",""],
+["2026-07-03","R009","Lukas Fuchs","Jan Ostrowski","USSR","Final Scoring","Final Scoring",""],
+["2026-07-03","N039","Garreth Hawkins","Jim Haefele","USSR","Turn 8","Wargames",""],
+["2026-07-03","J041","David Erill","Max DuBoff","USA","Turn 8","DEFCON","https://youtu.be/nK2b2sJ50uc"],
+["2026-07-03","R012","Urmas Yanis","Michael McKibbin","USSR","Turn 4","VP Track (+20)",""],
+["2026-07-04","B013","Aleksei Lobunko","Antoine Danel","USSR","Final Scoring","Final Scoring","https://youtu.be/EiSAgP-zMUY"],
+["2026-07-04","J014","Marek Burkacki","David Erill","USSR","Turn 10","Wargames",""],
+["2026-07-04","J013","Marek Burkacki","Kevin Gute","USSR","Final Scoring","Final Scoring",""],
+["2026-07-04","R005","Jan Ostrowski","John Kim","USSR","Turn 7","VP Track (+20)",""],
+["2026-07-04","R032","Michael McKibbin","Koen Dijkstra","USA","Turn 9","VP Track (+20)",""],
+["2026-07-04","R039","Daniel Ramos","Lukas Fuchs","USSR","Turn 10","Wargames","https://youtu.be/gtb-c8vwUBw"],
+["2026-07-05","A028","Brad McCoy","Yauheni Mashkouski","USA","Turn 3","Forfeit",""],
+["2026-07-05","R043","John Kim","Koen Dijkstra","USA","Turn 10","VP Track (+20)",""],
+["2026-07-05","R020","Crow Crowlas","Michael McKibbin","USSR","Turn 6","VP Track (+20)","https://youtu.be/6L7bTOgDUQ4"],
+["2026-07-05","E020","Mark Overstreet","Katsiaryna Makouskaya","USSR","Turn 8","Wargames",""],
+["2026-07-05","T027","Ziemowit Pazderski","Chris Xu","USA","Turn 9","Scoring Card Held","https://youtu.be/roNF-ZWIto4"],
+["2026-07-05","A023","Pau Sala","Raymond Wang","USSR","Turn 6","VP Track (+20)",""],
+["2026-07-06","G024","Haydon Dennison","Patxo Sans","USA","Final Scoring","Final Scoring",""],
+["2026-07-06","J030","Pavel Meshkov","Max DuBoff","USSR","Final Scoring","Final Scoring",""],
+["2026-07-06","S034","Tomas Tvaroh","Patrick Gong","USA","Final Scoring","Final Scoring",""],
+["2026-07-06","N028","Tomasz Babicz","Garreth Hawkins","USA","Turn 10","VP Track (+20)","https://youtu.be/jrlKxQuRa9s"],
+["2026-07-07","E035","Tim Furrow","Michael Stryker","USSR","Turn 9","VP Track (+20)",""],
+["2026-07-07","T026","B H Ju","Chris Xu","USA","Turn 2","Scoring Card Held",""],
+["2026-07-07","K047","Carlos Pintado","Arek Sitkowski","USSR","Final Scoring","Final Scoring",""],
+["2026-07-07","S043","Mathias Heinze","Justin Abramson","USA","Final Scoring","Final Scoring",""],
+["2026-07-07","J016","Paweł Januszewski","Marek Burkacki","USA","Final Scoring","Final Scoring",""],
+["2026-07-08","T018","B H Ju","Zhuang Yan","USSR","Turn 4","Europe Control",""],
+["2026-07-08","T040","Ziemowit Pazderski","Jinxi Xu","USSR","Turn 10","Wargames",""],
+["2026-07-08","K043","Anton Skott","Arek Sitkowski","USA","Final Scoring","Final Scoring",""],
+["2026-07-08","J031","Pavel Meshkov","Paweł Januszewski","USSR","Final Scoring","Final Scoring",""],
+["2026-07-09","T024","Chris Xu","Ted Livermore","USSR","Final Scoring","Final Scoring",""],
+["2026-07-09","N003","Adrian Ziarko","Tomasz Babicz","USA","Turn 8","DEFCON",""],
+["2026-07-09","S050","Jan Wimmer","Justin Abramson","USA","Final Scoring","Final Scoring",""],
+["2026-07-09","B002","Jan Schmidt","Michal Borkowicz","USSR","Turn 4","VP Track (+20)",""],
+["2026-07-09","C030","Bledson Bezerra","Bidart Larrakoetxea","USSR","Turn 10","DEFCON",""],
+["2026-07-10","T036","Jinxi Xu","Bartosz Wróbel","USA","Final Scoring","Final Scoring",""],
+["2026-07-10","B049","Robin Bos","Yongjun Park","USSR","Final Scoring","Final Scoring",""],
+["2026-07-10","E009","Peter Frantz","Jarek Grzaslewicz","USA","Turn 5","VP Track (+20)","https://www.twitch.tv/videos/2816590983"],
+["2026-07-10","B046","Robin Bos","Guang Li","USSR","Final Scoring","Final Scoring",""],
+["2026-07-10","S032","Patrick Gong","Justin Abramson","USA","Turn 8","Wargames",""],
+["2026-07-10","J037","Kevin Gute","Paweł Januszewski","USA","Turn 8","Wargames",""],
+["2026-07-10","G046","Hervé Duval","Patxo Sans","USA","Turn 8","Wargames",""],
+["2026-07-10","S040","Tomas Tvaroh","Jifei Li","USSR","Final Scoring","Final Scoring",""],
+["2026-07-10","A026","Daniël Hogetoorn","Pau Sala","USA","Turn 10","VP Track (+20)",""],
+["2026-07-10","T052","Ted Livermore","Ziemowit Pazderski","USA","Final Scoring","Final Scoring",""],
+["2026-07-10","C046","Bidart Larrakoetxea","Peter Davich","USSR","Turn 6","VP Track (+20)",""],
+["2026-07-11","G030","Francisco Sanchez","Hervé Duval","USSR","Turn 6","VP Track (+20)",""],
+["2026-07-11","B050","Guang Li","Ruben Messelink","USA","Final Scoring","Final Scoring",""],
+["2026-07-11","G020","Haydon Dennison","Francisco Sanchez","USSR","Turn 8","Wargames",""],
+["2026-07-11","R022","Crow Crowlas","John Kim","USSR","Turn 7","VP Track (+20)",""],
+["2026-07-11","R003","Jan Ostrowski","Michael McKibbin","USSR","Turn 9","Wargames",""],
+["2026-07-11","T019","Ziemowit Pazderski","Zhuang Yan","USA","Final Scoring","Final Scoring",""],
+["2026-07-11","B021","Michal Borkowicz","Antoine Danel","USA","Turn 9","Wargames",""],
+["2026-07-11","C007","Peter Davich","Jordan Cass","USA","Turn 7","VP Track (+20)",""],
+["2026-07-11","C050","Peter Davich","Daniel Simon","USA","Turn 3","DEFCON",""],
+["2026-07-11","E004","Jarek Grzaslewicz","Tim Furrow","USA","Turn 9","VP Track (+20)",""],
+["2026-07-11","C020","Jakub Węcławski","Bledson Bezerra","USA","Final Scoring","Final Scoring",""],
+["2026-07-11","A030","Brad McCoy","Raymond Wang","USA","Turn 10","Wargames",""],
+["2026-07-12","N022","Silver Zhu","Tim Engelhardt","USA","Final Scoring","Final Scoring","https://www.youtube.com/watch?v=X5dauWuF6YQ"],
+["2026-07-12","C028","Bledson Bezerra","Ruifeng Li","USA","Turn 7","DEFCON",""],
+["2026-07-12","N037","Garreth Hawkins","David Young","USA","Turn 9","Wargames",""],
+["2026-07-12","T025","Makis Bahtsevanis","Chris Xu","USA","Final Scoring","Final Scoring",""],
+["2026-07-12","N035","Garreth Hawkins","Tim Engelhardt","USA","Turn 7","VP Track (+20)","https://youtu.be/sGVuTPmxid0"],
+["2026-07-12","K044","Anton Skott","Charlie Blackmar","USA","Final Scoring","Final Scoring",""],
+["2026-07-12","G032","Francisco Sanchez","Marc Nuño","USSR","Turn 5","VP Track (+20)",""],
+["2026-07-13","B007","Guang Li","Jan Schmidt","USA","Turn 10","Wargames","https://youtu.be/ystxrB8y5n0"],
+["2026-07-13","E026","Peter Frantz","Mark Overstreet","TIE","Final Scoring","Final Scoring","https://www.twitch.tv/videos/2818745890"],
+["2026-07-13","G050","Patxo Sans","Marc Nuño","USSR","Turn 10","Wargames",""],
+["2026-07-13","B041","Nicu Oprea","Robin Bos","USSR","Turn 5","VP Track (+20)",""],
+["2026-07-13","C023","Jakub Węcławski","Bidart Larrakoetxea","USSR","Turn 9","VP Track (+20)",""],
+["2026-07-13","N008","Rafał Maksymiuk","Adrian Ziarko","USSR","Final Scoring","Final Scoring",""],
+["2026-07-13","C014","J.A McMahon","Mikolaj Solkiewicz","USA","Final Scoring","Final Scoring",""],
+["2026-07-14","C031","Bledson Bezerra","Peter Davich","USSR","Final Scoring","Final Scoring",""],
+["2026-07-14","J010","Guangheng Wu","Derek Miller","USA","Turn 8","Wargames",""],
+["2026-07-14","S031","Patrick Gong","Jan Wimmer","USA","Turn 7","VP Track (+20)",""],
+["2026-07-14","J015","Marek Burkacki","Max DuBoff","USSR","Turn 9","Wargames",""],
+["2026-07-14","G015","Mike Oehler","Hervé Duval","USSR","Turn 9","Wargames",""],
+["2026-07-14","K020","Stan Kaatee","Giorgos Iosifidis","USA","Turn 10","VP Track (+20)",""],
+["2026-07-14","J018","Enrico Ciardo","Marek Burkacki","USA","Turn 8","VP Track (+20)",""],
+["2026-07-15","A042","Matt Davies","David Bartolome Duran","USSR","Final Scoring","Final Scoring",""],
+["2026-07-15","S030","Patrick Gong","David Choo","USSR","Final Scoring","Final Scoring",""],
+["2026-07-15","T044","Jianshu Qian","B H Ju","USSR","Turn 9","Wargames",""],
+["2026-07-15","T035","Jinxi Xu","Jianshu Qian","USSR","Turn 9","DEFCON",""],
+["2026-07-15","K030","Giorgos Iosifidis","Carlos Pintado","USA","Turn 9","VP Track (+20)",""],
+["2026-07-15","S013","Onur Kulaksizoglu","Jifei Li","USSR","Turn 6","VP Track (+20)",""],
+["2026-07-15","A016","David Bartolome Duran","Markel Elortza","USA","Turn 8","VP Track (+20)",""],
+["2026-07-15","S012","Onur Kulaksizoglu","Patrick Gong","USSR","Turn 8","VP Track (+20)",""],
+["2026-07-15","J038","Kevin Gute","Frank Tarena","USA","Turn 4","DEFCON","https://youtu.be/qWCuL5Kzw1k?si=7aiEecKvR0jeVvgT"],
+["2026-07-16","G053","Marc Nuño","Juan Antonio Romera","USA","Turn 7","VP Track (+20)",""],
+["2026-07-16","K025","Arek Sitkowski","Stan Kaatee","USSR","Turn 4","VP Track (+20)",""],
+["2026-07-16","N043","Tim Engelhardt","Rafał Maksymiuk","USA","Final Scoring","Final Scoring","https://youtu.be/P2PWdtUpLyA"],
+["2026-07-16","R010","Riley Dosh","Jan Ostrowski","USSR","Turn 8","Wargames",""],
+["2026-07-16","B035","Antoine Danel","Nicu Oprea","USA","Final Scoring","Final Scoring","https://youtu.be/1syMVNzhfXc"],
+["2026-07-16","A001","Goos Kuijper","Markel Elortza","USSR","Final Scoring","Final Scoring",""],
+["2026-07-17","E016","Roger Jolly","Carl Young","USSR","Turn 9","VP Track (+20)",""],
+["2026-07-17","A013","Markel Elortza","Yauheni Mashkouski","USSR","Turn 10","VP Track (+20)",""],
+["2026-07-17","E031","Katsiaryna Makouskaya","Roger Jolly","USSR","Turn 7","VP Track (+20)",""],
+["2026-07-17","B029","Jan Edvard Nodland","Nicu Oprea","USA","Final Scoring","Final Scoring",""],
+["2026-07-17","R001","Jan Ostrowski","Urmas Yanis","USA","Turn 5","VP Track (+20)",""],
+["2026-07-17","C009","Robert Stegmann","Jordan Cass","USSR","Turn 9","Wargames","https://www.twitch.tv/videos/2822262343"],
+["2026-07-18","R013","Urmas Yanis","Daniel Ramos","USSR","Turn 7","VP Track (+20)",""],
+["2026-07-18","C003","Jordan Cass","Bledson Bezerra","USA","Final Scoring","Final Scoring","https://www.twitch.tv/videos/2822574113"],
+["2026-07-18","B031","Jan Edvard Nodland","Guang Li","USSR","Turn 4","VP Track (+20)","https://youtu.be/JqU_Y7xayCQ"],
+["2026-07-18","J022","Justin Nordstrom","David Erill","USSR","Turn 9","VP Track (+20)","https://youtu.be/OAOngu6fJ0M"],
+["2026-07-18","A006","Raymond Wang","Goos Kuijper","USA","Final Scoring","Final Scoring",""],
+["2026-07-18","A022","Pau Sala","Matt Davies","USA","Final Scoring","Final Scoring",""],
+["2026-07-18","E008","Joshua Mauer","Jarek Grzaslewicz","USSR","Final Scoring","Final Scoring","https://youtu.be/AeeWPdbGy5o"],
+["2026-07-18","R011","Urmas Yanis","Crow Crowlas","USA","Turn 7","VP Track (+20)","https://youtu.be/gKv6m9pqmN4"],
+["2026-07-18","N051","David Young","Jim Haefele","USSR","Turn 6","DEFCON",""],
+["2026-07-19","E050","Roger Jolly","Joshua Mauer","USA","Final Scoring","Final Scoring",""],
+["2026-07-19","T042","Jianshu Qian","Ted Livermore","USSR","Final Scoring","Final Scoring",""],
+["2026-07-19","R035","Daniel Ramos","John Kim","USSR","Turn 7","VP Track (+20)",""],
+["2026-07-19","A005","Goos Kuijper","Matt Davies","USA","Turn 8","Wargames",""],
+["2026-07-19","K012","Przemek Przemyslaw","Giorgos Iosifidis","USSR","Final Scoring","Final Scoring",""],
+["2026-07-20","B047","Robin Bos","Ruben Messelink","USA","Turn 9","Wargames",""],
+["2026-07-20","T041","Jianshu Qian","Bartosz Wróbel","USA","Final Scoring","Final Scoring",""],
+["2026-07-20","B053","Ruben Messelink","Andrea Mancuso","USSR","Turn 5","VP Track (+20)",""],
+["2026-07-20","T043","Jianshu Qian","Makis Bahtsevanis","USSR","Final Scoring","Final Scoring",""],
+["2026-07-21","R048","Simon Pudsey","Lukas Fuchs","USSR","Turn 4","VP Track (+20)",""],
+["2026-07-21","S008","Justin Abramson","Weiran Xie","USA","Turn 10","VP Track (+20)",""],
+["2026-07-22","J007","Paweł Januszewski","Derek Miller","USSR","Final Scoring","Final Scoring",""],
+["2026-07-23","C012","J.A McMahon","Bledson Bezerra","USSR","Final Scoring","Final Scoring",""],
+["2026-07-23","E024","Mark Overstreet","Roger Jolly","USA","Final Scoring","Final Scoring",""],
+["2026-07-24","S041","Mathias Heinze","David Choo","USSR","Turn 6","VP Track (+20)",""],
+["2026-07-24","K050","Asan Beisenov","Arek Sitkowski","USSR","Turn 10","Wargames",""],
+["2026-07-24","T023","Chris Xu","Bartosz Wróbel","USSR","Turn 7","VP Track (+20)",""],
+["2026-07-24","J017","Frank Tarena","Marek Burkacki","USSR","Final Scoring","Final Scoring",""],
+["2026-07-25","R014","Urmas Yanis","John Kim","USSR","Turn 7","VP Track (+20)",""],
+["2026-07-25","G003","Zihang Zhou","Francisco Sanchez","USA","Final Scoring","Final Scoring",""],
+["2026-07-25","S015","Onur Kulaksizoglu","David Choo","USA","Turn 4","DEFCON",""],
+["2026-07-25","T048","Bartosz Wróbel","B H Ju","USA","Final Scoring","Final Scoring","https://youtu.be/9iGhrYGt298"],
+["2026-07-25","S017","Justin Abramson","Onur Kulaksizoglu","USSR","Final Scoring","Final Scoring",""],
+["2026-07-25","C055","Robert Stegmann","Peter Heuvelman","USA","Final Scoring","VP Track (+20)",""],
+["2026-07-25","E002","Jarek Grzaslewicz","Mark Overstreet","USA","Final Scoring","Final Scoring",""],
+["2026-07-25","K016","Asan Beisenov","Przemek Przemyslaw","USSR","Turn 6","VP Track (+20)",""],
+["2026-07-26","C036","Sergei Sazonov","Bidart Larrakoetxea","USA","Final Scoring","Final Scoring",""],
+["2026-07-26","S011","Onur Kulaksizoglu","Alex Lee","USA","Final Scoring","Final Scoring",""],
+["2026-07-26","E046","Raewon Jang","Roger Jolly","USSR","Turn 10","Wargames",""],
+["2026-07-26","C004","Jordan Cass","Sergei Sazonov","USA","Turn 3","DEFCON","https://www.twitch.tv/videos/2829583803"],
+["2026-07-26","G055","Juan Antonio Romera","Joris Vandenbroeck","USSR","Final Scoring","Final Scoring",""],
+["2026-07-26","C005","Jordan Cass","Mikolaj Solkiewicz","USA","Turn 3","Forfeit",""],
+["2026-07-27","B018","Andrea Mancuso","Aleksei Lobunko","USSR","Final Scoring","Final Scoring",""],
+["2026-07-27","C008","Daniel Simon","Jordan Cass","USA","Final Scoring","Final Scoring",""],
+["2026-07-27","G007","Patxo Sans","Zihang Zhou","USSR","Turn 4","VP Track (+20)",""],
+["2026-07-29","T039","Jinxi Xu","B H Ju","USA","Turn 9","VP Track (+20)",""],
+["2026-07-29","R055","Lukas Fuchs","Károly Lukács","USSR","Turn 9","Wargames",""],
+["2026-07-30","T029","Dylan Provencher","Jianshu Qian","USSR","Turn 9","VP Track (+20)",""],
+["2026-07-30","R004","Jan Ostrowski","Daniel Ramos","USA","Final Scoring","Final Scoring",""],
+["2026-07-30","S029","Patrick Gong","Mathias Heinze","USSR","Turn 9","VP Track (+20)",""],
+["2026-07-30","N032","Tomasz Babicz","Rafał Maksymiuk","USA","Turn 10","VP Track (+20)",""],
+["2026-07-31","T033","B H Ju","Dylan Provencher","USSR","Turn 5","VP Track (+20)",""],
+["2026-07-31","C048","Bidart Larrakoetxea","Robert Stegmann","USA","Turn 9","VP Track (+20)",""],
+["2026-07-31","S005","Weiran Xie","Mathias Heinze","USSR","Final Scoring","Final Scoring",""],
+["2026-08-01","K004","Aaron Ng","Aidan Archer","USSR","Turn 8","DEFCON",""],
+["2026-08-01","E010","Mike Archambault","Jarek Grzaslewicz","USA","Final Scoring","Final Scoring",""],
+["2026-08-01","K029","Giorgos Iosifidis","Anton Skott","USSR","Turn 6","VP Track (+20)","https://www.twitch.tv/videos/2834645349"],
+["2026-08-02","T032","Dylan Provencher","Makis Bahtsevanis","USSR","Turn 8","VP Track (+20)",""],
+["2026-08-02","T034","Ziemowit Pazderski","Dylan Provencher","USA","Turn 7","VP Track (+20)",""],
+["2026-08-02","K001","Aaron Ng","Przemek Przemyslaw","USA","Turn 8","Wargames",""],
+["2026-08-03","T021","Chris Xu","Jinxi Xu","USA","Final Scoring","Final Scoring",""],
+["2026-08-03","R045","John Kim","Károly Lukács","USA","Final Scoring","Final Scoring",""],
+["2026-08-03","J008","Frank Tarena","Derek Miller","USSR","Turn 9","Wargames","https://youtu.be/LjcAg1BoLZM"],
+["2026-08-03","K042","Anton Skott","Asan Beisenov","TIE","Turn 10","Wargames",""],
+["2026-08-04","S047","David Choo","Justin Abramson","USA","Turn 10","VP Track (+20)",""],
+["2026-08-04","N055","Jim Haefele","Hicham Vanborm","USSR","Turn 6","VP Track (+20)",""],
+["2026-08-04","J005","Derek Miller","David Erill","USA","Final Scoring","Final Scoring","https://youtu.be/B668HP9MOQ0"],
+["2026-08-05","C016","Peter Davich","J.A McMahon","USA","Final Scoring","Final Scoring",""],
+["2026-08-05","J046","Max DuBoff","Paweł Januszewski","USSR","Turn 5","VP Track (+20)",""],
+["2026-08-05","B011","Aleksei Lobunko","Michal Borkowicz","USA","Final Scoring","Final Scoring",""],
+["2026-08-05","C041","Mikolaj Solkiewicz","Bidart Larrakoetxea","USSR","Turn 7","VP Track (+20)",""],
+["2026-08-05","T031","Dylan Provencher","Ted Livermore","USA","Turn 7","Scoring Card Held",""],
+["2026-08-06","J049","Max DuBoff","Guangheng Wu","USSR","Turn 10","VP Track (+20)","https://youtu.be/qZOZyLpJr6k"],
+["2026-08-06","N009","Jim Haefele","Adrian Ziarko","USSR","Turn 5","VP Track (+20)",""],
+["2026-08-08","T014","Zhuang Yan","Jianshu Qian","USA","Final Scoring","Final Scoring",""],
+["2026-08-08","A024","Pau Sala","David Bartolome Duran","USA","Turn 10","Wargames",""],
+["2026-08-08","T020","Chris Xu","Dylan Provencher","USSR","Turn 9","Wargames",""],
+["2026-08-08","G048","Hervé Duval","Juan Antonio Romera","USA","Final Scoring","Final Scoring",""],
+["2026-08-08","S033","Jarib Flores","Patrick Gong","USA","Turn 7","VP Track (+20)",""],
+["2026-08-08","C040","Peter Heuvelman","Sergei Sazonov","USSR","Final Scoring","Final Scoring",""],
+["2026-08-08","T045","Jianshu Qian","Ziemowit Pazderski","USSR","Turn 10","Wargames","https://youtu.be/R8UPdd_UkDY"],
+["2026-08-08","R033","Lukas Fuchs","Michael McKibbin","USSR","Final Scoring","Final Scoring",""],
+["2026-08-08","C037","Sergei Sazonov","Peter Davich","USSR","Turn 10","VP Track (+20)",""],
+["2026-08-08","E053","Joshua Mauer","Peter Frantz","USA","Turn 10","DEFCON",""],
+["2026-08-09","A025","Balazs Ulveczki","Pau Sala","USSR","Turn 10","DEFCON",""],
+["2026-08-09","G023","Haydon Dennison","Hervé Duval","USA","Final Scoring","Final Scoring",""],
+["2026-08-09","T055","B H Ju","Ziemowit Pazderski","USSR","Turn 10","Wargames","https://youtu.be/H3_J7ia-HdE"],
+["2026-08-09","B017","Ruben Messelink","Aleksei Lobunko","USSR","Turn 8","VP Track (+20)",""],
+["2026-08-09","B012","Aleksei Lobunko","Jan Edvard Nodland","USSR","Turn 4","VP Track (+20)",""],
+["2026-08-09","T046","Bartosz Wróbel","Ted Livermore","USA","Turn 7","VP Track (+20)",""],
+["2026-08-09","C013","J.A McMahon","Sergei Sazonov","USSR","Turn 9","Wargames",""],
+["2026-08-10","R008","Koen Dijkstra","Jan Ostrowski","USA","Turn 6","VP Track (+20)",""],
+["2026-08-10","K027","Dimitris Katsoulas","Stan Kaatee","USA","Turn 10","VP Track (+20)",""],
+["2026-08-11","E047","Raewon Jang","Joshua Mauer","USA","Final Scoring","Final Scoring","https://youtu.be/4lqiQS4aoVY"],
+["2026-08-11","K034","Dimitris Katsoulas","Giorgos Iosifidis","USA","Final Scoring","Europe Control",""],
+["2026-08-11","T054","Makis Bahtsevanis","Ziemowit Pazderski","USSR","Turn 4","VP Track (+20)","https://youtu.be/jGT0as-8d9Q"],
+["2026-08-11","A039","Yauheni Mashkouski","Daniël Hogetoorn","USSR","Turn 5","Forfeit",""],
+["2026-08-11","K017","Arek Sitkowski","Przemek Przemyslaw","USA","Turn 5","DEFCON",""],
+["2026-08-11","K022","Stan Kaatee","Anton Skott","USSR","Turn 10","VP Track (+20)",""],
+["2026-08-12","G012","Mike Oehler","Francisco Sanchez","USA","Final Scoring","Final Scoring",""],
+["2026-08-12","N030","Tomasz Babicz","Evangelos Iosifidis","USSR","Final Scoring","Final Scoring",""],
+["2026-08-12","G001","Zihang Zhou","Mike Oehler","USA","Final Scoring","Final Scoring",""],
+["2026-08-12","N020","Silver Zhu","Tomasz Babicz","USA","Final Scoring","Final Scoring","https://youtu.be/IrsMzz93rP0"],
+["2026-08-12","K045","Anton Skott","Dimitris Katsoulas","USA","Turn 7","VP Track (+20)",""],
+["2026-08-12","A021","Pau Sala","Yauheni Mashkouski","USSR","Turn 9","VP Track (+20)",""],
+["2026-08-13","T028","Dylan Provencher","Jinxi Xu","USSR","Final Scoring","Final Scoring",""],
+["2026-08-13","G017","Marc Nuño","Mike Oehler","USSR","Turn 8","VP Track (+20)",""],
+["2026-08-14","N029","Tomasz Babicz","Tim Engelhardt","USSR","Final Scoring","Final Scoring","https://youtu.be/QMg0uNHWnbw"],
+["2026-08-14","N034","Hicham Vanborm","Tomasz Babicz","USA","Final Scoring","Europe Control",""],
+["2026-08-15","N011","Ajoy Chakrabarti","Silver Zhu","USSR","Turn 7","VP Track (+20)",""],
+["2026-08-15","R017","Koen Dijkstra","Urmas Yanis","USA","Turn 10","Wargames",""],
+["2026-08-16","R041","John Kim","Simon Pudsey","USA","Turn 7","VP Track (+20)",""],
+["2026-08-16","R034","Károly Lukács","Michael McKibbin","USSR","Turn 5","VP Track (+20)",""],
+["2026-08-16","J055","Enrico Ciardo","Guangheng Wu","USSR","Turn 9","Wargames","https://youtu.be/UOSVdLv-JFQ"],
+["2026-08-16","N031","Tomasz Babicz","David Young","USSR","Final Scoring","Final Scoring",""],
+["2026-08-16","N033","Jim Haefele","Tomasz Babicz","USSR","Turn 4","VP Track (+20)","https://youtu.be/KBu-Vr3X7OY"],
+["2026-08-16","K002","Aaron Ng","Stan Kaatee","USA","Final Scoring","Final Scoring",""],
+["2026-08-17","T053","Makis Bahtsevanis","B H Ju","USA","Final Scoring","Final Scoring",""],
+["2026-08-17","B006","Robin Bos","Jan Schmidt","USA","Turn 7","VP Track (+20)",""],
+["2026-08-17","N036","Garreth Hawkins","Evangelos Iosifidis","USA","Final Scoring","Final Scoring",""],
+["2026-08-17","J027","Guangheng Wu","Justin Nordstrom","USA","Turn 7","VP Track (+20)","https://youtu.be/SUbxX_-jhxA"],
+["2026-08-18","R006","Simon Pudsey","Jan Ostrowski","USA","Turn 5","VP Track (+20)",""],
+["2026-08-18","N038","Garreth Hawkins","Rafał Maksymiuk","USA","Turn 10","VP Track (+20)",""],
+["2026-08-19","E030","Katsiaryna Makouskaya","Raewon Jang","USSR","Turn 5","VP Track (+20)","https://youtu.be/uQQ1y6fnpdw"],
+["2026-08-19","C027","Peter Heuvelman","Jakub Węcławski","USSR","Turn 8","Wargames",""],
+["2026-08-19","J048","Max DuBoff","Enrico Ciardo","USSR","Turn 7","VP Track (+20)",""],
+["2026-08-20","E027","Mike Archambault","Mark Overstreet","USA","Final Scoring","Final Scoring",""],
+["2026-08-20","N046","Evangelos Iosifidis","David Young","USSR","Turn 9","VP Track (+20)",""],
+["2026-08-21","E023","Mark Overstreet","Raewon Jang","USSR","Turn 3","VP Track (+20)","https://youtu.be/WvpZM5cgMWM"],
+["2026-08-21","K051","Asan Beisenov","Charlie Blackmar","USSR","Turn 9","VP Track (+20)",""],
+["2026-08-21","J021","Justin Nordstrom","Kevin Gute","USSR","Final Scoring","Final Scoring","https://youtu.be/QcK4fmIC3jY"],
+["2026-08-22","E052","Roger Jolly","Mike Archambault","USA","Final Scoring","Europe Control",""],
+["2026-08-22","R054","Koen Dijkstra","Károly Lukács","USA","Final Scoring","Final Scoring",""],
+["2026-08-23","K039","Aidan Archer","Charlie Blackmar","USSR","Turn 7","VP Track (+20)",""],
+["2026-08-23","N016","David Young","Ajoy Chakrabarti","USSR","Turn 7","VP Track (+20)",""],
+["2026-08-23","N007","David Young","Adrian Ziarko","USSR","Turn 8","DEFCON",""],
+["2026-08-23","N001","Adrian Ziarko","Ajoy Chakrabarti","USA","Turn 6","VP Track (+20)",""],
+["2026-08-24","K035","Aidan Archer","Anton Skott","USSR","Turn 6","VP Track (+20)",""],
+["2026-08-24","N040","Hicham Vanborm","Garreth Hawkins","USA","Turn 8","Wargames",""],
+["2026-08-25","G044","JJ Alt","Juan Antonio Romera","USA","Turn 9","VP Track (+20)",""],
+["2026-08-25","G042","JJ Alt","Patxo Sans","USSR","Turn 5","DEFCON",""],
+["2026-08-25","K032","Giorgos Iosifidis","Arek Sitkowski","USSR","Turn 4","VP Track (+20)",""],
+["2026-08-25","R025","Koen Dijkstra","Crow Crowlas","USSR","Turn 8","VP Track (+20)","https://youtu.be/o_GZFsjBtFA?si=rf-jvIKYdsi_6SbL"],
+["2026-08-25","G038","Travis Steele","Marc Nuño","USSR","Turn 6","VP Track (+20)",""],
+["2026-08-26","J004","Derek Miller","Kevin Gute","USSR","Turn 8","DEFCON","https://youtu.be/MXH5Q2VdUL4"],
+["2026-08-26","B015","Aleksei Lobunko","Robin Bos","USSR","Turn 9","Wargames",""],
+["2026-08-26","G029","Francisco Sanchez","JJ Alt","USA","Final Scoring","Europe Control",""],
+["2026-08-27","S004","Weiran Xie","Jifei Li","USSR","Turn 6","VP Track (+20)",""],
+["2026-08-27","S006","David Choo","Weiran Xie","USSR","Turn 5","VP Track (+20)",""],
+["2026-08-28","C043","Mikolaj Solkiewicz","Daniel Simon","USSR","Turn 6","VP Track (+20)",""],
+["2026-08-28","J025","Frank Tarena","Justin Nordstrom","USA","Turn 9","Wargames",""],
+["2026-08-28","S054","Justin Abramson","Tomas Tvaroh","USA","Final Scoring","Final Scoring","https://www.twitch.tv/videos/2858886291"],
+["2026-08-28","C026","Robert Stegmann","Jakub Węcławski","USSR","Turn 8","VP Track (+20)",""],
+["2026-08-29","B024","Michal Borkowicz","Guang Li","USA","Turn 9","DEFCON",""],
+["2026-08-29","B037","Antoine Danel","Guang Li","USSR","Turn 4","VP Track (+20)","https://youtu.be/0pFh6e8frks"],
+["2026-08-29","C051","Peter Davich","Robert Stegmann","USA","Final Scoring","Final Scoring",""],
+["2026-08-29","N049","Evangelos Iosifidis","Hicham Vanborm","USSR","Turn 7","VP Track (+20)",""],
+["2026-08-29","C025","Daniel Simon","Jakub Węcławski","USSR","Final Scoring","Final Scoring",""],
+["2026-08-29","A048","Raymond Wang","Daniël Hogetoorn","USA","Final Scoring","Final Scoring",""],
+["2026-08-29","B025","Ruben Messelink","Michal Borkowicz","USSR","Final Scoring","Final Scoring",""],
+["2026-08-30","G005","Zihang Zhou","JJ Alt","USA","Turn 10","DEFCON",""],
+["2026-08-30","B004","Jan Schmidt","Antoine Danel","USSR","Final Scoring","Final Scoring","https://youtu.be/Anu1nJADphs"],
+["2026-08-30","C029","Bledson Bezerra","Mikolaj Solkiewicz","USSR","Turn 10","Wargames",""],
+["2026-08-30","C039","Sergei Sazonov","Robert Stegmann","USSR","Turn 4","VP Track (+20)",""],
+["2026-08-30","R023","Crow Crowlas","Simon Pudsey","USA","Turn 9","VP Track (+20)",""],
+["2026-08-30","E032","Katsiaryna Makouskaya","Joshua Mauer","USSR","Turn 9","Wargames","https://www.twitch.tv/videos/2861025183"],
+["2026-08-30","E033","Peter Frantz","Katsiaryna Makouskaya","USA","Turn 7","VP Track (+20)","https://youtu.be/Uzhv7-x3d9c"],
+["2026-08-31","S038","Jifei Li","Justin Abramson","USSR","Turn 4","VP Track (+20)","https://www.twitch.tv/videos/2861532381"],
+["2026-08-31","J026","Enrico Ciardo","Justin Nordstrom","USA","Turn 7","DEFCON",""],
+["2026-09-01","C018","Robert Stegmann","J.A McMahon","USA","Turn 5","VP Track (+20)",""],
+["2026-09-01","B028","Jan Edvard Nodland","Antoine Danel","USSR","Final Scoring","Final Scoring","https://youtu.be/Isu79rzmKQA?si=nP63L5CucXLe4g0W"],
+["2026-09-01","B030","Jan Edvard Nodland","Robin Bos","USA","Turn 8","VP Track (+20)",""],
+["2026-09-01","R052","Nick Harinos","Károly Lukács","USA","Turn 6","VP Track (+20)",""],
+["2026-09-01","B020","Michal Borkowicz","Jan Edvard Nodland","USA","Final Scoring","Final Scoring",""],
+["2026-09-01","J044","David Erill","Enrico Ciardo","USSR","Final Scoring","Final Scoring",""],
+["2026-09-01","A017","Balazs Ulveczki","Markel Elortza","USA","Turn 6","VP Track (+20)",""],
+["2026-09-01","S053","Justin Abramson","Jarib Flores","USSR","Turn 10","DEFCON","https://www.twitch.tv/videos/2862640564"],
+["2026-09-02","C032","Bledson Bezerra","Daniel Simon","USSR","Turn 9","DEFCON",""],
+["2026-09-02","T001","Rong Yu","Zhuang Yan","USSR","Turn 5","VP Track (+20)",""],
+["2026-09-02","S025","Justin Abramson","Alex Lee","USSR","Turn 7","VP Track (+20)",""],
+["2026-09-03","K028","Giorgos Iosifidis","Aidan Archer","USSR","Turn 9","Europe Control",""],
+["2026-09-03","N005","Adrian Ziarko","Tim Engelhardt","USSR","Final Scoring","Final Scoring","https://youtu.be/KWvK1Msl4oo"],
+["2026-09-03","R016","Nick Harinos","Urmas Yanis","USA","Turn 6","VP Track (+20)",""],
+["2026-09-04","A040","Aleksandr Pushkarev","Yauheni Mashkouski","USSR","Turn 10","VP Track (+20)",""],
+["2026-09-04","B034","Yongjun Park","Jan Edvard Nodland","USSR","Turn 9","DEFCON",""],
+["2026-09-04","N015","Ajoy Chakrabarti","Evangelos Iosifidis","USSR","Turn 6","VP Track (+20)",""],
+["2026-09-05","J053","Frank Tarena","Enrico Ciardo","USA","Final Scoring","Final Scoring",""],
+["2026-09-05","K048","Carlos Pintado","Charlie Blackmar","USA","Turn 8","VP Track (+20)",""],
+["2026-09-06","G037","Travis Steele","Patxo Sans","USSR","Turn 9","Wargames",""],
+["2026-09-06","R027","Károly Lukács","Crow Crowlas","USSR","Turn 4","VP Track (+20)","https://youtu.be/sN_YEMqDBow"],
+["2026-09-06","T049","Bartosz Wróbel","Ziemowit Pazderski","USSR","Turn 5","Scoring Card Held","https://youtu.be/uKbvq-rhad8"],
+["2026-09-06","G031","Francisco Sanchez","Patxo Sans","USA","Turn 9","DEFCON",""],
+["2026-09-06","N017","Rafał Maksymiuk","Ajoy Chakrabarti","USSR","Turn 8","Wargames",""],
+["2026-09-06","A032","Brad McCoy","Balazs Ulveczki","USA","Final Scoring","Final Scoring",""],
+["2026-09-06","C010","Peter Heuvelman","Jordan Cass","USSR","Turn 9","VP Track (+20)","https://www.twitch.tv/videos/2867105575"],
+["2026-09-07","R002","Jan Ostrowski","Crow Crowlas","USA","Final Scoring","Final Scoring","https://youtu.be/O2ifZnRYGm8"],
+["2026-09-07","J051","Paweł Januszewski","Enrico Ciardo","USA","Final Scoring","Europe Control",""],
+["2026-09-08","K041","Anton Skott","Carlos Pintado","USA","Turn 8","VP Track (+20)",""],
+["2026-09-08","C022","Jakub Węcławski","Mikolaj Solkiewicz","USA","Final Scoring","Final Scoring",""],
+["2026-09-08","B033","Andrea Mancuso","Jan Edvard Nodland","USSR","Turn 9","Wargames",""],
+["2026-09-08","A041","Matt Davies","Raymond Wang","USSR","Turn 3","VP Track (+20)",""],
+["2026-09-09","E022","Mark Overstreet","Michael Stryker","USSR","Turn 6","VP Track (+20)",""],
+["2026-09-09","K036","Aidan Archer","Carlos Pintado","USSR","Turn 6","VP Track (+20)",""],
+["2026-09-09","S037","Jifei Li","Jan Wimmer","USSR","Final Scoring","Final Scoring",""],
+["2026-09-09","G051","Patxo Sans","Juan Antonio Romera","USSR","Turn 9","Wargames",""],
+["2026-09-10","E044","Michael Stryker","Peter Frantz","USSR","Final Scoring","Final Scoring","https://youtu.be/Ecgmr6X7umM"],
+["2026-09-10","J045","David Erill","Guangheng Wu","USSR","Final Scoring","Final Scoring",""],
+["2026-09-10","K037","Aidan Archer","Asan Beisenov","USSR","Turn 8","VP Track (+20)",""],
+["2026-09-10","N047","Evangelos Iosifidis","Rafał Maksymiuk","USA","Final Scoring","Final Scoring",""],
+["2026-09-11","B040","Yongjun Park","Antoine Danel","USSR","Turn 8","VP Track (+20)",""],
+["2026-09-11","S024","Alex Lee","Jan Wimmer","USSR","Final Scoring","Final Scoring",""],
+["2026-09-11","B019","Yongjun Park","Aleksei Lobunko","USSR","Final Scoring","Final Scoring",""],
+["2026-09-11","S021","Alex Lee","Jifei Li","USSR","Turn 9","Wargames",""],
+["2026-09-11","C035","Sergei Sazonov","Mikolaj Solkiewicz","USA","Final Scoring","Final Scoring",""],
+["2026-09-11","N012","Ajoy Chakrabarti","Tomasz Babicz","USSR","Turn 6","VP Track (+20)","https://youtu.be/kltsmHZB9Gg"],
+["2026-09-11","A043","Matt Davies","Balazs Ulveczki","USA","Turn 9","Wargames",""],
+["2026-09-12","T015","Zhuang Yan","Bartosz Wróbel","USA","Turn 7","DEFCON",""],
+["2026-09-12","A044","Matt Davies","Daniël Hogetoorn","USSR","Turn 9","Wargames",""],
+["2026-09-13","E021","Mark Overstreet","Tim Furrow","USA","Final Scoring","Final Scoring",""],
+["2026-09-13","E051","Roger Jolly","Peter Frantz","USA","Final Scoring","Final Scoring",""],
+["2026-09-13","A046","Raymond Wang","David Bartolome Duran","USA","Turn 10","VP Track (+20)",""],
+["2026-09-13","R049","Simon Pudsey","Károly Lukács","USA","Turn 6","VP Track (+20)",""],
+["2026-09-13","R053","Koen Dijkstra","Lukas Fuchs","USSR","Final Scoring","Final Scoring",""],
+["2026-09-13","K011","Przemek Przemyslaw","Stan Kaatee","USSR","Turn 8","Wargames",""],
+["2026-09-13","N045","Tim Engelhardt","Hicham Vanborm","USA","Final Scoring","Final Scoring","https://youtu.be/I3DacjKGujA"],
+["2026-09-14","K038","Aidan Archer","Arek Sitkowski","USA","Final Scoring","Final Scoring",""],
+["2026-09-14","S035","Jifei Li","Mathias Heinze","USA","Turn 9","Wargames",""],
+["2026-09-14","S019","Tomas Tvaroh","Onur Kulaksizoglu","USSR","Turn 4","VP Track (+20)",""],
+["2026-09-14","N027","Hicham Vanborm","Silver Zhu","USA","Turn 7","DEFCON",""],
+["2026-09-15","E018","Peter Frantz","Carl Young","USA","Final Scoring","Final Scoring","https://youtu.be/gsn67oWBnXE"],
+["2026-09-15","R040","Károly Lukács","Daniel Ramos","USSR","Turn 9","Scoring Card Held","https://youtu.be/kORGYdtvzW0"],
+["2026-09-16","S016","Jan Wimmer","Onur Kulaksizoglu","USSR","Turn 4","VP Track (+20)",""],
+["2026-09-16","B014","Aleksei Lobunko","Nicu Oprea","USA","Turn 7","VP Track (+20)",""],
+["2026-09-17","B022","Michal Borkowicz","Nicu Oprea","USSR","Turn 9","VP Track (+20)",""],
+["2026-09-18","B042","Nicu Oprea","Guang Li","USA","Turn 9","Forfeit",""],
+["2026-09-18","B001","Jan Schmidt","Aleksei Lobunko","USSR","Turn 6","VP Track (+20)",""],
+["2026-09-18","E011","Carl Young","Mark Overstreet","USSR","Turn 5","VP Track (+20)",""],
+["2026-09-19","E048","Raewon Jang","Peter Frantz","USSR","Final Scoring","Final Scoring","https://youtu.be/Xyf_R1QbjeU"],
+["2026-09-19","G026","Juan Antonio Romera","Haydon Dennison","USSR","Turn 6","VP Track (+20)",""],
+["2026-09-19","R021","Crow Crowlas","Daniel Ramos","USA","Final Scoring","Final Scoring","https://youtu.be/vunwiWRBFbk"],
+["2026-09-19","R046","Simon Pudsey","Nick Harinos","USSR","Turn 6","VP Track (+20)",""],
+["2026-09-19","N044","Tim Engelhardt","Jim Haefele","USSR","Final Scoring","Final Scoring","https://youtu.be/C3o3xI35Cdo"],
+["2026-09-20","N021","Silver Zhu","Garreth Hawkins","USSR","Turn 9","Wargames",""],
+["2026-09-20","R042","John Kim","Nick Harinos","USSR","Final Scoring","Final Scoring",""],
+["2026-09-20","C019","Peter Heuvelman","J.A McMahon","USSR","Turn 6","VP Track (+20)",""],
+["2026-09-20","K008","Arek Sitkowski","Aaron Ng","USA","Turn 9","Wargames",""],
+["2026-09-20","E042","Michael Stryker","Roger Jolly","USA","Turn 10","Timer Expired",""],
+["2026-09-20","T050","Ted Livermore","Makis Bahtsevanis","USA","Turn 10","DEFCON",""],
+["2026-09-20","G036","Travis Steele","Hervé Duval","USSR","Turn 9","VP Track (+20)",""],
+["2026-09-20","R051","Nick Harinos","Lukas Fuchs","USSR","Turn 7","VP Track (+20)",""],
+["2026-09-20","N019","Hicham Vanborm","Ajoy Chakrabarti","USSR","Turn 5","VP Track (+20)",""],
+["2026-09-20","B008","Ruben Messelink","Jan Schmidt","USSR","Turn 9","Wargames",""],
+["2026-09-20","A055","Daniël Hogetoorn","Aleksandr Pushkarev","USA","Turn 6","VP Track (+20)",""],
+["2026-09-20","A020","Pau Sala","Brad McCoy","USSR","Turn 10","VP Track (+20)",""],
+["2026-09-20","K019","Dimitris Katsoulas","Przemek Przemyslaw","USA","Turn 10","Wargames",""],
+["2026-09-20","E054","Joshua Mauer","Mike Archambault","USA","Final Scoring","Final Scoring","https://www.twitch.tv/videos/2879671602"],
+["2026-09-21","R037","Daniel Ramos","Nick Harinos","USSR","Final Scoring","Final Scoring","https://youtu.be/Mi34E6yi-0Q"],
+["2026-09-21","K010","Dimitris Katsoulas","Aaron Ng","USSR","Turn 8","DEFCON",""],
+["2026-09-21","C054","Daniel Simon","Peter Heuvelman","USSR","Turn 7","VP Track (+20)",""],
+["2026-09-22","G016","Patxo Sans","Mike Oehler","USA","Turn 10","Wargames",""],
+["2026-09-23","B027","Yongjun Park","Michal Borkowicz","USSR","Turn 9","Wargames",""],
+["2026-09-23","B052","Guang Li","Yongjun Park","USA","Turn 8","VP Track (+20)","https://youtu.be/CZP78XZT_B4"],
+["2026-09-23","G052","Patxo Sans","Joris Vandenbroeck","USSR","Turn 8","VP Track (+20)",""],
+["2026-09-23","A047","Raymond Wang","Balazs Ulveczki","USSR","Turn 7","VP Track (+20)",""],
+["2026-09-23","R026","Lukas Fuchs","Crow Crowlas","USA","Turn 8","VP Track (+20)","https://youtu.be/x9RiGyGM60Y"],
+["2026-09-23","K052","Asan Beisenov","Dimitris Katsoulas","USSR","Turn 4","DEFCON",""],
+["2026-09-23","T047","Bartosz Wróbel","Makis Bahtsevanis","USSR","Final Scoring","Final Scoring",""],
+["2026-09-23","G047","Hervé Duval","Marc Nuño","USSR","Final Scoring","Final Scoring",""],
+["2026-09-23","B009","Andrea Mancuso","Jan Schmidt","USSR","Final Scoring","Final Scoring",""],
+["2026-09-23","T016","Ted Livermore","Zhuang Yan","USSR","Turn 8","Wargames",""],
+["2026-09-24","G010","Joris Vandenbroeck","Zihang Zhou","USSR","Turn 4","VP Track (+20)",""],
+["2026-09-24","K046","Carlos Pintado","Asan Beisenov","USSR","Turn 5","DEFCON",""],
+["2026-09-24","J042","David Erill","Paweł Januszewski","USA","Turn 8","Wargames",""],
+["2026-09-24","S014","Onur Kulaksizoglu","Mathias Heinze","USSR","Turn 4","VP Track (+20)",""],
+["2026-09-25","S052","Jan Wimmer","Tomas Tvaroh","USA","Turn 7","Scoring Card Held",""],
+["","A002","Goos Kuijper","Pau Sala","USSR","-","Goos Kuijper withdrawn",""],
+["","A003","Goos Kuijper","Brad McCoy","USSR","-","Goos Kuijper withdrawn",""],
+["","A004","Goos Kuijper","Yauheni Mashkouski","USSR","-","Goos Kuijper withdrawn",""],
+["","A007","David Bartolome Duran","Goos Kuijper","USA","-","Goos Kuijper withdrawn",""],
+["","A008","Balazs Ulveczki","Goos Kuijper","USA","-","Goos Kuijper withdrawn",""],
+["","A009","Daniël Hogetoorn","Goos Kuijper","USA","-","Goos Kuijper withdrawn",""],
+["","A010","Aleksandr Pushkarev","Goos Kuijper","USA","-","Goos Kuijper withdrawn",""],
+["2026-09-26","T012","Zhuang Yan","Dylan Provencher","USSR","Turn 7","Timer Expired",""],
+["2026-09-26","K026","Charlie Blackmar","Stan Kaatee","USSR","Turn 7","VP Track (+20)",""],
+["2026-09-26","R036","Daniel Ramos","Simon Pudsey","USSR","Turn 9","Wargames","https://youtu.be/a486LsbjR2o"],
+["2026-09-26","G019","Joris Vandenbroeck","Mike Oehler","USA","Turn 10","VP Track (+20)",""],
+["2026-09-27","G009","Juan Antonio Romera","Zihang Zhou","USSR","Turn 8","Wargames",""],
+["2026-09-27","E019","Mike Archambault","Carl Young","USA","Final Scoring","Final Scoring",""],
+["2026-09-27","N025","Rafał Maksymiuk","Silver Zhu","USSR","Turn 6","VP Track (+20)",""],
+["2026-09-27","R038","Daniel Ramos","Koen Dijkstra","USSR","Turn 9","VP Track (+20)",""],
+["2026-09-27","S039","Jifei Li","Jarib Flores","USA","Turn 6","DEFCON",""],
+["2026-09-27","K009","Charlie Blackmar","Aaron Ng","USSR","Turn 9","Wargames",""],
+["2026-09-27","N050","David Young","Rafał Maksymiuk","USA","Turn 7","VP Track (+20)",""],
+["2026-09-27","E034","Mike Archambault","Katsiaryna Makouskaya","USSR","Turn 8","DEFCON",""],
+["2026-09-28","T017","Makis Bahtsevanis","Zhuang Yan","USSR","Turn 5","VP Track (+20)",""],
+["2026-09-28","A050","David Bartolome Duran","Balazs Ulveczki","USSR","Turn 9","Wargames",""],
+["2026-09-28","J043","David Erill","Frank Tarena","USA","Final Scoring","Final Scoring",""],
+["2026-09-28","A014","Markel Elortza","Matt Davies","USA","Turn 7","VP Track (+20)",""],
+["2026-09-29","K006","Carlos Pintado","Aaron Ng","USA","Turn 9","Wargames",""],
+["2026-09-30","A019","Aleksandr Pushkarev","Markel Elortza","USA","Turn 4","DEFCON",""],
+["2026-10-01","K003","Aaron Ng","Giorgos Iosifidis","USSR","Turn 10","VP Track (+20)",""],
+["2026-10-01","N041","Tim Engelhardt","Evangelos Iosifidis","USA","Turn 9","Wargames","https://youtu.be/Av1fJc-2M2U"],
+["2026-10-01","R047","Simon Pudsey","Koen Dijkstra","USSR","Turn 7","VP Track (+20)",""],
+["2026-10-01","R019","Károly Lukács","Urmas Yanis","USA","Turn 7","VP Track (+20)",""],
+["2026-10-02","E017","Joshua Mauer","Carl Young","USSR","Turn 7","VP Track (+20)",""],
+["2026-10-02","B045","Nicu Oprea","Yongjun Park","USSR","Turn 5","VP Track (+20)",""],
+["2026-10-02","B036","Antoine Danel","Robin Bos","USA","Turn 7","VP Track (+20)","https://youtu.be/PcYa-__pKIk"],
+["2026-10-02","B054","Ruben Messelink","Yongjun Park","USSR","Turn 9","Wargames",""],
+["2026-10-02","B016","Guang Li","Aleksei Lobunko","USA","Turn 8","VP Track (+20)",""],
+["2026-10-02","C042","Mikolaj Solkiewicz","Peter Davich","USSR","Turn 9","Wargames",""],
+["2026-10-03","G006","Hervé Duval","Zihang Zhou","USSR","Turn 8","VP Track (+20)",""],
+["2026-10-03","K015","Przemek Przemyslaw","Carlos Pintado","USA","Turn 9","DEFCON",""],
+["2026-10-04","E012","Carl Young","Katsiaryna Makouskaya","USSR","Turn 10","VP Track (+20)",""],
+["2026-10-04","N014","Ajoy Chakrabarti","Tim Engelhardt","USA","Final Scoring","Final Scoring","https://youtu.be/JNaCU2j3x5M"],
+["2026-10-06","R024","Crow Crowlas","Nick Harinos","USSR","Final Scoring","Final Scoring","https://youtu.be/eRaYQGmyIwU"],
+["2026-10-07","N054","Rafał Maksymiuk","Hicham Vanborm","USSR","Turn 5","VP Track (+20)",""],
+["","T002","Rong Yu","Chris Xu","USSR","-","Rong Yu disqualified",""],
+["","T003","Rong Yu","Dylan Provencher","USSR","-","Rong Yu disqualified",""],
+["","T004","Rong Yu","Jinxi Xu","USSR","-","Rong Yu disqualified",""],
+["","T005","Rong Yu","Jianshu Qian","USSR","-","Rong Yu disqualified",""],
+["","T006","Bartosz Wróbel","Rong Yu","USA","-","Rong Yu disqualified",""],
+["","T007","Ted Livermore","Rong Yu","USA","-","Rong Yu disqualified",""],
+["","T008","Makis Bahtsevanis","Rong Yu","USA","-","Rong Yu disqualified",""],
+["","T009","B H Ju","Rong Yu","USA","-","Rong Yu disqualified",""],
+["","T010","Ziemowit Pazderski","Rong Yu","USA","-","Rong Yu disqualified",""],
+["2026-10-09","E001","Jarek Grzaslewicz","Carl Young","USA","Final Scoring","Final Scoring",""],
+["2026-10-09","K053","Arek Sitkowski","Charlie Blackmar","USA","Turn 6","VP Track (+20)",""],
+["2026-10-10","G028","Francisco Sanchez","Travis Steele","USSR","Turn 8","Wargames",""],
+["2026-10-10","E028","Katsiaryna Makouskaya","Tim Furrow","USSR","Final Scoring","Final Scoring",""],
+["2026-10-11","S044","Mathias Heinze","Jarib Flores","USA","Final Scoring","Final Scoring",""],
+["2026-10-11","R050","Nick Harinos","Koen Dijkstra","USA","Final Scoring","Europe Control",""],
+["2026-10-11","B003","Jan Schmidt","Jan Edvard Nodland","USSR","Final Scoring","Final Scoring",""],
+["2026-10-11","K055","Charlie Blackmar","Dimitris Katsoulas","USSR","Turn 10","DEFCON",""],
+["2026-10-11","J009","Enrico Ciardo","Derek Miller","USSR","Turn 10","DEFCON",""],
+["2026-10-12","T013","Zhuang Yan","Jinxi Xu","USSR","Turn 4","VP Track (+20)",""],
+["2026-10-12","E038","Tim Furrow","Joshua Mauer","USSR","Turn 5","VP Track (+20)","https://youtu.be/4KW8Z5XB7s4"],
+["2026-10-13","C011","J.A McMahon","Jakub Węcławski","USSR","Turn 7","VP Track (+20)",""],
+["2026-10-13","K005","Aaron Ng","Anton Skott","USSR","Final Scoring","Final Scoring",""],
+["2026-10-14","K014","Przemek Przemyslaw","Anton Skott","USSR","Turn 7","VP Track (+20)",""],
+["2026-10-14","N004","Adrian Ziarko","Garreth Hawkins","USSR","Final Scoring","Final Scoring",""],
+["2026-10-15","J050","Paweł Januszewski","Frank Tarena","USA","Turn 7","VP Track (+20)",""],
+["2026-10-16","B010","Yongjun Park","Jan Schmidt","USA","Final Scoring","Final Scoring",""],
+["2026-10-16","C024","Jakub Węcławski","Peter Davich","USA","Final Scoring","Europe Control",""],
+["2026-10-17","G011","Mike Oehler","Haydon Dennison","USSR","Turn 8","VP Track (+20)",""],
+["2026-10-17","R044","John Kim","Lukas Fuchs","USSR","Final Scoring","Final Scoring",""],
+["2026-10-17","E037","Tim Furrow","Roger Jolly","USSR","Turn 6","VP Track (+20)",""],
+["2026-10-18","G039","Travis Steele","Juan Antonio Romera","USA","Turn 6","VP Track (+20)",""],
+["2026-10-18","S042","Mathias Heinze","Jan Wimmer","USSR","Turn 10","DEFCON",""],
+["2026-10-18","R031","Michael McKibbin","Nick Harinos","USSR","Final Scoring","Final Scoring",""],
+["2026-10-18","C017","Daniel Simon","J.A McMahon","USSR","Turn 4","VP Track (+20)",""],
+["2026-10-19","C038","Sergei Sazonov","Daniel Simon","USSR","Turn 6","VP Track (+20)",""],
+["2026-10-19","K023","Stan Kaatee","Carlos Pintado","USA","Turn 7","DEFCON",""],
+["2026-10-19","C034","Peter Heuvelman","Bledson Bezerra","USSR","Turn 7","VP Track (+20)",""],
+["2026-10-19","B043","Nicu Oprea","Ruben Messelink","USSR","Turn 10","Wargames",""],
+["2026-10-19","N006","Evangelos Iosifidis","Adrian Ziarko","USA","Turn 8","DEFCON",""],
+["2026-10-19","J024","Justin Nordstrom","Paweł Januszewski","USSR","Final Scoring","Final Scoring",""],
+["2026-10-20","J006","Max DuBoff","Derek Miller","USA","Final Scoring","Final Scoring",""],
+["2026-10-20","K024","Stan Kaatee","Asan Beisenov","USSR","Turn 10","DEFCON",""],
+["2026-10-21","S049","David Choo","Tomas Tvaroh","USSR","Turn 10","VP Track (+20)",""],
+["2026-10-21","C033","Robert Stegmann","Bledson Bezerra","USSR","Turn 9","VP Track (+20)",""],
+["2026-10-21","S045","Mathias Heinze","Tomas Tvaroh","USA","Final Scoring","Final Scoring",""],
+["2026-10-23","S046","David Choo","Jan Wimmer","USSR","Turn 10","Wargames",""]
+];
+let LEV=[
+[1,1,"RTSL Champion 🏆","Jifei Li",7,2,0,1,""],
+[1,2,"Runner-up🥈","Jan Wimmer",6,2,0,2,""],
+[1,3,"2nd Runner-up🥉","Mathias Heinze",6,4,0,0,"Finished October 21"],
+[1,4,"Remain at Level 1","Onur Kulaksizoglu",5,4,0,1,""],
+[1,5,"","David Choo",5,5,0,0,"Finished October 23"],
+[1,6,"Relegation Playoff","Alex Lee",4,4,0,2,""],
+[1,7,"","Patrick Gong",3,4,0,3,""],
+[1,8,"Relegated to Level 2","Weiran Xie",2,3,0,5,"Extension until October 31"],
+[1,9,"","Jarib Flores",3,6,0,1,""],
+[1,10,"","Tomas Tvaroh",3,6,0,1,""],
+[1,11,"","Justin Abramson",3,7,0,0,"👹 Finished September 2"],
+[2,1,"Truman Leader 🥇","Ziemowit Pazderski",8,2,0,0,"👽 Finished September 6"],
+[2,1,"Eisenhower Leader 🥇","Michael Stryker",3,1,0,6,"Extension until October 31"],
+[2,3,"Truman Runner-up 🥈","Jinxi Xu",6,2,0,2,""],
+[2,3,"Eisenhower Runner-up 🥈","Roger Jolly",7,3,0,0,"Finished October 17"],
+[2,5,"Promotion Playoff","Makis Bahtsevanis",6,3,0,1,""],
+[2,6,"","Raewon Jang",4,2,0,4,"Extension until October 31"],
+[2,7,"","Peter Frantz",6,3,1,0,"Finished September 19"],
+[2,8,"","Ted Livermore",5,3,0,2,""],
+[2,9,"Remain at Level 2","Zhuang Yan",6,4,0,0,"Finished October 12"],
+[2,10,"","Jarek Grzaslewicz",4,3,0,3,""],
+[2,11,"","Dylan Provencher",5,4,0,1,""],
+[2,12,"","Mark Overstreet",4,5,1,0,"Finished September 19"],
+[2,13,"Relegation Playoff","Bartosz Wróbel",4,5,0,1,""],
+[2,14,"","Joshua Mauer",4,5,0,1,""],
+[2,15,"Relegated to Level 3","Mike Archambault",4,5,0,1,""],
+[2,16,"","Chris Xu",4,6,0,0,"Finished August 8"],
+[2,17,"","Jianshu Qian",4,6,0,0,"Finished August 8"],
+[2,18,"","Katsiaryna Makouskaya",3,5,0,2,""],
+[2,19,"","B H Ju",3,6,0,1,""],
+[2,20,"","Carl Young",2,5,0,3,""],
+[2,21,"","Tim Furrow",2,6,0,2,""],
+[2,22,"","Rong Yu",0,10,0,0,"🤖 Disqualified October 10"],
+[3,1,"Brezhnev Leader 🥇","Guang Li",7,2,0,1,"👹"],
+[3,1,"JFKennedy Leader 🥇","Kevin Gute",9,1,0,0,"👹 Finished August 26"],
+[3,1,"Khrushchev Leader 🥇","Anton Skott",9,0,1,0,"👹 Finished October 14"],
+[3,4,"Brezhnev Runner-up 🥈","Michal Borkowicz",6,2,0,2,""],
+[3,4,"JFKennedy Runner-up 🥈","Guangheng Wu",7,1,0,2,""],
+[3,4,"Khrushchev Runner-up 🥈","Dimitris Katsoulas",5,2,0,3,""],
+[3,7,"Promoted to Level 2","Antoine Danel",7,3,0,0,"Finished October 2"],
+[3,8,"","Derek Miller",6,3,0,1,""],
+[3,9,"","Paweł Januszewski",6,3,0,1,""],
+[3,10,"Remain at Level 3","Arek Sitkowski",6,3,0,1,""],
+[3,11,"","Jan Edvard Nodland",6,4,0,0,"Finished October 11"],
+[3,12,"","Aleksei Lobunko",6,4,0,0,"Finished October 2"],
+[3,13,"","David Erill",6,4,0,0,"Finished September 29"],
+[3,14,"","Stan Kaatee",5,4,0,1,""],
+[3,15,"","Yongjun Park",5,5,0,0,"Finished October 16"],
+[3,16,"","Pavel Meshkov",5,5,0,0,"Finished July 8"],
+[3,17,"","Aaron Ng",5,5,0,0,"Finished October 13"],
+[3,18,"","Robin Bos",4,4,0,2,""],
+[3,19,"","Max DuBoff",4,5,0,1,""],
+[3,20,"","Giorgos Iosifidis",4,5,0,1,""],
+[3,21,"","Andrea Mancuso",3,4,0,3,""],
+[3,22,"Relegated to Level 4","Aidan Archer",3,4,0,3,""],
+[3,23,"","Enrico Ciardo",4,6,0,0,"Finished October 11"],
+[3,24,"","Asan Beisenov",3,5,1,1,""],
+[3,25,"","Przemek Przemyslaw",3,6,0,1,""],
+[3,26,"","Carlos Pintado",3,6,0,1,""],
+[3,27,"","Frank Tarena",2,6,0,2,""],
+[3,28,"","Jan Schmidt",2,7,0,1,"👻"],
+[3,29,"","Nicu Oprea",2,7,0,1,"👻"],
+[3,30,"","Ruben Messelink",2,8,0,0,"👻 Finished October 19"],
+[3,31,"","Charlie Blackmar",2,8,0,0,"👻 Finished October 11"],
+[3,32,"","Justin Nordstrom",1,8,0,1,"👻"],
+[3,33,"","Marek Burkacki",1,9,0,0,"👻 Finished July 24"],
+[4,1,"Nixon Leader 🥇","Silver Zhu",6,2,0,2,""],
+[4,1,"Carter Leader 🥇","Peter Davich",8,1,0,1,"🤖"],
+[4,1,"Reagan Leader 🥇","Nick Harinos",8,1,0,1,"🤖"],
+[4,1,"Gorbachev Leader 🥇","Zihang Zhou",8,1,0,1,"🤖"],
+[4,1,"Andropov Leader 🥇","Brad McCoy",8,1,0,1,"🤖"],
+[4,5,"Nixon Runner-up 🥈","Hicham Vanborm",6,2,0,2,""],
+[4,5,"Carter Runner-up 🥈","Jakub Węcławski",7,1,0,2,""],
+[4,5,"Reagan Runner-up 🥈","Michael McKibbin",8,2,0,0,"🤖 Finished October 18"],
+[4,5,"Gorbachev Runner-up 🥈","Marc Nuño",5,1,0,4,"Extension until October 31"],
+[4,5,"Andropov Runner-up 🥈","Raymond Wang",6,2,0,2,""],
+[4,11,"Promoted to Level 3","Joris Vandenbroeck",5,1,0,4,""],
+[4,12,"","John Kim",8,2,0,0,"🤖 Finished October 17"],
+[4,13,"Remained at Level 4","Bidart Larrakoetxea",7,3,0,0,"Finished August 5"],
+[4,14,"","Jordan Cass",6,3,0,1,""],
+[4,15,"","Lukas Fuchs",6,3,0,1,""],
+[4,16,"","Travis Steele",6,3,0,1,""],
+[4,17,"","Yauheni Mashkouski",4,2,0,4,""],
+[4,18,"","Adrian Ziarko",5,3,0,2,""],
+[4,19,"","Balazs Ulveczki",5,3,0,2,""],
+[4,20,"","Ajoy Chakrabarti",6,4,0,0,"Finished October 4"],
+[4,21,"","Garreth Hawkins",6,4,0,0,"Finished October 14"],
+[4,22,"","Jan Ostrowski",5,4,0,1,""],
+[4,23,"","Tim Engelhardt",5,4,0,1,""],
+[4,24,"","Hervé Duval",5,4,0,1,""],
+[4,25,"","Pau Sala",5,4,0,1,""],
+[4,26,"","Koen Dijkstra",5,5,0,0,""],
+[4,27,"","Daniël Hogetoorn",5,5,0,0,"Finished September 20"],
+[4,28,"","Sergei Sazonov",4,4,0,1,""],
+[4,29,"","Haydon Dennison",4,4,0,2,""],
+[4,30,"","David Bartolome Duran",4,4,0,2,""],
+[4,31,"","Aleksandr Pushkarev",2,2,0,6,"Extension until October 31"],
+[4,32,"","Daniel Simon",4,5,0,1,""],
+[4,33,"","Robert Stegmann",4,5,0,1,""],
+[4,34,"","Jim Haefele",4,5,0,1,""],
+[4,35,"","David Young",3,4,0,3,""],
+[4,36,"","JJ Alt",3,4,0,3,""],
+[4,37,"","J.A McMahon",4,6,0,0,"Finished October 18"],
+[4,38,"","Bledson Bezerra",4,6,0,0,"Finished October 21"],
+[4,39,"","Crow Crowlas",4,6,0,0,"Finished October 6"],
+[4,40,"","Tomasz Babicz",4,6,0,0,"Finished September 11"],
+[4,41,"","Evangelos Iosifidis",4,6,0,0,"Finished October 19"],
+[4,42,"","Francisco Sanchez",4,6,0,0,"Finished Octover 10"],
+[4,43,"","Simon Pudsey",3,6,0,1,""],
+[4,44,"","Patxo Sans",3,7,0,0,"Finished September 23"],
+[4,45,"","Markel Elortza",3,7,0,0,"Finished September 28"],
+[4,46,"","Matt Davies",2,6,0,2,""],
+[4,47,"","Károly Lukács",2,7,0,0,"Finished October 1"],
+[4,48,"","Mike Oehler",2,7,0,1,""],
+[4,49,"","Mikolaj Solkiewicz",2,8,0,0,"Finished October 2"],
+[4,50,"","Daniel Ramos",2,8,0,0,"Finished September 27"],
+[4,51,"","Urmas Yanis",1,7,0,2,""],
+[4,52,"","Peter Heuvelman",1,8,0,1,""],
+[4,53,"","Juan Antonio Romera",1,8,0,1,""],
+[4,54,"","Goos Kuijper",1,9,0,0,"Withdrawn September 20"],
+[4,55,"","Rafał Maksymiuk",0,9,0,1,""]
+];
+/*DATA-END*/
+const HOF=[["2026-B","in progress"],["2026-A","Peiyi Sun"],["2025","Ziemowit Pazderski"],["2024-B","Bartosz Wróbel"],["2024-A","Jarib Flores"],["2023-B","Jarib Flores"],["2023-A","Ziemowit Pazderski"],["2022-B","Sheng Wei Qin"],["2022-A","Ziemowit Pazderski"],["2021-B","Tomáš Tvaroh"],["2021-A","Youngbae Park"],["2020-B","Mathieu Latendresse"],["2020-A","Janusz Szulc"],["2019-B","Janusz Szulc"],["2019-A","Janusz Szulc"],["2018","Shackleton"]];
+const TIER_EMOJI={"👽":1,"👹":2,"🤖":3,"👻":4};
+const TIER_NAMES={1:"Division 1",2:"Division 2",3:"Division 3",4:"Division 4"};
+const SNAP=new Date(UPDATED),START=new Date("2026-06-19"),END=new Date("2026-11-23");
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const pct=(w,l,t)=>{const g=w+l+t;return g?(w+t/2)/g:0};
+
+// season clock
+function drawClock(){
+  const span=END-START, pos=d=>Math.min(100,Math.max(0,(d-START)/span*100));
+  let now=new Date(); if(now<START||now>END||isNaN(now)) now=SNAP;
+  const t=document.getElementById("track");
+  let h=`<div class="bar"><div class="fill" style="width:${pos(now)}%"></div></div>`;
+  [["2026-07-20","Jul 20","2"],["2026-08-31","Aug 31","5"],["2026-09-30","Sep 30","7"]].forEach(([d,l,n])=>{h+=`<div class="tick" style="left:${pos(new Date(d))}%" title="${n} games completed by ${l}"><b><span class="n">${n} games · </span>${l}</b></div>`});
+  h+=`<div class="now" style="left:${pos(now)}%" title="Today"></div>`;
+  t.innerHTML=h;
+  let played=0,total=0,done=0,players=0;
+  DIVS.forEach(d=>{total+=d.h.length*(d.h.length-1)/2;d.s.forEach(r=>{played+=r[1]+r[2]+r[3];players++;if(r[4]===0)done++})});
+  played/=2;
+  const days=Math.max(0,Math.ceil((END-now)/864e5));
+  document.getElementById("stats").innerHTML=
+   `<div><strong class="mono">${Math.round(played)}<small style="font-size:16px;color:var(--muted)">/${total}</small></strong><span class="label">Games played</span></div>`+
+   `<div><strong class="mono">${done}<small style="font-size:16px;color:var(--muted)">/${players}</small></strong><span class="label">Players finished</span></div>`+
+   `<div><strong class="mono">${days}</strong><span class="label">Days left</span></div>`;
+}
+drawClock();
+
+function noteHtml(note,tier){
+  let out="",rest=note;
+  const em=Object.keys(TIER_EMOJI).find(e=>note.startsWith(e));
+  if(em){const to=TIER_EMOJI[em];rest=note.slice(em.length).trim();
+    out+=to<tier?`<span class="chip up" title="Promotion marker">↑ Div ${to}</span>`:to>tier?`<span class="chip down" title="Relegation marker">↓ Div ${to}</span>`:"";}
+  if(/^Extension/.test(rest)) out+=`<span class="chip ext">Ext. to Oct 31</span>`;
+  else if(/^(Disqualified|Withdrawn)/.test(rest)) out+=`<span class="chip out">${esc(rest.split(" ")[0])}</span>${esc(rest.replace(/^\w+\s*/,""))}`;
+  else if(rest) out+=esc(rest.replace(/^Finished/,"Done"));
+  return out;
+}
+
+const state={tier:"all",q:"",view:{},mode:"div"};
+try{const m=localStorage.getItem("rtsl-mode");if(m==="level"||m==="div")state.mode=m}catch(e){}
+try{const s=localStorage.getItem("rtsl-tier");if(s)state.tier=s}catch(e){}
+
+function card(d){
+  const key=d.name, view=state.view[key]||"table", n=d.h.length;
+  const q=state.q.toLowerCase();
+  const played=d.s.reduce((a,r)=>a+r[1]+r[2]+r[3],0)/2, total=n*(n-1)/2;
+  let body;
+  if(view==="table"){
+    body=`<div class="scroll"><table class="st"><thead><tr><th>#</th><th class="l">Player</th><th>W</th><th>L</th><th>T</th><th>Win %</th><th>Left</th><th class="l">Status</th></tr></thead><tbody>`+
+    d.s.map((r,i)=>{const p=pct(r[1],r[2],r[3]);const hit=q&&r[0].toLowerCase().includes(q);
+      return `<tr class="${hit?"hit":""}"><td class="rk">${i+1}</td><td class="name${r[4]===0?" done":""}" title="${r[4]===0?"Finished all games":r[4]+" games left"}">${esc(r[0])}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]||"–"}</td>
+      <td><span class="pct">${(p*100).toFixed(1)}<s><i style="width:${p*100}%"></i></s></span></td><td>${r[4]||"–"}</td><td class="note">${noteHtml(r[5],d.tier)}</td></tr>`}).join("")+
+    `</tbody></table></div>`;
+  }else{
+    const order=d.s.map(r=>d.h.indexOf(r[0]));
+    body=`<div class="h2h"><div class="scroll"><table><thead><tr><th></th>${order.map((_,j)=>`<th>${j+1}</th>`).join("")}</tr></thead><tbody>`+
+    order.map((hi,i)=>{const name=d.h[hi];const hit=q&&name.toLowerCase().includes(q);
+      return `<tr class="${hit?"hit":""}"><th class="rn${d.s[i][4]===0?" done":""}"><span class="mono" style="color:var(--muted);font-weight:400">${i+1}</span> ${esc(name)}</th>`+
+      order.map((hj,j)=>{if(hi===hj)return `<td class="self"></td>`;const c=d.m[hi][hj];
+        return c==="."?`<td title="${esc(name)} vs ${esc(d.h[hj])}: not played">·</td>`:`<td class="${c}" title="${esc(name)} vs ${esc(d.h[hj])}: ${c==="W"?"won":c==="L"?"lost":"tie"}">${c}</td>`}).join("")+`</tr>`}).join("")+
+    `</tbody></table></div><div class="legend"><span><i style="background:var(--usa-soft)"></i>Win</span><span><i style="background:var(--ussr-soft)"></i>Loss</span><span><i style="background:var(--tie-soft)"></i>Tie</span><span><i style="background:var(--empty)"></i>Not played</span><span>Read across: row player's result vs column number.</span></div></div>`;
+  }
+  return `<article class="card" data-tier="${d.tier}">
+    <div class="card-head"><h3>${esc(d.name)}<span class="side">Div ${d.tier}</span></h3>
+      <div class="meta"><span class="mono" style="font-size:12px;color:var(--muted)" title="Games played">${Math.round(played)}/${total}</span><span class="meter"><i style="width:${played/total*100}%"></i></span>
+      <div class="seg" role="group" aria-label="View"><button data-k="${key}" data-v="table" aria-pressed="${view==="table"}">Table</button><button data-k="${key}" data-v="grid" aria-pressed="${view==="grid"}">Head-to-head</button></div></div></div>
+    ${body}</article>`;
+}
+
+// ---- level standings (sheet's "Level Standings" tab; computed from win % until it is loaded) ----
+const LEVEL_DIVS={1:"Stalin",2:"Truman + Eisenhower",3:"Khrushchev + JFK + Brezhnev",4:"Nixon, Carter, Reagan, Gorbachev, Andropov"};
+function levelClass(l){if(!l)return null;if(/Playoff/i.test(l))return "play";if(/Relegat|Demot/i.test(l))return "down";if(/Remain/i.test(l))return "stay";if(/Champion|Leader|Runner|Promot/i.test(l))return "up";return null;}
+function levelRows(t){
+  if(Array.isArray(LEV)&&LEV.length)return LEV.filter(r=>r[0]===t).map(r=>({rank:r[1],label:r[2],name:r[3],w:r[4],l:r[5],t:r[6],gp:r[7],note:r[8]}));
+  const rows=[];DIVS.filter(d=>d.tier===t).forEach(d=>d.s.forEach(r=>rows.push({name:r[0],w:r[1],l:r[2],t:r[3],gp:r[4],note:r[5],label:""})));
+  rows.sort((a,b)=>pct(b.w,b.l,b.t)-pct(a.w,a.l,a.t)||b.w-a.w||a.l-b.l);
+  rows.forEach((r,i)=>r.rank=i+1);return rows;
+}
+function levelSection(t){
+  const pd={};DIVS.forEach(d=>d.h.forEach(n=>pd[n]=d));
+  const q=state.q.toLowerCase();
+  const rows=levelRows(t);
+  if(q&&!rows.some(r=>r.name.toLowerCase().includes(q)))return "";
+  let band=null;
+  const body=rows.map(r=>{
+    const c=levelClass(r.label);if(c)band=c;
+    const d=pd[r.name],p=pct(r.w,r.l,r.t),hit=q&&r.name.toLowerCase().includes(q);
+    const lab=r.label?`<span class="lchip ${c||""}">${esc(r.label)}</span>`:"";
+    return `<tr class="${band?"b-"+band:""}${hit?" hit":""}"><td class="rk">${r.rank??""}</td><td class="name${r.gp===0?" done":""}" title="${r.gp===0?"Finished all games":r.gp+" games left"}">${esc(r.name)}</td>
+      <td class="dv">${d?`<span class="dchip" data-tier="${d.tier}">${esc(d.name)}</span>`:""}</td><td>${r.w}</td><td>${r.l}</td><td>${r.t||"–"}</td>
+      <td><span class="pct">${(p*100).toFixed(1)}<s><i style="width:${p*100}%"></i></s></span></td><td>${r.gp||"–"}</td><td class="note">${lab}${noteHtml(r.note||"",t)}</td></tr>`;
+  }).join("");
+  const live=Array.isArray(LEV)&&LEV.length;
+  return `<section class="tier" data-tier="${t}"><div class="tier-head"><h2>Level ${t}</h2><span class="label">${rows.length} players · ${esc(LEVEL_DIVS[t])}</span><span class="rule"></span></div>
+    <div class="card"><div class="scroll"><table class="st lv"><thead><tr><th>#</th><th class="l">Player</th><th class="l">Division</th><th>W</th><th>L</th><th>T</th><th>Win %</th><th>Left</th><th class="l">Status</th></tr></thead><tbody>${body}</tbody></table></div>
+    ${live?"":`<p class="lvnote">Ranked by win % here. The league's own ranking and promotion/relegation labels appear once the Level Standings tab has been loaded.</p>`}</div></section>`;
+}
+let render=function(){
+  const tiers=[1,2,3,4];
+  document.getElementById("mode").innerHTML=[["div","Divisions"],["level","Levels"]].map(([v,l])=>`<button data-mode="${v}" aria-pressed="${state.mode===v}">${l}</button>`).join("");
+  document.getElementById("tabs").innerHTML=[["all","All"],...tiers.map(t=>[String(t),(state.mode==="level"?"Level ":"Div ")+t])]
+    .map(([v,l])=>`<button data-tier="${v}" aria-pressed="${state.tier===v}">${l}</button>`).join("");
+  const q=state.q.toLowerCase();
+  let html="";
+  if(state.mode==="level"){
+    html=tiers.filter(t=>state.tier==="all"||String(t)===state.tier).map(levelSection).join("");
+    document.getElementById("main").innerHTML=html||`<p class="empty">No player matches “${esc(state.q)}”.</p>`;
+    return;
+  }
+  tiers.filter(t=>state.tier==="all"||String(t)===state.tier).forEach(t=>{
+    let ds=DIVS.filter(d=>d.tier===t);
+    if(q) ds=ds.filter(d=>d.h.some(n=>n.toLowerCase().includes(q)));
+    if(!ds.length) return;
+    html+=`<section class="tier" data-tier="${t}"><div class="tier-head"><h2>${TIER_NAMES[t]}</h2><span class="label">${ds.length} ${ds.length>1?"divisions":"division"}</span><span class="rule"></span></div><div class="grid">${ds.map(card).join("")}</div></section>`;
+  });
+  document.getElementById("main").innerHTML=html||`<p class="empty">No player matches “${esc(state.q)}”.</p>`;
+};
+document.getElementById("mode").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;state.mode=b.dataset.mode;try{localStorage.setItem("rtsl-mode",state.mode)}catch(_){}render()});
+document.getElementById("tabs").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;state.tier=b.dataset.tier;try{localStorage.setItem("rtsl-tier",state.tier)}catch(_){}render()});
+document.getElementById("main").addEventListener("click",e=>{const b=e.target.closest("button[data-k]");if(!b)return;state.view[b.dataset.k]=b.dataset.v;render()});
+document.getElementById("q").addEventListener("input",e=>{state.q=e.target.value.trim();render()});
+// ---- results list ----
+// Uses the sheet's Results tab (RES) when loaded; otherwise falls back to the head-to-head grid (no dates/sides).
+const rstate={div:"all",player:"",limit:60};
+function playerDiv(){const m={};DIVS.forEach(d=>d.h.forEach(n=>m[n]=d));return m;}
+function gridGames(){
+  const g=[];
+  DIVS.forEach(d=>{const n=d.h.length;
+    for(let i=0;i<n;i++)for(let j=i+1;j<n;j++){
+      let c=d.m[i][j];
+      if(c==="."){const o=d.m[j][i];c=o==="W"?"L":o==="L"?"W":o;}
+      if(c==="."||!c)continue;
+      const a=d.h[i],b=d.h[j];
+      g.push({d,a,b,res:c==="T"?"T":c==="W"?"A":"B"});
+    }});
+  return g;
+}
+function resGames(){
+  const pd=playerDiv();
+  return RES.map((r,i)=>({i,date:r[0],id:r[1],usa:r[2],ussr:r[3],win:r[4],turn:r[5],type:r[6],vid:r[7],d:pd[r[2]]||pd[r[3]]||null}));
+}
+const fmtDate=s=>{const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(s||"");if(!m)return s||"";return `${+m[3]} ${["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][m[2]-1]}`;};
+const fmtTurn=t=>/final/i.test(t)?"Final":/^\s*-?\s*$/.test(t||"")?"":(t||"").replace(/^Turn\s*/i,"T");
+const fmtType=t=>(t||"").replace(/\s*\(.*?\)\s*/g,"").replace(/^VP Track$/i,"VP track").replace(/^Final Scoring$/i,"Final scoring");
+function metaHtml(x){
+  const ty=fmtType(x.type),tu=fmtTurn(x.turn);
+  const txt=(/final/i.test(x.turn)&&/final/i.test(x.type))?"Final scoring":[tu,ty].filter(Boolean).join(" · ");
+  return `<span class="meta-txt" title="${esc((x.turn||"")+" — "+(x.type||""))}">${esc(txt)}</span>`+
+    (x.vid?` <a class="vid" href="${esc(x.vid)}" target="_blank" rel="noopener" title="Watch the game">▶ Video</a>`:"");
+}
+function renderResults(){
+  const sel=document.getElementById("rdiv");
+  const opts=[["all","All divisions"],...DIVS.map(d=>[d.name,`Div ${d.tier} · ${d.name}`])];
+  sel.innerHTML=opts.map(([v,l])=>`<option value="${esc(v)}"${rstate.div===v?" selected":""}>${esc(l)}</option>`).join("");
+  const pool=DIVS.filter(d=>rstate.div==="all"||d.name===rstate.div);
+  document.getElementById("rplayers").innerHTML=pool.flatMap(d=>d.h).sort((x,y)=>x.localeCompare(y)).map(n=>`<option value="${esc(n)}">`).join("");
+  const p=rstate.player.toLowerCase();
+  const exact=p?DIVS.flatMap(d=>d.h).find(n=>n.toLowerCase()===p):null;
+  const rich=Array.isArray(RES)&&RES.length>0;
+  document.getElementById("rlegend").hidden=!rich;
+  let games=rich?resGames():gridGames();
+  games=games.filter(x=>rstate.div==="all"||(x.d&&x.d.name===rstate.div));
+  if(p)games=games.filter(x=>(rich?[x.usa,x.ussr]:[x.a,x.b]).some(n=>n.toLowerCase().includes(p)));
+  if(rich)games.sort((x,y)=>(y.date||"").localeCompare(x.date||"")||y.i-x.i);
+  else games.sort((x,y)=>x.d.tier-y.d.tier||DIVS.indexOf(x.d)-DIVS.indexOf(y.d));
+  document.getElementById("rcount").textContent=`${games.length} ${games.length===1?"game":"games"}`+(rich?"":" · dates not loaded");
+  const sum=document.getElementById("rsum");
+  if(exact){
+    const dv=DIVS.find(d=>d.h.includes(exact));
+    if(rich){
+      const rec={USA:[0,0,0],USSR:[0,0,0]};
+      games.forEach(x=>{const side=x.usa===exact?"USA":"USSR";const k=x.win==="TIE"?2:x.win===side?0:1;rec[side][k]++;});
+      const f=r=>`${r[0]}–${r[1]}${r[2]?"–"+r[2]:""}`;
+      const tot=[0,1,2].map(k=>rec.USA[k]+rec.USSR[k]);
+      sum.innerHTML=`<b>${esc(exact)}</b> ${f(tot)} in ${esc(dv.name)} · <span class="sd usa">as USA ${f(rec.USA)}</span> · <span class="sd ussr">as USSR ${f(rec.USSR)}</span>`;
+    }else{
+      let w=0,l=0,t=0;games.forEach(x=>{if(x.res==="T")t++;else if((x.res==="A"?x.a:x.b)===exact)w++;else l++;});
+      sum.innerHTML=`<b>${esc(exact)}</b> ${w}–${l}${t?"–"+t:""} in ${esc(dv.name)}`;
+    }
+    sum.hidden=false;
+  }else sum.hidden=true;
+  const shown=games.slice(0,rstate.limit);
+  const tagOf=d=>d?`<span class="dtag" data-tier="${d.tier}">D${d.tier} ${esc(d.name)}</span>`:`<span class="dtag">—</span>`;
+  let html=shown.map(x=>{
+    if(!rich){
+      const res=x.res==="T"?`<span class="w">${esc(x.a)}</span><span class="vs">drew with</span><span class="w">${esc(x.b)}</span>`
+        :`<span class="w">${esc(x.res==="A"?x.a:x.b)}</span><span class="vs">beat</span>${esc(x.res==="A"?x.b:x.a)}`;
+      return `<div class="rrow"><span class="rdate"></span>${tagOf(x.d)}<div class="res">${res}</div><div class="rmeta"></div></div>`;
+    }
+    let res;
+    if(exact){
+      const side=x.usa===exact?"USA":"USSR",opp=side==="USA"?x.ussr:x.usa;
+      const o=x.win==="TIE"?"T":x.win===side?"W":"L";
+      res=`<span class="out ${o}">${o}</span><span class="sd ${side.toLowerCase()}">${side}</span><span class="vs">vs</span>${esc(opp)}`;
+    }else{
+      const nm=(n,side)=>`<span class="pn ${side}${x.win===side.toUpperCase()?" win":""}" title="${esc(n)} played ${side.toUpperCase()}${x.win===side.toUpperCase()?" and won":""}">${esc(n)}</span>`;
+      res=nm(x.usa,"usa")+`<span class="vs">${x.win==="TIE"?"drew":"vs"}</span>`+nm(x.ussr,"ussr");
+    }
+    return `<div class="rrow"><span class="rdate mono">${esc(fmtDate(x.date))}</span>${tagOf(x.d)}<div class="res">${res}</div><div class="rmeta">${metaHtml(x)}</div></div>`;
+  }).join("");
+  if(!games.length)html=`<div class="rrow"><span></span><span></span><div class="res" style="color:var(--muted)">No results match this filter.</div><div></div></div>`;
+  if(games.length>shown.length)html+=`<div class="rmore"><button id="rmore">Show all ${games.length}</button></div>`;
+  document.getElementById("rlist").innerHTML=html;
+}
+document.getElementById("rdiv").addEventListener("change",e=>{rstate.div=e.target.value;rstate.limit=60;renderResults()});
+document.getElementById("rplayer").addEventListener("input",e=>{rstate.player=e.target.value.trim();rstate.limit=60;renderResults()});
+document.getElementById("rlist").addEventListener("click",e=>{if(e.target.id==="rmore"){rstate.limit=1e9;renderResults()}});
+const _render=render;render=function(){_render();renderResults()};
+document.getElementById("hof").innerHTML=HOF.map(([s,n])=>`<li><span>${s}</span><b${n==="in progress"?' style="color:var(--muted);font-weight:400"':""}>${esc(n)}</b></li>`).join("");
+function stamp(){let t;try{t=new Date(UPDATED).toLocaleString("en-GB",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit",timeZone:"Europe/Warsaw"})+" (Warsaw)"}catch(e){t=UPDATED}
+["asof","asof2"].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=t})}
+stamp();
+render();
+
+// Latest data: an hourly job (GitHub Actions) publishes data.json to the free "data" branch deploy
+// of this Netlify site (data--<site>.netlify.app). The page shows its built-in copy first, then swaps in data.json.
+const DATA_URL=(()=>{const h=location.hostname;return /\.netlify\.app$/i.test(h)&&!/^data--/i.test(h)?`https://data--${h}/data.json`:"data.json";})();
+(function loadLatest(){
+  if(!/^https?:$/.test(location.protocol))return;
+  const ctl=typeof AbortController==="function"?new AbortController():null;
+  const timer=setTimeout(()=>{if(ctl)ctl.abort()},10000);
+  fetch(DATA_URL+"?t="+Date.now(),{cache:"no-store",signal:ctl?ctl.signal:undefined})
+    .then(r=>{if(!r.ok)throw new Error("HTTP "+r.status);return r.json()})
+    .then(d=>{
+      if(!d||!Array.isArray(d.divs)||!d.divs.length)return;
+      if(d.updated&&UPDATED&&d.updated<=UPDATED)return;
+      DIVS=d.divs;if(Array.isArray(d.res))RES=d.res;if(Array.isArray(d.lev))LEV=d.lev;if(d.updated)UPDATED=d.updated;
+      drawClock();render();stamp();
+    })
+    .catch(e=>console.warn("Latest data not loaded, showing the built-in copy:",e))
+    .finally(()=>clearTimeout(timer));
+})();
+</script>
+</body>
+</html>
