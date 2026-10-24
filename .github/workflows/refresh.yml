@@ -35,7 +35,11 @@ jobs:
           curl -sSLf --retry 3 -o work/standings.csv "${SHEET}Standings"
           curl -sSLf --retry 3 -o work/results.csv "${SHEET}Results" || rm -f work/results.csv
           curl -sSLf --retry 3 -o work/levels.csv "${SHEET}Level%20Standings" || rm -f work/levels.csv
-
+             mkdir -p work/matches
+             for tab in 1-Stalin 2-Truman 2-Eisenhower 3-Brezhnev 3-JFK 3-Khrushchev 4-Carter 4-Reagan 4-Gorbachev 4-Nixon 4-Andropov; do
+               curl -sSLf --retry 3 -o "work/matches/$tab.csv" "${SHEET}$tab" || rm -f "work/matches/$tab.csv"
+             done
+             
       - name: Get the previously published data
         run: |
           if git fetch --depth=1 origin data 2>/dev/null; then
@@ -48,7 +52,7 @@ jobs:
           r=work/results.csv;  [ -s "$r" ] || r=-
           l=work/levels.csv;   [ -s "$l" ] || l=-
           p=work/prev.json;    [ -s "$p" ] || p=-
-          node tools/build-data.mjs site out work/standings.csv "$r" "$l" "$p" | tee work/result.txt
+          node tools/build-data.mjs site out work/standings.csv "$r" "$l" "$p" work/matches | tee work/result.txt
 
       - name: Publish to the data branch
         run: |
