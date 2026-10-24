@@ -1,4 +1,5 @@
-// Usage: node tools/build-data.mjs <siteDir> <outDir> <standings.csv> <results.csv|-> <levels.csv|-> <previous data.json|->
+// Usage: node tools/build-data.mjs <siteDir> <outDir> <standings.csv> <results.csv|-> <levels.csv|-> <previous data.json|-> [matchesDir|-]
+// matchesDir holds one CSV per division tab (e.g. 1-Stalin.csv) with the game list of that division.
 // Builds the "data" branch: a copy of the site whose index.html has the latest data built in, plus data.json.
 // The "updated" time only moves when the league data really changed. Prints "changed ..." or "unchanged".
 import fs from "node:fs";
@@ -107,9 +108,25 @@ function parseLevels(csv) {
   if (out.length < 20) throw new Error("Only " + out.length + " level rows parsed");
   return out;
 }
+// Games of one division tab (e.g. "1-Stalin"): [code, usaPlayer, ussrPlayer, played]
+function parseMatches(csv) {
+  const rows = parseCSV(csv);
+  const hi = rows.findIndex(r => r.some(c => c.trim().toUpperCase() === "MATCH ID"));
+  if (hi < 0) throw new Error("MATCH ID header not found");
+  const cols = []; rows[hi].forEach((c, i) => { if (c.trim().toUpperCase() === "MATCH ID") cols.push(i); });
+  const out = [];
+  for (const r of rows.slice(hi + 1)) for (const i of cols) {
+    const code = (r[i] || "").trim(), usa = (r[i + 1] || "").trim(), ussr = (r[i + 2] || "").trim();
+    if (!/^[A-Z]\d{3}$/.test(code) || !usa || !ussr) continue;
+    out.push([code, usa, ussr, (r[i - 1] || "").trim().toUpperCase() === "TRUE"]);
+  }
+  out.sort((a, b) => a[0].localeCompare(b[0]));
+  if (out.length < 10) throw new Error("Only " + out.length + " games parsed");
+  return out;
+}
 // ==== SHARED-PARSERS-END ====
 
-const [siteDir, outDir, stPath, resPath, levPath, prevPath] = process.argv.slice(2);
+const [siteDir, outDir, stPath, resPath, levPath, prevPath, matchDir] = process.argv.slice(2);
 if (!siteDir || !outDir || !stPath) { console.error("usage: build-data.mjs <siteDir> <outDir> <standings.csv> <results.csv|-> <levels.csv|-> <prev.json|->"); process.exit(2); }
 const readIf = p => (p && p !== "-" && fs.existsSync(p) && fs.statSync(p).size > 0) ? fs.readFileSync(p, "utf8") : null;
 
@@ -122,9 +139,16 @@ try { const t = readIf(resPath); if (t) res = parseResults(t); } catch (e) { con
 try { const t = readIf(levPath); if (t) lev = parseLevels(t); } catch (e) { console.error("Level Standings tab skipped: " + e.message); }
 if (!res && prev && Array.isArray(prev.res)) res = prev.res;
 if (!lev && prev && Array.isArray(prev.lev)) lev = prev.lev;
+const TABS = ["1-Stalin", "2-Truman", "2-Eisenhower", "3-Brezhnev", "3-JFK", "3-Khrushchev", "4-Carter", "4-Reagan", "4-Gorbachev", "4-Nixon", "4-Andropov"];
+const matches = { ...((prev && prev.matches) || {}) };
+if (matchDir && matchDir !== "-") for (const tab of TABS) {
+  const t = readIf(path.join(matchDir, tab + ".csv"));
+  if (!t) continue;
+  try { matches[tab.split("-")[1]] = parseMatches(t); } catch (e) { console.error(tab + " skipped: " + e.message); }
+}
 
-const data = { divs, res, lev };
-const same = !!prev && JSON.stringify({ divs: prev.divs, res: prev.res ?? null, lev: prev.lev ?? null }) === JSON.stringify(data);
+const data = { divs, res, lev, matches };
+const same = !!prev && JSON.stringify({ divs: prev.divs, res: prev.res ?? null, lev: prev.lev ?? null, matches: prev.matches ?? {} }) === JSON.stringify(data);
 const updated = same && prev.updated ? prev.updated : new Date().toISOString();
 
 fs.rmSync(outDir, { recursive: true, force: true });
@@ -133,7 +157,7 @@ fs.writeFileSync(path.join(outDir, "data.json"), JSON.stringify({ updated, ...da
 
 const fmt = d => `{tier:${d.tier},name:${JSON.stringify(d.name)},side:"${d.side}",\n h:${JSON.stringify(d.h)},\n m:${JSON.stringify(d.m)},\n s:${JSON.stringify(d.s)}}`;
 const rows = a => a ? "[\n" + a.map(r => JSON.stringify(r)).join(",\n") + "\n]" : "null";
-const block = `/*DATA-START*/\nlet UPDATED="${updated}";\nlet DIVS=[\n${divs.map(fmt).join(",\n")}\n];\nlet RES=${rows(res)};\nlet LEV=${rows(lev)};\n`;
+const block = `/*DATA-START*/\nlet UPDATED="${updated}";\nlet DIVS=[\n${divs.map(fmt).join(",\n")}\n];\nlet RES=${rows(res)};\nlet LEV=${rows(lev)};\nlet MATCHES=${Object.keys(matches).length ? "{\n" + Object.entries(matches).map(([k, v]) => JSON.stringify(k) + ":" + JSON.stringify(v)).join(",\n") + "\n}" : "null"};\n`;
 const idx = path.join(outDir, "index.html");
 const html = fs.readFileSync(idx, "utf8");
 const a = html.indexOf("/*DATA-START*/"), b = html.indexOf("/*DATA-END*/");
