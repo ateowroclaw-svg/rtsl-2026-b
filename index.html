@@ -264,7 +264,7 @@ table{border-collapse:collapse;width:100%}
 // Matrix rows follow the sheet's header order (h). W = row player won, L = lost, T = tie, . = not played / self.
 // Standings rows (s) follow the sheet's ranking: [name, W, L, T, games left, note]
 /*DATA-START*/
-let UPDATED="2026-10-23T21:47:00.728Z";
+let UPDATED="2026-10-24T05:45:56.809Z";
 let DIVS=[
 {tier:1,name:"Stalin",side:"ussr",
  h:["Weiran Xie","Onur Kulaksizoglu","Alex Lee","Patrick Gong","Jifei Li","Mathias Heinze","David Choo","Jan Wimmer","Justin Abramson","Jarib Flores","Tomas Tvaroh"],
@@ -300,8 +300,8 @@ let DIVS=[
  s:[["Nick Harinos",8,1,0,1,"🤖"],["Michael McKibbin",8,2,0,0,"🤖 Finished October 18"],["John Kim",8,2,0,0,"🤖 Finished October 17"],["Lukas Fuchs",6,3,0,1,""],["Jan Ostrowski",5,4,0,1,""],["Koen Dijkstra",5,5,0,0,"Finished October 11"],["Crow Crowlas",4,6,0,0,"Finished October 6"],["Simon Pudsey",3,6,0,1,""],["Károly Lukács",2,7,0,0,"Finished October 1"],["Daniel Ramos",2,8,0,0,"Finished September 27"],["Urmas Yanis",1,7,0,2,""]]},
 {tier:4,name:"Gorbachev",side:"ussr",
  h:["Zihang Zhou","Mike Oehler","Haydon Dennison","Francisco Sanchez","Travis Steele","JJ Alt","Hervé Duval","Patxo Sans","Marc Nuño","Juan Antonio Romera","Joris Vandenbroeck"],
- m:[".WWWLWWW.WW","L.LWLLLLW.L","LW.LL.WW.WL","LLW.LWLWLWL","WWWW.WLLLW.","LW.LL.WL.W.","LWLWWL.WLWW","LWLLWWL.LLL",".L.WW.WW.W.","L.LLLLLWL.L","LWWW..LW.W."],
- s:[["Zihang Zhou",8,1,0,1,"🤖"],["Marc Nuño",5,1,0,4,"Extension until October 31"],["Joris Vandenbroeck",5,2,0,3,""],["Travis Steele",6,3,0,1,""],["Hervé Duval",6,4,0,0,"Finished October 23"],["Haydon Dennison",4,4,0,2,""],["JJ Alt",3,4,0,3,""],["Francisco Sanchez",4,6,0,0,"Finished October 10"],["Patxo Sans",3,7,0,0,"Finished September 23"],["Mike Oehler",2,7,0,1,""],["Juan Antonio Romera",1,8,0,1,""]]},
+ m:[".WWWLWWW.WW","L.LWLLLLWWL","LW.LL.WW.WL","LLW.LWLWLWL","WWWW.WLLLW.","LW.LL.WL.W.","LWLWWL.WLWW","LWLLWWL.LLL",".L.WW.WW.W.","LLLLLLLWL.L","LWWW..LW.W."],
+ s:[["Zihang Zhou",8,1,0,1,"🤖"],["Marc Nuño",5,1,0,4,"Extension until October 31"],["Joris Vandenbroeck",5,2,0,3,""],["Travis Steele",6,3,0,1,""],["Hervé Duval",6,4,0,0,"Finished October 23"],["Haydon Dennison",4,4,0,2,""],["JJ Alt",3,4,0,3,""],["Francisco Sanchez",4,6,0,0,"Finished October 10"],["Mike Oehler",3,7,0,0,""],["Patxo Sans",3,7,0,0,"Finished September 23"],["Juan Antonio Romera",1,9,0,0,""]]},
 {tier:4,name:"Nixon",side:"usa",
  h:["Adrian Ziarko","Ajoy Chakrabarti","Silver Zhu","Tomasz Babicz","Garreth Hawkins","Tim Engelhardt","Evangelos Iosifidis","David Young","Rafał Maksymiuk","Jim Haefele","Hicham Vanborm"],
  m:[".W.WLLLWWW.","L.LLWWLWWWW",".W.WLWW.WWL","LWL.WLLLWWL","WLWL.WWWWLL","WLLWL.W.WLW","WWLWLL.LWLL","LL.WL.W.WL.","LLLLLLLL..L","LLLLWWWW..L",".LWWWLW.WW."],
@@ -850,7 +850,8 @@ let RES=[
 ["2026-10-23","B051","Guang Li","Andrea Mancuso","USSR","Turn 8","VP Track (+20)",""],
 ["2026-10-23","E006","Raewon Jang","Jarek Grzaslewicz","USA","Turn 7","VP Track (+20)","https://youtu.be/576jXDX-IHQ"],
 ["2026-10-23","G049","Hervé Duval","Joris Vandenbroeck","USA","Turn 5","Forfeit",""],
-["2026-10-23","S028","Patrick Gong","Jifei Li","USSR","Final Scoring","Final Scoring",""]
+["2026-10-23","S028","Patrick Gong","Jifei Li","USSR","Final Scoring","Final Scoring",""],
+["2026-10-24","G018","Juan Antonio Romera","Mike Oehler","USSR","Final Scoring","Final Scoring",""]
 ];
 let LEV=[
 [1,1,"RTSL Champion 🏆","Jifei Li",8,2,0,0,"Finished October 23"],
@@ -962,16 +963,16 @@ let LEV=[
 [4,41,"","Evangelos Iosifidis",4,6,0,0,"Finished October 19"],
 [4,42,"","Francisco Sanchez",4,6,0,0,"Finished October 10"],
 [4,43,"","Simon Pudsey",3,6,0,1,""],
-[4,44,"","Patxo Sans",3,7,0,0,"Finished September 23"],
-[4,45,"","Markel Elortza",3,7,0,0,"Finished September 28"],
-[4,46,"","Matt Davies",2,6,0,2,""],
-[4,47,"","Károly Lukács",2,7,0,0,"Finished October 1"],
-[4,48,"","Mike Oehler",2,7,0,1,""],
+[4,44,"","Mike Oehler",3,7,0,0,""],
+[4,45,"","Patxo Sans",3,7,0,0,"Finished September 23"],
+[4,46,"","Markel Elortza",3,7,0,0,"Finished September 28"],
+[4,47,"","Matt Davies",2,6,0,2,""],
+[4,48,"","Károly Lukács",2,7,0,0,"Finished October 1"],
 [4,49,"","Mikolaj Solkiewicz",2,8,0,0,"Finished October 2"],
 [4,50,"","Daniel Ramos",2,8,0,0,"Finished September 27"],
 [4,51,"","Urmas Yanis",1,7,0,2,""],
 [4,52,"","Peter Heuvelman",1,8,0,1,""],
-[4,53,"","Juan Antonio Romera",1,8,0,1,""],
+[4,53,"","Juan Antonio Romera",1,9,0,0,""],
 [4,54,"","Goos Kuijper",1,9,0,0,"Withdrawn September 20"],
 [4,55,"","Rafał Maksymiuk",0,9,0,1,""]
 ];
