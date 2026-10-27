@@ -375,7 +375,7 @@ a.plink:focus-visible{outline:2px solid var(--usa);outline-offset:2px;border-rad
 // Matrix rows follow the sheet's header order (h). W = row player won, L = lost, T = tie, . = not played / self.
 // Standings rows (s) follow the sheet's ranking: [name, W, L, T, games left, note]
 /*DATA-START*/
-let UPDATED="2026-10-26T19:52:34.093Z";
+let UPDATED="2026-10-27T21:48:42.348Z";
 let DIVS=[
 {tier:1,name:"Stalin",side:"ussr",
  h:["Weiran Xie","Onur Kulaksizoglu","Alex Lee","Patrick Gong","Jifei Li","Mathias Heinze","David Choo","Jan Wimmer","Justin Abramson","Jarib Flores","Tomas Tvaroh"],
@@ -391,8 +391,8 @@ let DIVS=[
  s:[["Michael Stryker",4,1,1,4,"Extension until October 31"],["Roger Jolly",7,3,0,0,"Finished October 17"],["Peter Frantz",6,3,1,0,"Finished September 19"],["Raewon Jang",5,3,0,2,""],["Jarek Grzaslewicz",4,4,0,2,""],["Mark Overstreet",4,5,1,0,"Finished September 19"],["Joshua Mauer",4,5,0,1,""],["Mike Archambault",4,5,0,1,""],["Katsiaryna Makouskaya",3,5,1,1,""],["Carl Young",2,5,0,3,""],["Tim Furrow",2,6,0,2,""]]},
 {tier:3,name:"Brezhnev",side:"ussr",
  h:["Jan Schmidt","Aleksei Lobunko","Michal Borkowicz","Jan Edvard Nodland","Antoine Danel","Nicu Oprea","Robin Bos","Guang Li","Ruben Messelink","Andrea Mancuso","Yongjun Park"],
- m:[".LLLLLLLWWL","W.WLLWLLWWW","WL.WWL.WW.W","WWL.LWWLLWW","WWLW.WWLWLW","WLWLL.LWLLL","WW.LLW.LW.L","WWLWWLW.WLW","LLLWLWLL.LL","LL.LWW.WW.L","WLLLLWWLWW."],
- s:[["Michal Borkowicz",6,2,0,2,""],["Guang Li",7,3,0,0,"👹 Finished October 23"],["Antoine Danel",7,3,0,0,"Finished October 2"],["Jan Edvard Nodland",6,4,0,0,"Finished October 11"],["Aleksei Lobunko",6,4,0,0,"Finished October 2"],["Yongjun Park",5,5,0,0,"Finished October 16"],["Robin Bos",4,4,0,2,""],["Andrea Mancuso",4,4,0,2,""],["Nicu Oprea",3,7,0,0,"👻 Finished October 26"],["Jan Schmidt",2,8,0,0,"👻 Finished October 26"],["Ruben Messelink",2,8,0,0,"👻 Finished October 19"]]},
+ m:[".LLLLLLLWWL","W.WLLWLLWWW","WL.WWLWWW.W","WWL.LWWLLWW","WWLW.WWLWLW","WLWLL.LWLLL","WWLLLW.LW.L","WWLWWLW.WLW","LLLWLWLL.LL","LL.LWW.WW.L","WLLLLWWLWW."],
+ s:[["Michal Borkowicz",7,2,0,1,""],["Guang Li",7,3,0,0,"👹 Finished October 23"],["Antoine Danel",7,3,0,0,"Finished October 2"],["Jan Edvard Nodland",6,4,0,0,"Finished October 11"],["Aleksei Lobunko",6,4,0,0,"Finished October 2"],["Yongjun Park",5,5,0,0,"Finished October 16"],["Andrea Mancuso",4,4,0,2,""],["Robin Bos",4,5,0,1,""],["Nicu Oprea",3,7,0,0,"👻 Finished October 26"],["Jan Schmidt",2,8,0,0,"👻 Finished October 26"],["Ruben Messelink",2,8,0,0,"👻 Finished October 19"]]},
 {tier:3,name:"JFK",side:"usa",
  h:["Derek Miller","Marek Burkacki","Justin Nordstrom","Pavel Meshkov","Kevin Gute","David Erill","Max DuBoff","Paweł Januszewski","Frank Tarena","Enrico Ciardo","Guangheng Wu"],
  m:[".W.WLWLWWWL","L.LLLLLLWLL",".W.LLLLLLLL","LWW.LWLLWWL","WWWW.LWWWWW","LWWLW.WWWLL","WWWWLL.LLLL","LWWWLLW.WW.","LLWLLLWL.W.","LWWLLWWLL.L","WWWWLWW..W."],
@@ -969,7 +969,8 @@ let RES=[
 ["2026-10-25","E029","Katsiaryna Makouskaya","Michael Stryker","TIE","Turn 8","Wargames",""],
 ["2026-10-25","N042","Tim Engelhardt","David Young","USSR","Final Scoring","Final Scoring","https://youtu.be/Aif8ypYxgRw"],
 ["2026-10-26","K031","Giorgos Iosifidis","Asan Beisenov","USA","Turn 8","DEFCON",""],
-["2026-10-26","B005","Jan Schmidt","Nicu Oprea","USSR","Turn 9","DEFCON",""]
+["2026-10-26","B005","Jan Schmidt","Nicu Oprea","USSR","Turn 9","DEFCON",""],
+["2026-10-27","B023","Michal Borkowicz","Robin Bos","USA","Turn 10","DEFCON",""]
 ];
 let LEV=[
 [1,1,"RTSL Champion 🏆","Jifei Li",8,2,0,0,"Finished October 23"],
@@ -1005,7 +1006,7 @@ let LEV=[
 [2,20,"","Carl Young",2,5,0,3,""],
 [2,21,"","Tim Furrow",2,6,0,2,""],
 [2,22,"","Rong Yu",0,10,0,0,"🤖 Disqualified October 10"],
-[3,1,"Brezhnev Leader 🥇","Michal Borkowicz",6,2,0,2,""],
+[3,1,"Brezhnev Leader 🥇","Michal Borkowicz",7,2,0,1,""],
 [3,1,"JFKennedy Leader 🥇","Kevin Gute",9,1,0,0,"👹 Finished August 26"],
 [3,1,"Khrushchev Leader 🥇","Anton Skott",9,0,1,0,"👹 Finished October 14"],
 [3,4,"Brezhnev Runner-up 🥈","Guang Li",7,3,0,0,"👹 Finished October 23"],
@@ -1023,8 +1024,8 @@ let LEV=[
 [3,16,"","Pavel Meshkov",5,5,0,0,"Finished July 8"],
 [3,17,"","Aaron Ng",5,5,0,0,"Finished October 13"],
 [3,18,"","Giorgos Iosifidis",5,5,0,0,"Finished October 26"],
-[3,19,"","Robin Bos",4,4,0,2,""],
-[3,20,"","Andrea Mancuso",4,4,0,2,""],
+[3,19,"","Andrea Mancuso",4,4,0,2,""],
+[3,20,"","Robin Bos",4,5,0,1,""],
 [3,21,"","Aidan Archer",3,4,0,3,""],
 [3,22,"Relegated to Level 4","Max DuBoff",4,6,0,0,"Finished October 25"],
 [3,23,"","Enrico Ciardo",4,6,0,0,"Finished October 11"],
