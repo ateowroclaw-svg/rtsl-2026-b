@@ -375,7 +375,7 @@ a.plink:focus-visible{outline:2px solid var(--usa);outline-offset:2px;border-rad
 // Matrix rows follow the sheet's header order (h). W = row player won, L = lost, T = tie, . = not played / self.
 // Standings rows (s) follow the sheet's ranking: [name, W, L, T, games left, note]
 /*DATA-START*/
-let UPDATED="2026-10-28T20:55:39.728Z";
+let UPDATED="2026-10-30T02:59:51.368Z";
 let DIVS=[
 {tier:1,name:"Stalin",side:"ussr",
  h:["Weiran Xie","Onur Kulaksizoglu","Alex Lee","Patrick Gong","Jifei Li","Mathias Heinze","David Choo","Jan Wimmer","Justin Abramson","Jarib Flores","Tomas Tvaroh"],
@@ -383,8 +383,8 @@ let DIVS=[
  s:[["Jifei Li",8,2,0,0,"Finished October 23"],["Jan Wimmer",6,2,0,2,""],["Mathias Heinze",6,4,0,0,"Finished October 21"],["Onur Kulaksizoglu",5,4,0,1,""],["David Choo",5,5,0,0,"Finished October 23"],["Alex Lee",4,4,0,2,""],["Weiran Xie",2,3,0,5,"Extension until October 31"],["Patrick Gong",3,5,0,2,""],["Jarib Flores",3,6,0,1,""],["Tomas Tvaroh",3,6,0,1,""],["Justin Abramson",3,7,0,0,"👹 Finished September 2"]]},
 {tier:2,name:"Truman",side:"usa",
  h:["Rong Yu","Zhuang Yan","Chris Xu","Dylan Provencher","Jinxi Xu","Jianshu Qian","Bartosz Wróbel","Ted Livermore","Makis Bahtsevanis","B H Ju","Ziemowit Pazderski"],
- m:[".LLLLLLLLLL","W.LLLWWWWWL","WW.LWWLLLLL","WWW.LL.WLWL","WWLW.LW..WW","WLLWW.WLLLL","WLW.LL.WLWL","WLWL.WL.W.W","WLWW.WWL.WL","WLWLLWL.L.L","WWWWLWWLWW."],
- s:[["Ziemowit Pazderski",8,2,0,0,"👽 Finished September 6"],["Jinxi Xu",6,2,0,2,""],["Makis Bahtsevanis",6,3,0,1,""],["Ted Livermore",5,3,0,2,""],["Zhuang Yan",6,4,0,0,"Finished October 12"],["Dylan Provencher",5,4,0,1,""],["Bartosz Wróbel",4,5,0,1,""],["Chris Xu",4,6,0,0,"Finished August 8"],["Jianshu Qian",4,6,0,0,"Finished August 8"],["B H Ju",3,6,0,1,""],["Rong Yu",0,10,0,0,"🤖 Disqualified October 10"]]},
+ m:[".LLLLLLLLLL","W.LLLWWWWWL","WW.LWWLLLLL","WWW.LL.WLWL","WWLW.LW..WW","WLLWW.WLLLL","WLW.LL.WLWL","WLWL.WL.WLW","WLWW.WWL.WL","WLWLLWLWL.L","WWWWLWWLWW."],
+ s:[["Ziemowit Pazderski",8,2,0,0,"👽 Finished September 6"],["Jinxi Xu",6,2,0,2,""],["Makis Bahtsevanis",6,3,0,1,""],["Zhuang Yan",6,4,0,0,"Finished October 12"],["Dylan Provencher",5,4,0,1,""],["Ted Livermore",5,4,0,1,""],["Bartosz Wróbel",4,5,0,1,""],["Chris Xu",4,6,0,0,"Finished August 8"],["Jianshu Qian",4,6,0,0,"Finished August 8"],["B H Ju",4,6,0,0,""],["Rong Yu",0,10,0,0,"🤖 Disqualified October 10"]]},
 {tier:2,name:"Eisenhower",side:"usa",
  h:["Jarek Grzaslewicz","Carl Young","Mark Overstreet","Katsiaryna Makouskaya","Tim Furrow","Michael Stryker","Raewon Jang","Roger Jolly","Joshua Mauer","Peter Frantz","Mike Archambault"],
  m:[".WW.W.LLWLL","L.LL...WWLL","LW.LWLLWWTL",".WW.LTLLLLW","L.LW.L.LLWL","..WTW.WW.L.","W.WW.L.LWLW","WLLWWLW.WWW","LLLWW.LL.WW","WWTWLWWLL.W","WWWLW.LLLL."],
@@ -972,7 +972,8 @@ let RES=[
 ["2026-10-26","B005","Jan Schmidt","Nicu Oprea","USSR","Turn 9","DEFCON",""],
 ["2026-10-27","B023","Michal Borkowicz","Robin Bos","USA","Turn 10","DEFCON",""],
 ["2026-10-28","K049","Carlos Pintado","Dimitris Katsoulas","USA","Turn 8","Wargames",""],
-["2026-10-28","C053","Daniel Simon","Robert Stegmann","USSR","Turn 7","VP Track (+20)",""]
+["2026-10-28","C053","Daniel Simon","Robert Stegmann","USSR","Turn 7","VP Track (+20)",""],
+["2026-10-30","T051","Ted Livermore","B H Ju","USSR","Turn 8","Wargames",""]
 ];
 let LEV=[
 [1,1,"RTSL Champion 🏆","Jifei Li",8,2,0,0,"Finished October 23"],
@@ -992,10 +993,10 @@ let LEV=[
 [2,3,"Eisenhower Runner-up 🥈","Roger Jolly",7,3,0,0,"Finished October 17"],
 [2,5,"Promotion Playoff","Makis Bahtsevanis",6,3,0,1,""],
 [2,6,"","Peter Frantz",6,3,1,0,"Finished September 19"],
-[2,7,"","Ted Livermore",5,3,0,2,""],
-[2,8,"","Raewon Jang",5,3,0,2,""],
-[2,9,"Remain at Level 2","Zhuang Yan",6,4,0,0,"Finished October 12"],
-[2,10,"","Dylan Provencher",5,4,0,1,""],
+[2,7,"","Raewon Jang",5,3,0,2,""],
+[2,8,"","Zhuang Yan",6,4,0,0,"Finished October 12"],
+[2,9,"Remain at Level 2","Dylan Provencher",5,4,0,1,""],
+[2,10,"","Ted Livermore",5,4,0,1,""],
 [2,11,"","Jarek Grzaslewicz",4,4,0,2,""],
 [2,12,"","Mark Overstreet",4,5,1,0,"Finished September 19"],
 [2,13,"Relegation Playoff","Bartosz Wróbel",4,5,0,1,""],
@@ -1003,8 +1004,8 @@ let LEV=[
 [2,15,"Relegated to Level 3","Mike Archambault",4,5,0,1,""],
 [2,16,"","Chris Xu",4,6,0,0,"Finished August 8"],
 [2,17,"","Jianshu Qian",4,6,0,0,"Finished August 8"],
-[2,18,"","Katsiaryna Makouskaya",3,5,1,1,""],
-[2,19,"","B H Ju",3,6,0,1,""],
+[2,18,"","B H Ju",4,6,0,0,""],
+[2,19,"","Katsiaryna Makouskaya",3,5,1,1,""],
 [2,20,"","Carl Young",2,5,0,3,""],
 [2,21,"","Tim Furrow",2,6,0,2,""],
 [2,22,"","Rong Yu",0,10,0,0,"🤖 Disqualified October 10"],
