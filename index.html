@@ -1117,8 +1117,12 @@ let MATCHES={
 const LVL_ICON={1:"👽",2:"👹",3:"🤖",4:"👻"};
 // Games played per division: counted from the division tab's played ticks (same as the sheet's game list);
 // falls back to the standings when the game list is missing.
+// A game counts as played when the division tab ticks it OR a result with its code is in the Results tab
+// (the tick in the sheet is sometimes set later than the result is entered).
+function resultCodes(){const s=new Set();(typeof RES!=="undefined"&&RES||[]).forEach(r=>{if(r&&r[1])s.add(r[1])});return s}
+function gamePlayed(g,codes){return g[3]===true||(codes||resultCodes()).has(g[0])}
 function divPlayed(d){const g=typeof MATCHES!=="undefined"&&MATCHES&&MATCHES[d.name];
-  if(g&&g.length)return g.filter(x=>x.includes(true)).length;
+  if(g&&g.length){const c=resultCodes();return g.filter(x=>gamePlayed(x,c)).length;}
   return Math.round(d.s.reduce((a,r)=>a+r[1]+r[2]+r[3],0)/2);}
 // Player profiles on twilight-struggle.com: name -> [profile id, country code]; flags from the same site (36x24 PNG).
 const TS_PLAYERS={"Aaron Ng":[1527,"HK"],"Adrian Ziarko":[1540,"PL"],"Aidan Archer":[1543,"AU"],"Ajoy Chakrabarti":[1547,"CA"],"Aleksandr Pushkarev":[3161,"NL"],"Aleksei Lobunko":[1558,"NL"],"Alex Lee":[2996,"CN"],"Andrea Mancuso":[1600,"IT"],"Antoine Danel":[1627,"FR"],"Anton Skott":[1630,"SE"],"Arek Sitkowski":[1635,"PL"],"Asan Beisenov":[3196,"KZ"],"B H Ju":[1652,"KR"],"Balazs Ulveczki":[3100,"HU"],"Bartosz Wróbel":[1658,"PL"],"Bidart Larrakoetxea":[1677,"EUS"],"Bledson Bezerra":[1689,"BR"],"Brad McCoy":[2947,"CA"],"Carl Young":[1715,"CN"],"Carlos Pintado":[3063,"ES"],"Charlie Blackmar":[3059,"US"],"Chris Xu":[1757,"CN"],"Crow Crowlas":[1781,"UK"],"Daniel Ramos":[3079,"ES"],"Daniel Simon":[1797,"ES"],"Daniël Hogetoorn":[1790,"NL"],"David Bartolome Duran":[1811,"ES"],"David Choo":[1814,"KR"],"David Erill":[1817,"CAT"],"David Young":[1834,"US"],"Derek Miller":[1844,"US"],"Dimitris Katsoulas":[1853,"GR"],"Dylan Provencher":[3015,"US"],"Enrico Ciardo":[2956,"IT"],"Evangelos Iosifidis":[1904,"GR"],"Francisco Sanchez":[3201,"ES"],"Frank Tarena":[1933,"FR"],"Garreth Hawkins":[3219,"UK"],"Giorgos Iosifidis":[1974,"GR"],"Goos Kuijper":[3036,"NL"],"Guang Li":[3105,"CN"],"Guangheng Wu":[1984,"CN"],"Haydon Dennison":[3294,"AU"],"Hervé Duval":[2010,"FR"],"Hicham Vanborm":[2012,"BE"],"J.A McMahon":[2050,"US"],"JJ Alt":[3267,"US"],"Jakub Węcławski":[2962,"PL"],"Jan Edvard Nodland":[3021,"NO"],"Jan Ostrowski":[3210,"PL"],"Jan Schmidt":[2074,"DE"],"Jan Wimmer":[2077,"US"],"Jarek Grzaslewicz":[2082,"PL"],"Jarib Flores":[2084,"ES"],"Jianshu Qian":[3123,"CN"],"Jifei Li":[3089,"CN"],"Jim Haefele":[2141,"US"],"Jinxi Xu":[3034,"CN"],"John Kim":[2165,"US"],"Jordan Cass":[2190,"US"],"Joris Vandenbroeck":[3155,"BE"],"Joshua Mauer":[3038,"US"],"Juan Antonio Romera":[3166,"ES"],"Justin Abramson":[2232,"US"],"Justin Nordstrom":[2235,"US"],"Katsiaryna Makouskaya":[2256,"PL"],"Kevin Gute":[2271,"US"],"Koen Dijkstra":[3065,"NL"],"Károly Lukács":[2254,"HU"],"Lukas Fuchs":[2330,"SK"],"Makis Bahtsevanis":[2344,"GR"],"Marc Nuño":[2356,"CAT"],"Marek Burkacki":[2367,"PL"],"Mark Overstreet":[2375,"US"],"Markel Elortza":[2971,"EUS"],"Mathias Heinze":[2393,"DK"],"Matt Davies":[2399,"US"],"Max DuBoff":[2414,"US"],"Michael McKibbin":[2429,"US"],"Michael Stryker":[2438,"US"],"Michal Borkowicz":[2439,"PL"],"Mike Archambault":[2449,"US"],"Mike Oehler":[3185,"US"],"Mikolaj Solkiewicz":[2461,"PL"],"Nick Harinos":[3162,"GR"],"Nicu Oprea":[3051,"RO"],"Onur Kulaksizoglu":[2508,"TR"],"Patrick Gong":[2525,"CN"],"Patxo Sans":[3003,"ES"],"Pau Sala":[2981,"CAT"],"Pavel Meshkov":[2536,"RU"],"Paweł Januszewski":[2537,"PL"],"Peter Davich":[2554,"US"],"Peter Frantz":[2555,"US"],"Peter Heuvelman":[2556,"NL"],"Przemek Przemyslaw":[2577,"PL"],"Raewon Jang":[3009,"KR"],"Rafał Maksymiuk":[2583,"PL"],"Raymond Wang":[3154,"US"],"Riley Dosh":[2985,"US"],"Robert Stegmann":[3013,"CA"],"Robin Bos":[3064,"NL"],"Roger Jolly":[2624,"KR"],"Rong Yu":[3104,"CN"],"Ruben Messelink":[2634,"NL"],"Ruifeng Li":[3298,"CA"],"Sergei Sazonov":[3322,"US"],"Silver Zhu":[3287,"CN"],"Simon Pudsey":[2986,"UK"],"Stan Kaatee":[2709,"NL"],"Ted Livermore":[2745,"US"],"Tim Engelhardt":[3209,"DE"],"Tim Furrow":[2762,"US"],"Tomas Tvaroh":[2780,"CZ"],"Tomasz Babicz":[2781,"PL"],"Travis Steele":[3035,"US"],"Urmas Yanis":[3243,"US"],"Weiran Xie":[2886,"CN"],"Yauheni Mashkouski":[3157,"BY"],"Yongjun Park":[2850,"KR"],"Zhuang Yan":[3084,"CN"],"Ziemowit Pazderski":[2878,"PL"],"Zihang Zhou":[3170,"CN"]};
@@ -1188,15 +1192,16 @@ function gamesBody(d){
   if(!list)return `<p class="lvnote">The game list for ${esc(d.name)} appears with the next hourly update.</p>`;
   const byId={};(RES||[]).forEach(r=>{if(r[1])byId[r[1]]=r});
   const f=state.gf[d.name]||"all",q=state.q.toLowerCase();
-  const done=list.filter(g=>g[3]).length;
-  const rows=list.filter(g=>f==="all"||(f==="todo"?!g[3]:g[3])).map(g=>{
-    const r=byId[g[0]],win=g[3]&&r?r[4]:null,hit=q&&(g[1]+"|"+g[2]).toLowerCase().includes(q);
+  const pl=g=>g[3]===true||!!byId[g[0]];
+  const done=list.filter(pl).length;
+  const rows=list.filter(g=>f==="all"||(f==="todo"?!pl(g):pl(g))).map(g=>{
+    const r=byId[g[0]],win=pl(g)&&r?r[4]:null,hit=q&&(g[1]+"|"+g[2]).toLowerCase().includes(q);
     const nm=(n,side)=>`<span class="pn ${side}${win===side.toUpperCase()?" win":""}">${plink(n)}</span>`;
     let res;
-    if(!g[3])res=`<span class="chip ext">To play</span>`;
+    if(!pl(g))res=`<span class="chip ext">To play</span>`;
     else if(r){const date=fmtDate(r[0]);res=(win==="TIE"?`<span class="chip">Tie</span>`:"")+(date?`<span class="mono">${esc(date)}</span> · `:"")+metaHtml({turn:r[5],type:r[6],vid:r[7]});}
     else res="Played";
-    return `<tr class="${g[3]?"":"todo"}${hit?" hit":""}"><td class="code">${esc(g[0])}</td><td>${nm(g[1],"usa")}</td><td>${nm(g[2],"ussr")}</td><td class="gres">${res}</td></tr>`;
+    return `<tr class="${pl(g)?"":"todo"}${hit?" hit":""}"><td class="code">${esc(g[0])}</td><td>${nm(g[1],"usa")}</td><td>${nm(g[2],"ussr")}</td><td class="gres">${res}</td></tr>`;
   }).join("");
   const btn=(v,l)=>`<button data-gk="${esc(d.name)}" data-gf="${v}" aria-pressed="${f===v}">${l}</button>`;
   return `<div class="gsum"><span><b>${done}</b> played · <b>${list.length-done}</b> to play</span><div class="seg" role="group" aria-label="Show games">${btn("all","All")}${btn("todo","To play")}${btn("done","Played")}</div></div>
