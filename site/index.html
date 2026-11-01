@@ -375,7 +375,7 @@ a.plink:focus-visible{outline:2px solid var(--usa);outline-offset:2px;border-rad
 // Matrix rows follow the sheet's header order (h). W = row player won, L = lost, T = tie, . = not played / self.
 // Standings rows (s) follow the sheet's ranking: [name, W, L, T, games left, note]
 /*DATA-START*/
-let UPDATED="2026-11-01T13:55:46.910Z";
+let UPDATED="2026-11-01T18:57:11.473Z";
 let DIVS=[
 {tier:1,name:"Stalin",side:"ussr",
  h:["Weiran Xie","Onur Kulaksizoglu","Alex Lee","Patrick Gong","Jifei Li","Mathias Heinze","David Choo","Jan Wimmer","Justin Abramson","Jarib Flores","Tomas Tvaroh"],
@@ -395,8 +395,8 @@ let DIVS=[
  s:[["Michal Borkowicz",7,2,0,1,""],["Guang Li",7,3,0,0,"👹 Finished October 23"],["Antoine Danel",7,3,0,0,"Finished October 2"],["Jan Edvard Nodland",6,4,0,0,"Finished October 11"],["Aleksei Lobunko",6,4,0,0,"Finished October 2"],["Yongjun Park",5,5,0,0,"Finished October 16"],["Andrea Mancuso",4,4,0,2,""],["Robin Bos",4,5,0,1,""],["Nicu Oprea",3,7,0,0,"👻 Finished October 26"],["Jan Schmidt",2,8,0,0,"👻 Finished October 26"],["Ruben Messelink",2,8,0,0,"👻 Finished October 19"]]},
 {tier:3,name:"JFK",side:"usa",
  h:["Derek Miller","Marek Burkacki","Justin Nordstrom","Pavel Meshkov","Kevin Gute","David Erill","Max DuBoff","Paweł Januszewski","Frank Tarena","Enrico Ciardo","Guangheng Wu"],
- m:[".W.WLWLWWWL","L.LLLLLLWLL",".W.LLLLLLLL","LWW.LWLLWWL","WWWW.LWWWWW","LWWLW.WWWLL","WWWWLL.LLLL","LWWWLLW.WW.","LLWLLLWL.W.","LWWLLWWLL.L","WWWWLWW..W."],
- s:[["Kevin Gute",9,1,0,0,"👹 Finished August 26"],["Guangheng Wu",7,1,0,2,""],["Derek Miller",6,3,0,1,""],["Paweł Januszewski",6,3,0,1,""],["David Erill",6,4,0,0,"Finished September 29"],["Pavel Meshkov",5,5,0,0,"Finished July 8"],["Max DuBoff",4,6,0,0,"Finished October 25"],["Enrico Ciardo",4,6,0,0,"Finished October 11"],["Frank Tarena",3,6,0,1,""],["Justin Nordstrom",1,8,0,1,"👻"],["Marek Burkacki",1,9,0,0,"👻 Finished July 24"]]},
+ m:[".W.WLWLWWWL","L.LLLLLLWLL",".W.LLLLLLLL","LWW.LWLLWWL","WWWW.LWWWWW","LWWLW.WWWLL","WWWWLL.LLLL","LWWWLLW.WWL","LLWLLLWL.W.","LWWLLWWLL.L","WWWWLWWW.W."],
+ s:[["Kevin Gute",9,1,0,0,"👹 Finished August 26"],["Guangheng Wu",8,1,0,1,""],["Derek Miller",6,3,0,1,""],["David Erill",6,4,0,0,"Finished September 29"],["Paweł Januszewski",6,4,0,0,""],["Pavel Meshkov",5,5,0,0,"Finished July 8"],["Max DuBoff",4,6,0,0,"Finished October 25"],["Enrico Ciardo",4,6,0,0,"Finished October 11"],["Frank Tarena",3,6,0,1,""],["Justin Nordstrom",1,8,0,1,"👻"],["Marek Burkacki",1,9,0,0,"👻 Finished July 24"]]},
 {tier:3,name:"Khrushchev",side:"ussr",
  h:["Aaron Ng","Przemek Przemyslaw","Stan Kaatee","Giorgos Iosifidis","Aidan Archer","Anton Skott","Carlos Pintado","Asan Beisenov","Arek Sitkowski","Charlie Blackmar","Dimitris Katsoulas"],
  m:[".WWLLLLWLWW","L.LLLLWWLWL","LW.W.LWLWWL","WWL.LLWWLWL","WW.W.LLLWLW","WWWWW.WTWWW","WLLLWL.LLWW","LLWLWTW.LLL","WWLWLLWW.W.","LLLLWLLWL.L","LWWWLLLW.W."],
@@ -977,7 +977,8 @@ let RES=[
 ["2026-10-30","E014","Carl Young","Michael Stryker","USSR","Turn 4","VP Track (+20)",""],
 ["2026-10-31","K040","Dimitris Katsoulas","Aidan Archer","USSR","Turn 10","Timer Expired",""],
 ["2026-10-31","T030","Dylan Provencher","Bartosz Wróbel","USSR","Turn 5","VP Track (+20)","https://youtu.be/8r05bsPFLKo"],
-["2026-11-01","K013","Przemek Przemyslaw","Aidan Archer","USSR","Turn 10","Wargames",""]
+["2026-11-01","K013","Przemek Przemyslaw","Aidan Archer","USSR","Turn 10","Wargames",""],
+["2026-11-01","J052","Paweł Januszewski","Guangheng Wu","USSR","Turn 9","VP Track (+20)","https://youtu.be/37m3Tm1eGLg"]
 ];
 let LEV=[
 [1,1,"RTSL Champion 🏆","Jifei Li",8,2,0,0,"Finished October 23"],
@@ -1017,14 +1018,14 @@ let LEV=[
 [3,1,"JFKennedy Leader 🥇","Kevin Gute",9,1,0,0,"👹 Finished August 26"],
 [3,1,"Khrushchev Leader 🥇","Anton Skott",9,0,1,0,"👹 Finished October 14"],
 [3,4,"Brezhnev Runner-up 🥈","Guang Li",7,3,0,0,"👹 Finished October 23"],
-[3,4,"JFKennedy Runner-up 🥈","Guangheng Wu",7,1,0,2,""],
+[3,4,"JFKennedy Runner-up 🥈","Guangheng Wu",8,1,0,1,""],
 [3,4,"Khrushchev Runner-up 🥈","Arek Sitkowski",6,3,0,1,""],
 [3,7,"Promoted to Level 2","Antoine Danel",7,3,0,0,"Finished October 2"],
 [3,8,"","Derek Miller",6,3,0,1,""],
-[3,9,"","Paweł Januszewski",6,3,0,1,""],
-[3,10,"Remain at Level 3","Jan Edvard Nodland",6,4,0,0,"Finished October 11"],
-[3,11,"","Aleksei Lobunko",6,4,0,0,"Finished October 2"],
-[3,12,"","David Erill",6,4,0,0,"Finished September 29"],
+[3,9,"","Jan Edvard Nodland",6,4,0,0,"Finished October 11"],
+[3,10,"Remain at Level 3","Aleksei Lobunko",6,4,0,0,"Finished October 2"],
+[3,11,"","David Erill",6,4,0,0,"Finished September 29"],
+[3,12,"","Paweł Januszewski",6,4,0,0,""],
 [3,13,"","Stan Kaatee",5,4,0,1,""],
 [3,14,"","Aidan Archer",5,4,0,1,""],
 [3,15,"","Dimitris Katsoulas",5,4,0,1,""],
