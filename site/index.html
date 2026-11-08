@@ -51,6 +51,16 @@ h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:.0
 .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
 .label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:600}
 
+/* announcement banner (red, full width, above the header) */
+.promo{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:6px 12px;text-align:center;
+  background:var(--ussr);color:#fff;font:600 15px/1.35 var(--body);padding:10px 16px;
+  margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:8;box-shadow:0 1px 0 rgba(0,0,0,.12)}
+@media (max-width:600px){.promo{font-size:13px;padding:6px 12px}.promo-tag{display:none}}
+.promo b{font-weight:800}
+.promo-tag{font:700 11px var(--mono);text-transform:uppercase;letter-spacing:.12em;border:1px solid rgba(255,255,255,.7);border-radius:3px;padding:2px 7px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .promo{background:#a32a24}}
+:root[data-theme="dark"] .promo{background:#a32a24}
 /* header */
 header{padding-block:32px 20px;display:grid;gap:20px;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);align-items:end;border-bottom:3px double var(--line)}
 @media (max-width:760px){header{grid-template-columns:1fr}}
@@ -77,7 +87,7 @@ header{padding-block:32px 20px;display:grid;gap:20px;grid-template-columns:minma
 .stats strong{font:800 30px/1 var(--display)}
 
 /* toolbar */
-.toolbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:12px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--line)}
+.toolbar{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--promo-h,0px));z-index:5;background:var(--bg);padding-block:12px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--line)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
 .tabs{display:flex;gap:4px;flex-wrap:wrap}
 .tabs button,.seg button{font:600 13px var(--body);border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:6px 12px;border-radius:4px;cursor:pointer}
@@ -314,6 +324,7 @@ a.plink:focus-visible{outline:2px solid var(--usa);outline-offset:2px;border-rad
 @media (prefers-reduced-motion:no-preference){.track .fill{transition:width .8s ease}}
 </style>
 
+<div class="promo" role="note"><span class="promo-tag">New season</span><span>Registration for the edition <b>2027-A</b> starts soon! Expected start of next season <b>18 December 2026</b>.</span></div>
 <div class="wrap">
   <header>
     <div class="brand">
@@ -1601,6 +1612,11 @@ const DATA_URL=(()=>{const h=location.hostname;return /\.netlify\.app$/i.test(h)
     .catch(e=>console.warn("Latest data not loaded, showing the built-in copy:",e))
     .finally(()=>clearTimeout(timer));
 })();
+
+// sticky banner: the toolbar sticks just below it, whatever height the banner wraps to
+(function(){const b=document.querySelector(".promo");if(!b)return;
+  const set=()=>document.documentElement.style.setProperty("--promo-h",b.offsetHeight+"px");
+  set();addEventListener("resize",set);if(window.ResizeObserver)new ResizeObserver(set).observe(b);})();
 </script>
 </body>
 </html>
