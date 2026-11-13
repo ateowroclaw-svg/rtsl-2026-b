@@ -133,7 +133,8 @@ table{border-collapse:collapse;width:100%}
 .st th{font:600 10px var(--body);text-transform:uppercase;letter-spacing:.1em;color:var(--muted);text-align:right;padding:8px 8px 6px}
 .st th.l{text-align:left}
 .st td{padding:6px 8px;border-top:1px solid var(--line);text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:13px;white-space:nowrap}
-.st td.name{text-align:left;font-family:var(--body);font-size:15px;font-weight:600;white-space:normal;min-width:140px}
+.st td.name{text-align:left;font-family:var(--body);font-size:15px;font-weight:600;white-space:nowrap;min-width:140px;width:1%}
+.st td.name .plink{white-space:nowrap}
 .st td.name{font-weight:400}
 .st td.name.done{font-weight:700}
 .h2h th.rn{font-weight:400}
@@ -169,6 +170,11 @@ table{border-collapse:collapse;width:100%}
 .st td.rk{color:var(--muted);width:28px;text-align:center}
 .st td.note{text-align:left;font-family:var(--body);font-size:12px;color:var(--muted);white-space:normal;min-width:120px}
 .st tr.hit td{background:var(--usa-soft)}
+/* Status on one line so every row has the same height; long text scrolls sideways inside the cell */
+.st td.note .nw{max-width:200px;overflow-x:auto;white-space:nowrap;scrollbar-width:thin;padding-bottom:1px}
+/* Levels: Status takes all the remaining width of the row (still one line, scrolls if longer) */
+table.st:not(.lv){width:100%}.st:not(.lv) td.note{width:100%;max-width:0}.st:not(.lv) td.note .nw{max-width:100%}.lv td.note{width:auto;max-width:none}table.st.lv{table-layout:fixed;width:100%}.lv th:nth-child(1){width:44px}.lv th:nth-child(2){width:220px}.lv th:nth-child(3){width:112px}.lv th:nth-child(4),.lv th:nth-child(5),.lv th:nth-child(6){width:44px}.lv th:nth-child(7){width:100px}.lv th:nth-child(8){width:58px}.lv td{overflow:hidden}.lv td.note .nw{max-width:100%}
+.st td.note .nw::-webkit-scrollbar{height:4px}.st td.note .nw::-webkit-scrollbar-thumb{background:var(--line);border-radius:2px}
 .pct{display:inline-flex;align-items:center;gap:6px}
 .pct s{display:inline-block;width:38px;height:4px;background:var(--empty);border-radius:2px;overflow:hidden;text-decoration:none}
 .pct s i{display:block;height:100%;background:var(--ink);opacity:.7}
@@ -176,6 +182,7 @@ table{border-collapse:collapse;width:100%}
 .chip.up{background:var(--usa-soft);color:var(--usa)}
 .chip.down{background:var(--ussr-soft);color:var(--ussr)}
 .chip.out{background:var(--empty);color:var(--muted)}
+.chip.out.dq{color:var(--ussr)}
 .chip.ext{background:var(--tie-soft);color:var(--tie)}
 
 /* head-to-head */
@@ -248,6 +255,28 @@ a.plink:focus-visible{outline:2px solid var(--usa);outline-offset:2px;border-rad
 .gm .pn{opacity:1}
 .gsum{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 10px;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}
 .gsum b{color:var(--ink)}
+.ct td{white-space:normal;vertical-align:middle}.ct td:first-child,.ct td:last-child{white-space:nowrap}
+.nick{font-family:var(--body);font-size:14px;word-break:break-word}
+.nonick{color:var(--muted);font-style:italic;font-size:12px}
+.copy{margin-left:6px;font:12px var(--body);border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:3px;padding:0 5px;cursor:pointer;line-height:18px}
+.copy:hover{color:var(--ink);border-color:var(--ink)}.copy.ok{color:var(--usa);border-color:var(--usa)}
+.mailp{color:var(--usa);font-size:13px;text-decoration:none}.mailp:hover{text-decoration:underline}
+/* division card header on one line: name · games played · view buttons */
+@media (min-width:620px){
+  .card-head{flex-wrap:nowrap}
+  .card-head h3{font-size:22px;white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis}
+  .card-head .meta{gap:8px;flex:none}
+  .card-head .meter{width:36px}
+  .grid.divs .card-head .side{display:none}
+  .card-head .seg button{padding:4px 7px;font-size:12px}
+}
+@media (min-width:1117px) and (max-width:1199px){.card-head .seg button{padding:4px 5px}.card-head h3{font-size:21px}.card-head .meter{width:30px}}
+/* a level with a single division (Stalin): card centred, same width as the others */
+.grid.solo{grid-template-columns:minmax(0,min(100%,calc((100% - 18px)/2)));justify-content:center}
+@media (max-width:1116px){.grid.solo{grid-template-columns:minmax(0,1fr)}}
+/* an odd last division on a level (Level 3: 3 divisions, Level 4: 5) sits centred under the pairs */
+@media (min-width:1117px){.grid.divs:not(.solo)>.card:last-child:nth-child(odd){grid-column:1/-1;justify-self:center;width:calc((100% - 18px)/2)}}
+.tier-head.center{justify-content:center}.tier-head.center .rule{flex:1;min-width:20px}
 .pmatch+.pmatch{border-top:2px solid var(--line)}
 .pmhead{display:flex;justify-content:space-between;align-items:baseline;padding:10px 14px 0}
 .pmhead b{font:800 18px var(--display);text-transform:uppercase}
@@ -1226,7 +1255,7 @@ function noteHtml(note,tier){
   if(em){const to=TIER_EMOJI[em];rest=note.slice(em.length).trim();
     out+=to<tier?`<span class="chip up" title="Promoted to Level ${to}">↑ ${em} Div ${to}</span>`:to>tier?`<span class="chip down" title="Relegated to Level ${to}">↓ ${em} Div ${to}</span>`:"";}
   if(/^Extension/.test(rest)) out+=`<span class="chip ext">Ext. to Oct 31</span>`;
-  else if(/^(Disqualified|Withdrawn)/.test(rest)) out+=`<span class="chip out">${esc(rest.split(" ")[0])}</span>${esc(rest.replace(/^\w+\s*/,""))}`;
+  else if(/^(Disqual|Disquali|Withdraw)\w*/i.test(rest)){out+=/^withdraw/i.test(rest)?`<span class="chip out">Withdrawn</span>`:`<span class="chip out dq">Disqualified</span>`;out+=esc(rest.replace(/^\w+\s*/,""));}
   else if(rest) out+=esc(rest.replace(/^Finished/,"Done"));
   return out;
 }
@@ -1256,18 +1285,32 @@ function gamesBody(d){
   return `<div class="gsum"><span><b>${done}</b> played · <b>${list.length-done}</b> to play</span><div class="seg" role="group" aria-label="Show games">${btn("all","All")}${btn("todo","To play")}${btn("done","Played")}</div></div>
     <div class="scroll"><table class="st gm"><thead><tr><th class="l">Game</th><th class="l">USA</th><th class="l">USSR</th><th class="l">Result</th></tr></thead><tbody>${rows||`<tr><td colspan="4" class="gres">No games in this filter.</td></tr>`}</tbody></table></div>`;
 }
+// ---- contacts (division tabs of the sheet: Playdek and Discord nicknames). E-mail addresses are never put on this page:
+// the e-mail link goes to the player's twilight-struggle.com profile, which is only visible to logged-in members. ----
+function contactBody(d){
+  const q=state.q.toLowerCase(), list=(typeof CONTACTS!=="undefined"&&CONTACTS&&CONTACTS[d.name])||[];
+  const by={};list.forEach(r=>by[r[0]]=r);
+  const nick=(v,kind)=>v?`<span class="nick">${esc(v)}</span><button class="copy" data-copy="${esc(v)}" title="Copy ${kind} nickname" aria-label="Copy ${kind} nickname ${esc(v)}">⧉</button>`:`<span class="nonick" title="No nickname given yet">not provided</span>`;
+  const rows=d.s.map(r=>{const n=r[0],c=by[n]||[n,"",""],p=TS_PLAYERS[n],hit=q&&n.toLowerCase().includes(q);
+    const mail=p&&p[0]?`<a class="mailp" href="https://twilight-struggle.com/userprofile/${p[0]}" target="_blank" rel="noopener" title="The e-mail address is on ${esc(n)}'s twilight-struggle.com profile (log in to see it)">✉ via profile ↗</a>`:`<span class="nonick">–</span>`;
+    return `<tr class="${hit?"hit":""}"><td>${plink(n)}</td><td>${nick(c[1],"Playdek")}</td><td>${nick(c[2],"Discord")}</td><td>${mail}</td></tr>`}).join("");
+  return `<div class="scroll"><table class="st gm ct"><thead><tr><th class="l">Player</th><th class="l">Playdek</th><th class="l">Discord</th><th class="l">E-mail</th></tr></thead><tbody>${rows}</tbody></table></div>
+    <p class="lvnote">E-mail addresses are not shown here. “via profile” opens the player's twilight-struggle.com profile, where logged-in members can see it. Missing nickname? Send it to <span class="mono" style="user-select:all">RTSL.solidarity@gmail.com</span>.</p>`;
+}
 function card(d){
   const key=d.name, view=state.view[key]||"table", n=d.h.length;
   const q=state.q.toLowerCase();
   const played=divPlayed(d), total=n*(n-1)/2;
   let body;
-  if(view==="games"){
+  if(view==="contact"){
+    body=contactBody(d);
+  }else if(view==="games"){
     body=gamesBody(d);
   }else if(view==="table"){
     body=`<div class="scroll"><table class="st"><thead><tr><th>#</th><th class="l">Player</th><th>W</th><th>L</th><th>T</th><th>Win %</th><th>Left</th><th class="l">Status</th></tr></thead><tbody>`+
     d.s.map((r,i)=>{const p=pct(r[1],r[2],r[3]);const hit=q&&r[0].toLowerCase().includes(q);
-      return `<tr class="${hit?"hit":""}"><td class="rk">${i+1}</td><td class="name${r[4]===0?" done":""}" title="${r[4]===0?"Finished all games":r[4]+" games left"}">${plink(r[0])}${moveIcon(r[5],d.tier)}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]||"–"}</td>
-      <td><span class="pct">${(p*100).toFixed(1)}<s><i style="width:${p*100}%"></i></s></span></td><td>${r[4]||"–"}</td><td class="note">${noteHtml(r[5],d.tier)}</td></tr>`}).join("")+
+      return `<tr class="${hit?"hit":""}"><td class="rk">${i+1}</td><td class="name${r[4]===0?" done":""}" title="${r[4]===0?"Finished all games":r[4]+" games left"}">${plink(r[0])}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]||"–"}</td>
+      <td><span class="pct">${(p*100).toFixed(1)}<s><i style="width:${p*100}%"></i></s></span></td><td>${r[4]||"–"}</td><td class="note"><div class="nw">${noteHtml(r[5],d.tier)}</div></td></tr>`}).join("")+
     `</tbody></table></div>`;
   }else{
     const order=d.s.map(r=>d.h.indexOf(r[0]));
@@ -1303,10 +1346,11 @@ function levelSection(t){
   const body=rows.map(r=>{
     const c=levelClass(r.label);if(c)band=c;
     const d=pd[r.name],p=pct(r.w,r.l,r.t),hit=q&&r.name.toLowerCase().includes(q);
-    const lab=r.label?`<span class="lchip ${c||""}">${esc(r.label)}</span>`:"";
-    return `<tr class="${band?"b-"+band:""}${hit?" hit":""}"><td class="rk">${r.rank??""}</td><td class="name${r.gp===0?" done":""}" title="${r.gp===0?"Finished all games":r.gp+" games left"}">${plink(r.name)}${moveIcon(r.note,t)}</td>
+    // "Relegated to Level N" / "Remain at Level N" boxes are left out: the row colour and the level icon already say it
+    const lab=r.label&&!/^\s*(Relegat\w*|Remain\w*)\s+(to|at|in)\s+Level/i.test(r.label)?`<span class="lchip ${c||""}">${esc(r.label)}</span>`:"";
+    return `<tr class="${band?"b-"+band:""}${hit?" hit":""}"><td class="rk">${r.rank??""}</td><td class="name${r.gp===0?" done":""}" title="${r.gp===0?"Finished all games":r.gp+" games left"}">${plink(r.name)}</td>
       <td class="dv">${d?`<span class="dchip" data-tier="${d.tier}">${esc(d.name)}</span>`:""}</td><td>${r.w}</td><td>${r.l}</td><td>${r.t||"–"}</td>
-      <td><span class="pct">${(p*100).toFixed(1)}<s><i style="width:${p*100}%"></i></s></span></td><td>${r.gp||"–"}</td><td class="note">${lab}${noteHtml(r.note||"",t)}</td></tr>`;
+      <td><span class="pct">${(p*100).toFixed(1)}<s><i style="width:${p*100}%"></i></s></span></td><td>${r.gp||"–"}</td><td class="note"><div class="nw">${lab}${noteHtml(r.note||"",t)}</div></td></tr>`;
   }).join("");
   const live=Array.isArray(LEV)&&LEV.length;
   return `<section class="tier" data-tier="${t}"><div class="tier-head"><h2>${LVL_ICON[t]||""} Level ${t}</h2><span class="label">${rows.length} players · ${esc(LEVEL_DIVS[t])}</span><span class="rule"></span></div>
@@ -1411,7 +1455,7 @@ function archSection(){
     }else{
       body=`<div class="scroll"><table class="st"><thead><tr><th>#</th><th class="l">Player</th><th>W</th><th>L</th><th>T</th><th>Win %</th><th class="l">Note</th></tr></thead><tbody>${rows.map((r,i)=>{
         const x=P[r[0]],p=pct(r[1],r[2],r[3]),hit=q&&x.toLowerCase().includes(q);
-        return `<tr class="${hit?"hit":""}"><td class="rk">${i+1}</td><td class="name">${nm(r[0])}${i===0&&tier===1?` <span title="Champion">🏆</span>`:""}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]||"–"}</td><td><span class="pct">${(p*100).toFixed(1)}<s><i style="width:${p*100}%"></i></s></span></td><td class="note">${noteHtml(r[5]||"",tier)}</td></tr>`}).join("")}</tbody></table></div>`;
+        return `<tr class="${hit?"hit":""}"><td class="rk">${i+1}</td><td class="name">${nm(r[0])}${i===0&&tier===1?` <span title="Champion">🏆</span>`:""}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]||"–"}</td><td><span class="pct">${(p*100).toFixed(1)}<s><i style="width:${p*100}%"></i></s></span></td><td class="note"><div class="nw">${noteHtml(r[5]||"",tier)}</div></td></tr>`}).join("")}</tbody></table></div>`;
     }
     const seg=`<div class="seg" role="group" aria-label="View"><button data-av="${esc(key)}" data-v="table" aria-pressed="${view==="table"}">Table</button><button data-av="${esc(key)}" data-v="results" aria-pressed="${view==="results"}">Results${dres.length?" ("+dres.length+")":""}</button></div>`;
     return q&&!hitAny?"":`<div class="card" data-tier="${tier}"><div class="card-head"><h3>${esc(name)} <span class="side">${["","DIV 1","DIV 2","DIV 3","DIV 4"][tier]||""}</span></h3>${seg}</div>${body}</div>`;
@@ -1495,6 +1539,7 @@ function hofSection(){
       <div class="card hofmost"><h3>Most titles</h3><ol>${top.map(([n,c])=>`<li><span>${TS_PLAYERS[n]?plink(n):esc(n)}</span><b class="mono">${c}×</b></li>`).join("")}</ol></div>
     </div></section>`;
 }
+function fallbackCopy(v){try{const t=document.createElement("textarea");t.value=v;t.style.position="fixed";t.style.opacity="0";document.body.appendChild(t);t.select();document.execCommand("copy");t.remove()}catch(_){}}
 let render=function(){
   const tiers=[1,2,3,4];
   document.getElementById("mode").innerHTML=[[["div","Divisions"],["level","Levels"],["res","Results"],["po","Playoffs"],["stats","Statistics"]],[["hof","Hall of Fame"],["arch","Archive"],["perf","Performance"]]].map((g,i)=>`<span class="mgrp${i?" hist":""}" role="group" aria-label="${i?"History":"Current season"}">${g.map(([v,l])=>`<button data-mode="${v}" aria-pressed="${state.mode===v}">${l}</button>`).join("")}</span>`).join("");
@@ -1536,13 +1581,15 @@ let render=function(){
     let ds=DIVS.filter(d=>d.tier===t);
     if(q) ds=ds.filter(d=>d.h.some(n=>n.toLowerCase().includes(q)));
     if(!ds.length) return;
-    html+=`<section class="tier" data-tier="${t}"><div class="tier-head"><h2>${LVL_ICON[t]||""} ${TIER_NAMES[t]}</h2><span class="label">${ds.length} ${ds.length>1?"divisions":"division"}</span><span class="rule"></span></div><div class="grid">${ds.map(card).join("")}</div></section>`;
+    html+=`<section class="tier" data-tier="${t}"><div class="tier-head center"><span class="rule"></span><h2>${LVL_ICON[t]||""} ${TIER_NAMES[t]}</h2><span class="label">${ds.length} ${ds.length>1?"divisions":"division"}</span><span class="rule"></span></div><div class="grid divs${ds.length===1?" solo":""}">${ds.map(card).join("")}</div></section>`;
   });
   document.getElementById("main").innerHTML=html||`<p class="empty">No player matches “${esc(state.q)}”.</p>`;
 };
 document.getElementById("mode").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;state.mode=b.dataset.mode;try{localStorage.setItem("rtsl-mode",state.mode)}catch(_){}render()});
 document.getElementById("tabs").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;state.tier=b.dataset.tier;try{localStorage.setItem("rtsl-tier",state.tier)}catch(_){}render()});
 document.getElementById("main").addEventListener("click",e=>{
+  const cp=e.target.closest("button[data-copy]");if(cp){const v=cp.dataset.copy;const done=()=>{cp.textContent="✓";cp.classList.add("ok");setTimeout(()=>{cp.textContent="⧉";cp.classList.remove("ok")},1200)};
+    try{navigator.clipboard.writeText(v).then(done,()=>{fallbackCopy(v);done()})}catch(_){fallbackCopy(v);done()}return}
   const ar=e.target.closest("button[data-arch]");if(ar){state.arch=ar.dataset.arch;state.mode="arch";try{localStorage.setItem("rtsl-mode","arch")}catch(_){}render();if(ar.classList.contains("slink"))window.scrollTo({top:document.getElementById("main").offsetTop-80});return}
   const ps=e.target.closest("button[data-ps]");if(ps){const c=ps.dataset.ps;state.ps=state.ps.col===c?{col:c,dir:-state.ps.dir}:{col:c,dir:1};render();return}
   const av=e.target.closest("button[data-av]");if(av){state.av[av.dataset.av]=av.dataset.v;render();return}
@@ -1641,6 +1688,11 @@ function stamp(){let t;try{t=new Date(UPDATED).toLocaleString("en-GB",{day:"nume
 stamp();
 render();
 
+// sticky banner: the toolbar sticks just below it, whatever height the banner wraps to
+(function(){const b=document.querySelector(".promo");if(!b)return;
+  const set=()=>document.documentElement.style.setProperty("--promo-h",b.offsetHeight+"px");
+  set();addEventListener("resize",set);if(window.ResizeObserver)new ResizeObserver(set).observe(b);})();
+
 // Latest data: an hourly job (GitHub Actions) publishes data.json to the free "data" branch deploy
 // of this Netlify site (data--<site>.netlify.app). The page shows its built-in copy first, then swaps in data.json.
 const DATA_URL=(()=>{const h=location.hostname;return /\.netlify\.app$/i.test(h)&&!/^data--/i.test(h)?`https://data--${h}/data.json`:"data.json";})();
@@ -1662,11 +1714,6 @@ const DATA_URL=(()=>{const h=location.hostname;return /\.netlify\.app$/i.test(h)
     .catch(e=>console.warn("Latest data not loaded, showing the built-in copy:",e))
     .finally(()=>clearTimeout(timer));
 })();
-
-// sticky banner: the toolbar sticks just below it, whatever height the banner wraps to
-(function(){const b=document.querySelector(".promo");if(!b)return;
-  const set=()=>document.documentElement.style.setProperty("--promo-h",b.offsetHeight+"px");
-  set();addEventListener("resize",set);if(window.ResizeObserver)new ResizeObserver(set).observe(b);})();
 </script>
 </body>
 </html>
