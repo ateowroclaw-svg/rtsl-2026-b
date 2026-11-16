@@ -126,7 +126,7 @@ function parseMatches(csv) {
 }
 // ==== SHARED-PARSERS-END ====
 
-const [siteDir, outDir, stPath, resPath, levPath, prevPath, matchDir] = process.argv.slice(2);
+const [siteDir, outDir, stPath, resPath, levPath, prevPath, matchDir, regPath] = process.argv.slice(2);
 if (!siteDir || !outDir || !stPath) { console.error("usage: build-data.mjs <siteDir> <outDir> <standings.csv> <results.csv|-> <levels.csv|-> <prev.json|->"); process.exit(2); }
 const readIf = p => (p && p !== "-" && fs.existsSync(p) && fs.statSync(p).size > 0) ? fs.readFileSync(p, "utf8") : null;
 
@@ -147,8 +147,21 @@ if (matchDir && matchDir !== "-") for (const tab of TABS) {
   try { matches[tab.split("-")[1]] = parseMatches(t); } catch (e) { console.error(tab + " skipped: " + e.message); }
 }
 
-const data = { divs, res, lev, matches };
-const same = !!prev && JSON.stringify({ divs: prev.divs, res: prev.res ?? null, lev: prev.lev ?? null, matches: prev.matches ?? {} }) === JSON.stringify(data);
+// Registered players for the next edition (reg.json from tools/fetch-reg.mjs): [[name, profileId], ...]
+let reg = (prev && prev.reg) || null;
+try {
+  const t = readIf(regPath);
+  if (t) {
+    const list = JSON.parse(t);
+    if (Array.isArray(list) && list.length >= 5) {
+      const players = list.map(x => [String(x[0]).trim(), parseInt(x[1], 10)]).filter(x => x[0] && Number.isFinite(x[1]));
+      if (!reg || JSON.stringify(reg.players) !== JSON.stringify(players))
+        reg = { updated: new Date().toISOString(), url: (reg && reg.url) || "https://twilight-struggle.com/tournaments/368", players };
+    } else console.error("reg.json skipped: list looks empty");
+  }
+} catch (e) { console.error("reg.json skipped: " + e.message); }
+const data = { divs, res, lev, matches, reg };
+const same = !!prev && JSON.stringify({ divs: prev.divs, res: prev.res ?? null, lev: prev.lev ?? null, matches: prev.matches ?? {}, reg: prev.reg ?? null }) === JSON.stringify(data);
 const updated = same && prev.updated ? prev.updated : new Date().toISOString();
 
 fs.rmSync(outDir, { recursive: true, force: true });
@@ -162,11 +175,14 @@ const idx = path.join(outDir, "index.html");
 const html = fs.readFileSync(idx, "utf8");
 const a = html.indexOf("/*DATA-START*/"), b = html.indexOf("/*DATA-END*/");
 if (a < 0 || b < 0) throw new Error("DATA markers missing in " + idx);
-fs.writeFileSync(idx, html.slice(0, a) + block + html.slice(b));
+let out = html.slice(0, a) + block + html.slice(b);
+const ra = out.indexOf("/*REG-START*/"), rb = out.indexOf("/*REG-END*/");
+if (reg && ra >= 0 && rb > ra) out = out.slice(0, ra) + "/*REG-START*/\nlet REG=" + JSON.stringify(reg) + ";\n" + out.slice(rb);
+fs.writeFileSync(idx, out);
 
 // The data branch is published from its root, and data.json may be read by the main site.
 fs.writeFileSync(path.join(outDir, "netlify.toml"), '[build]\n  publish = "."\n  command = ""\n');
 fs.appendFileSync(path.join(outDir, "_headers"), "\n/data.json\n  Access-Control-Allow-Origin: *\n  Cache-Control: no-cache\n");
 
 const players = divs.reduce((x, d) => x + d.s.length, 0);
-console.log(same ? "unchanged" : `changed: ${divs.length} divisions, ${players} players, ${res ? res.length : 0} results, ${lev ? lev.length : 0} level rows`);
+console.log(same ? "unchanged" : `changed: ${divs.length} divisions, ${players} players, ${res ? res.length : 0} results, ${lev ? lev.length : 0} level rows, ${reg ? reg.players.length : 0} registered`);

@@ -19,6 +19,14 @@ if 'rel="icon"' not in head:
 body = src[src.index("<style>"):]
 assert "fonts.googleapis" not in body and "fonts.gstatic" not in body
 
+# 2b. Contact tab stays on the Claude page only (nicknames are not published on Netlify)
+import re as _re
+body, n = _re.subn(r'<button data-k="\$\{key\}" data-v="contact" aria-pressed="\$\{view==="contact"\}">Contact</button>', "", body)
+assert n == 1, "Contact button not found"
+cs = body.index("let CONTACTS=")
+ce = body.index("/*DATA-END*/", cs)
+body = body[:cs] + "let CONTACTS=null;\n" + body[ce:]
+
 # 3. data that the loader replaces must be reassignable
 body = body.replace("const UPDATED=", "let UPDATED=", 1).replace("const DIVS=[", "let DIVS=[", 1)
 
@@ -51,6 +59,7 @@ const DATA_URL=(()=>{const h=location.hostname;return /\.netlify\.app$/i.test(h)
       if(d.updated&&UPDATED&&d.updated<=UPDATED)return;
       DIVS=d.divs;if(Array.isArray(d.res))RES=d.res;if(Array.isArray(d.lev))LEV=d.lev;
       if(d.matches&&typeof d.matches==="object")MATCHES=d.matches;
+      if(d.reg&&Array.isArray(d.reg.players)&&typeof REG!=="undefined")REG=d.reg;
       if(d.updated)UPDATED=d.updated;
       PERF_ROWS=null;
       drawClock();render();stamp();
