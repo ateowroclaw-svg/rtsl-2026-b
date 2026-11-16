@@ -6,7 +6,7 @@ name: Refresh RTSL data
 # Nothing here touches the main branch, so it never triggers a paid production deploy.
 on:
   schedule:
-    - cron: "17 * * * *"
+    - cron: "7-59/10 * * * *"
   workflow_dispatch:
 
 permissions:
