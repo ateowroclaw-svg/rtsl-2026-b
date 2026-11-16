@@ -58,6 +58,12 @@ h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:.0
   position:sticky;top:env(safe-area-inset-top,0px);z-index:8;box-shadow:0 1px 0 rgba(0,0,0,.12)}
 @media (max-width:600px){.promo{font-size:13px;padding:6px 12px}.promo-tag{display:none}}
 .promo b{font-weight:800}
+.promo-link{color:#fff;font-weight:800;text-decoration:underline;text-underline-offset:3px}
+.promo-btn{font:600 13px var(--body);color:var(--ussr);background:#fff;border:1px solid #fff;border-radius:4px;padding:4px 10px;cursor:pointer;white-space:nowrap}
+.promo-btn:hover{background:rgba(255,255,255,.88)}.promo-btn[aria-pressed="true"]{background:transparent;color:#fff}
+.promo-btn span{font-family:var(--mono);font-weight:700;margin-left:2px}
+.regtbl td.code{color:var(--muted)}.regtbl .new{font-size:12px;color:var(--muted);font-style:italic}
+.regtbl .lvlc{white-space:nowrap}
 .promo-tag{font:700 11px var(--mono);text-transform:uppercase;letter-spacing:.12em;border:1px solid rgba(255,255,255,.7);border-radius:3px;padding:2px 7px}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .promo{background:#a32a24}}
 :root[data-theme="dark"] .promo{background:#a32a24}
@@ -284,6 +290,7 @@ a.plink:focus-visible{outline:2px solid var(--usa);outline-offset:2px;border-rad
 .pvs{padding:4px 14px 8px;font-size:15px}
 .pvs .vs{color:var(--muted);font-size:13px;margin:0 8px}
 .ptbd{color:var(--muted);font-style:italic}
+.pvs{display:flex;flex-wrap:wrap;align-items:center;gap:4px 0}.pp{display:inline-flex;flex-direction:column;font-weight:600}.pp small{font-size:11px;font-weight:400;color:var(--muted);margin-left:26px}
 .mvic{display:inline-flex;align-items:center;gap:1px;margin-left:6px;font:600 13px var(--mono);padding:1px 6px;box-shadow:inset 0 0 0 1px currentColor;border-radius:10px;vertical-align:middle;white-space:nowrap}
 .mvic.up{background:var(--usa-soft);color:var(--usa)}
 .mvic.down{background:var(--ussr-soft);color:var(--ussr)}
@@ -353,7 +360,7 @@ a.plink:focus-visible{outline:2px solid var(--usa);outline-offset:2px;border-rad
 @media (prefers-reduced-motion:no-preference){.track .fill{transition:width .8s ease}}
 </style>
 
-<div class="promo" role="note"><span class="promo-tag">New season</span><span>Registration for the edition <b>2027-A</b> starts soon! Expected start of next season <b>18 December 2026</b>.</span></div>
+<div class="promo" role="note"><span class="promo-tag">New season</span><span>Registration for the edition <b>2027-A</b> is open! <a class="promo-link" href="https://twilight-struggle.com/tournaments/368" target="_blank" rel="noopener">Register here ↗</a> · Start of the season <b>18 December 2026</b>.</span><button type="button" class="promo-btn" id="regbtn" aria-pressed="false">Registered players <span id="regn"></span></button></div>
 <div class="wrap">
   <header>
     <div class="brand">
@@ -415,7 +422,7 @@ a.plink:focus-visible{outline:2px solid var(--usa);outline-offset:2px;border-rad
 // Matrix rows follow the sheet's header order (h). W = row player won, L = lost, T = tie, . = not played / self.
 // Standings rows (s) follow the sheet's ranking: [name, W, L, T, games left, note]
 /*DATA-START*/
-let UPDATED="2026-11-15T21:51:46.861Z";
+let UPDATED="2026-11-16T09:09:28.236Z";
 let DIVS=[
 {tier:1,name:"Stalin",side:"ussr",
  h:["Weiran Xie","Onur Kulaksizoglu","Alex Lee","Patrick Gong","Jifei Li","Mathias Heinze","David Choo","Jan Wimmer","Justin Abramson","Jarib Flores","Tomas Tvaroh"],
@@ -1197,6 +1204,9 @@ let MATCHES={
 "Andropov":[["A001","Goos Kuijper","Markel Elortza",true],["A002","Goos Kuijper","Pau Sala",true],["A003","Goos Kuijper","Brad McCoy",true],["A004","Goos Kuijper","Yauheni Mashkouski",true],["A005","Goos Kuijper","Matt Davies",true],["A006","Raymond Wang","Goos Kuijper",true],["A007","David Bartolome Duran","Goos Kuijper",true],["A008","Balazs Ulveczki","Goos Kuijper",true],["A009","Daniël Hogetoorn","Goos Kuijper",true],["A010","Aleksandr Pushkarev","Goos Kuijper",true],["A011","Markel Elortza","Pau Sala",true],["A012","Markel Elortza","Brad McCoy",true],["A013","Markel Elortza","Yauheni Mashkouski",true],["A014","Markel Elortza","Matt Davies",true],["A015","Markel Elortza","Raymond Wang",true],["A016","David Bartolome Duran","Markel Elortza",true],["A017","Balazs Ulveczki","Markel Elortza",true],["A018","Daniël Hogetoorn","Markel Elortza",true],["A019","Aleksandr Pushkarev","Markel Elortza",true],["A020","Pau Sala","Brad McCoy",true],["A021","Pau Sala","Yauheni Mashkouski",true],["A022","Pau Sala","Matt Davies",true],["A023","Pau Sala","Raymond Wang",true],["A024","Pau Sala","David Bartolome Duran",true],["A025","Balazs Ulveczki","Pau Sala",true],["A026","Daniël Hogetoorn","Pau Sala",true],["A027","Aleksandr Pushkarev","Pau Sala",true],["A028","Brad McCoy","Yauheni Mashkouski",true],["A029","Brad McCoy","Matt Davies",true],["A030","Brad McCoy","Raymond Wang",true],["A031","Brad McCoy","David Bartolome Duran",true],["A032","Brad McCoy","Balazs Ulveczki",true],["A033","Daniël Hogetoorn","Brad McCoy",true],["A034","Aleksandr Pushkarev","Brad McCoy",true],["A035","Yauheni Mashkouski","Matt Davies",true],["A036","Yauheni Mashkouski","Raymond Wang",true],["A037","Yauheni Mashkouski","David Bartolome Duran",true],["A038","Yauheni Mashkouski","Balazs Ulveczki",true],["A039","Yauheni Mashkouski","Daniël Hogetoorn",true],["A040","Aleksandr Pushkarev","Yauheni Mashkouski",true],["A041","Matt Davies","Raymond Wang",true],["A042","Matt Davies","David Bartolome Duran",true],["A043","Matt Davies","Balazs Ulveczki",true],["A044","Matt Davies","Daniël Hogetoorn",true],["A045","Matt Davies","Aleksandr Pushkarev",true],["A046","Raymond Wang","David Bartolome Duran",true],["A047","Raymond Wang","Balazs Ulveczki",true],["A048","Raymond Wang","Daniël Hogetoorn",true],["A049","Raymond Wang","Aleksandr Pushkarev",true],["A050","David Bartolome Duran","Balazs Ulveczki",true],["A051","David Bartolome Duran","Daniël Hogetoorn",true],["A052","David Bartolome Duran","Aleksandr Pushkarev",true],["A053","Balazs Ulveczki","Daniël Hogetoorn",true],["A054","Balazs Ulveczki","Aleksandr Pushkarev",true],["A055","Daniël Hogetoorn","Aleksandr Pushkarev",true]]
 };
 /*DATA-END*/
+/*REG-START*/
+let REG={"updated":"2026-11-16T09:09:28.235Z","url":"https://twilight-struggle.com/tournaments/368","players":[["Jarek Grzaslewicz",2082],["Carlos Pintado",3063],["Travis Steele",3035],["Marek Burkacki",2367],["Hicham Vanborm",2012],["Evangelos Iosifidis",1904],["Ajoy Chakrabarti",1547],["Arek Sitkowski",1635],["Daniël Hogetoorn",1790],["Ted Livermore",2745],["Mathias Heinze",2393],["Hervé Duval",2010],["Francisco Sanchez",3201],["Yongjun Park",2850],["Raymond Wang",3154],["Patxo Sans",3003],["Justin Abramson",2232],["Bidart Larrakoetxea",1677],["Pavel Meshkov",2536],["John Kim",2165],["Derek Miller",1844],["Jan Schmidt",2074],["David Choo",1814],["Paweł Januszewski",2537],["Daniel Ramos",3079],["Max DuBoff",2414],["Peter Frantz",2555],["Juan Antonio Romera",3166],["Bledson Bezerra",1689],["Koen Dijkstra",3065],["Chris Xu",1757],["Mike Oehler",3185],["Aaron Ng",1527],["Stan Kaatee",2709],["Jianshu Qian",3123],["Patrick Gong",2525],["Michal Borkowicz",2439],["Peter Heuvelman",2556],["Tomasz Babicz",2781],["Enrico Ciardo",2956],["Makis Bahtsevanis",2344],["Andrea Mancuso",1600],["Tomas Tvaroh",2780],["Jan Ostrowski",3210],["Matt Davies",2399],["Kevin Gute",2271],["Pau Sala",2981],["Garreth Hawkins",3219],["Giorgos Iosifidis",1974],["J.A McMahon",2050],["Przemek Przemyslaw",2577],["David Bartolome Duran",1811],["Balazs Ulveczki",3100],["Michael McKibbin",2429],["Haydon Dennison",3294],["Michael Stryker",2438],["Alex Lee",2996],["Anton Skott",1630],["Ziemowit Pazderski",2878],["Robin Bos",3064],["Ruben Messelink",2634],["Rafał Maksymiuk",2583],["Raewon Jang",3009],["Zihang Zhou",3170],["Peiyuan Huang",3402],["Nicu Oprea",3051],["David Erill",1817]]};
+/*REG-END*/
 // Level icons used in the sheet: 1 👽, 2 👹, 3 🤖, 4 👻
 const LVL_ICON={1:"👽",2:"👹",3:"🤖",4:"👻"};
 // Games played per division: counted from the division tab's played ticks (same as the sheet's game list);
@@ -1209,7 +1219,7 @@ function divPlayed(d){const g=typeof MATCHES!=="undefined"&&MATCHES&&MATCHES[d.n
   if(g&&g.length){const c=resultCodes();return g.filter(x=>gamePlayed(x,c)).length;}
   return Math.round(d.s.reduce((a,r)=>a+r[1]+r[2]+r[3],0)/2);}
 // Player profiles on twilight-struggle.com: name -> [profile id, country code]; flags from the same site (36x24 PNG).
-const TS_PLAYERS={"Aaron Ng":[1527,"HK"],"Adrian Ziarko":[1540,"PL"],"Aidan Archer":[1543,"AU"],"Ajoy Chakrabarti":[1547,"CA"],"Aleksandr Pushkarev":[3161,"NL"],"Aleksei Lobunko":[1558,"NL"],"Alex Lee":[2996,"CN"],"Andrea Mancuso":[1600,"IT"],"Antoine Danel":[1627,"FR"],"Anton Skott":[1630,"SE"],"Arek Sitkowski":[1635,"PL"],"Asan Beisenov":[3196,"KZ"],"B H Ju":[1652,"KR"],"Balazs Ulveczki":[3100,"HU"],"Bartosz Wróbel":[1658,"PL"],"Bidart Larrakoetxea":[1677,"EUS"],"Bledson Bezerra":[1689,"BR"],"Brad McCoy":[2947,"CA"],"Carl Young":[1715,"CN"],"Carlos Pintado":[3063,"ES"],"Charlie Blackmar":[3059,"US"],"Chris Xu":[1757,"CN"],"Crow Crowlas":[1781,"UK"],"Daniel Ramos":[3079,"ES"],"Daniel Simon":[1797,"ES"],"Daniël Hogetoorn":[1790,"NL"],"David Bartolome Duran":[1811,"ES"],"David Choo":[1814,"KR"],"David Erill":[1817,"CAT"],"David Young":[1834,"US"],"Derek Miller":[1844,"US"],"Dimitris Katsoulas":[1853,"GR"],"Dylan Provencher":[3015,"US"],"Enrico Ciardo":[2956,"IT"],"Evangelos Iosifidis":[1904,"GR"],"Francisco Sanchez":[3201,"ES"],"Frank Tarena":[1933,"FR"],"Garreth Hawkins":[3219,"UK"],"Giorgos Iosifidis":[1974,"GR"],"Goos Kuijper":[3036,"NL"],"Guang Li":[3105,"CN"],"Guangheng Wu":[1984,"CN"],"Haydon Dennison":[3294,"AU"],"Hervé Duval":[2010,"FR"],"Hicham Vanborm":[2012,"BE"],"J.A McMahon":[2050,"US"],"JJ Alt":[3267,"US"],"Jakub Węcławski":[2962,"PL"],"Jan Edvard Nodland":[3021,"NO"],"Jan Ostrowski":[3210,"PL"],"Jan Schmidt":[2074,"DE"],"Jan Wimmer":[2077,"US"],"Jarek Grzaslewicz":[2082,"PL"],"Jarib Flores":[2084,"ES"],"Jianshu Qian":[3123,"CN"],"Jifei Li":[3089,"CN"],"Jim Haefele":[2141,"US"],"Jinxi Xu":[3034,"CN"],"John Kim":[2165,"US"],"Jordan Cass":[2190,"US"],"Joris Vandenbroeck":[3155,"BE"],"Joshua Mauer":[3038,"US"],"Juan Antonio Romera":[3166,"ES"],"Justin Abramson":[2232,"US"],"Justin Nordstrom":[2235,"US"],"Katsiaryna Makouskaya":[2256,"PL"],"Kevin Gute":[2271,"US"],"Koen Dijkstra":[3065,"NL"],"Károly Lukács":[2254,"HU"],"Lukas Fuchs":[2330,"SK"],"Makis Bahtsevanis":[2344,"GR"],"Marc Nuño":[2356,"CAT"],"Marek Burkacki":[2367,"PL"],"Mark Overstreet":[2375,"US"],"Markel Elortza":[2971,"EUS"],"Mathias Heinze":[2393,"DK"],"Matt Davies":[2399,"US"],"Max DuBoff":[2414,"US"],"Michael McKibbin":[2429,"US"],"Michael Stryker":[2438,"US"],"Michal Borkowicz":[2439,"PL"],"Mike Archambault":[2449,"US"],"Mike Oehler":[3185,"US"],"Mikolaj Solkiewicz":[2461,"PL"],"Nick Harinos":[3162,"GR"],"Nicu Oprea":[3051,"RO"],"Onur Kulaksizoglu":[2508,"TR"],"Patrick Gong":[2525,"CN"],"Patxo Sans":[3003,"ES"],"Pau Sala":[2981,"CAT"],"Pavel Meshkov":[2536,"RU"],"Paweł Januszewski":[2537,"PL"],"Peter Davich":[2554,"US"],"Peter Frantz":[2555,"US"],"Peter Heuvelman":[2556,"NL"],"Przemek Przemyslaw":[2577,"PL"],"Raewon Jang":[3009,"KR"],"Rafał Maksymiuk":[2583,"PL"],"Raymond Wang":[3154,"US"],"Riley Dosh":[2985,"US"],"Robert Stegmann":[3013,"CA"],"Robin Bos":[3064,"NL"],"Roger Jolly":[2624,"KR"],"Rong Yu":[3104,"CN"],"Ruben Messelink":[2634,"NL"],"Ruifeng Li":[3298,"CA"],"Sergei Sazonov":[3322,"US"],"Silver Zhu":[3287,"CN"],"Simon Pudsey":[2986,"UK"],"Stan Kaatee":[2709,"NL"],"Ted Livermore":[2745,"US"],"Tim Engelhardt":[3209,"DE"],"Tim Furrow":[2762,"US"],"Tomas Tvaroh":[2780,"CZ"],"Tomasz Babicz":[2781,"PL"],"Travis Steele":[3035,"US"],"Urmas Yanis":[3243,"US"],"Weiran Xie":[2886,"CN"],"Yauheni Mashkouski":[3157,"BY"],"Yongjun Park":[2850,"KR"],"Zhuang Yan":[3084,"CN"],"Ziemowit Pazderski":[2878,"PL"],"Zihang Zhou":[3170,"CN"]};
+const TS_PLAYERS={"Aaron Ng":[1527,"HK"],"Adrian Ziarko":[1540,"PL"],"Aidan Archer":[1543,"AU"],"Ajoy Chakrabarti":[1547,"CA"],"Aleksandr Pushkarev":[3161,"NL"],"Aleksei Lobunko":[1558,"NL"],"Alex Lee":[2996,"CN"],"Andrea Mancuso":[1600,"IT"],"Antoine Danel":[1627,"FR"],"Anton Skott":[1630,"SE"],"Arek Sitkowski":[1635,"PL"],"Asan Beisenov":[3196,"KZ"],"B H Ju":[1652,"KR"],"Balazs Ulveczki":[3100,"HU"],"Bartosz Wróbel":[1658,"PL"],"Bidart Larrakoetxea":[1677,"EUS"],"Bledson Bezerra":[1689,"BR"],"Brad McCoy":[2947,"CA"],"Carl Young":[1715,"CN"],"Carlos Pintado":[3063,"ES"],"Charlie Blackmar":[3059,"US"],"Chris Xu":[1757,"CN"],"Crow Crowlas":[1781,"UK"],"Daniel Ramos":[3079,"ES"],"Daniel Simon":[1797,"ES"],"Daniël Hogetoorn":[1790,"NL"],"David Bartolome Duran":[1811,"ES"],"David Choo":[1814,"KR"],"David Erill":[1817,"CAT"],"David Young":[1834,"US"],"Derek Miller":[1844,"US"],"Dimitris Katsoulas":[1853,"GR"],"Dylan Provencher":[3015,"US"],"Enrico Ciardo":[2956,"IT"],"Evangelos Iosifidis":[1904,"GR"],"Francisco Sanchez":[3201,"ES"],"Frank Tarena":[1933,"FR"],"Garreth Hawkins":[3219,"UK"],"Giorgos Iosifidis":[1974,"GR"],"Goos Kuijper":[3036,"NL"],"Guang Li":[3105,"CN"],"Guangheng Wu":[1984,"CN"],"Haydon Dennison":[3294,"AU"],"Hervé Duval":[2010,"FR"],"Hicham Vanborm":[2012,"BE"],"J.A McMahon":[2050,"US"],"JJ Alt":[3267,"US"],"Jakub Węcławski":[2962,"PL"],"Jan Edvard Nodland":[3021,"NO"],"Jan Ostrowski":[3210,"PL"],"Jan Schmidt":[2074,"DE"],"Jan Wimmer":[2077,"US"],"Jarek Grzaslewicz":[2082,"PL"],"Jarib Flores":[2084,"ES"],"Jianshu Qian":[3123,"CN"],"Jifei Li":[3089,"CN"],"Jim Haefele":[2141,"US"],"Jinxi Xu":[3034,"CN"],"John Kim":[2165,"US"],"Jordan Cass":[2190,"US"],"Joris Vandenbroeck":[3155,"BE"],"Joshua Mauer":[3038,"US"],"Juan Antonio Romera":[3166,"ES"],"Justin Abramson":[2232,"US"],"Justin Nordstrom":[2235,"US"],"Katsiaryna Makouskaya":[2256,"PL"],"Kevin Gute":[2271,"US"],"Koen Dijkstra":[3065,"NL"],"Károly Lukács":[2254,"HU"],"Lukas Fuchs":[2330,"SK"],"Makis Bahtsevanis":[2344,"GR"],"Marc Nuño":[2356,"CAT"],"Marek Burkacki":[2367,"PL"],"Mark Overstreet":[2375,"US"],"Markel Elortza":[2971,"EUS"],"Mathias Heinze":[2393,"DK"],"Matt Davies":[2399,"US"],"Max DuBoff":[2414,"US"],"Michael McKibbin":[2429,"US"],"Michael Stryker":[2438,"US"],"Michal Borkowicz":[2439,"PL"],"Mike Archambault":[2449,"US"],"Mike Oehler":[3185,"US"],"Mikolaj Solkiewicz":[2461,"PL"],"Nick Harinos":[3162,"GR"],"Nicu Oprea":[3051,"RO"],"Onur Kulaksizoglu":[2508,"TR"],"Patrick Gong":[2525,"CN"],"Patxo Sans":[3003,"ES"],"Pau Sala":[2981,"CAT"],"Pavel Meshkov":[2536,"RU"],"Paweł Januszewski":[2537,"PL"],"Peter Davich":[2554,"US"],"Peiyuan Huang":[3402,"CA"],"Peter Frantz":[2555,"US"],"Peter Heuvelman":[2556,"NL"],"Przemek Przemyslaw":[2577,"PL"],"Raewon Jang":[3009,"KR"],"Rafał Maksymiuk":[2583,"PL"],"Raymond Wang":[3154,"US"],"Riley Dosh":[2985,"US"],"Robert Stegmann":[3013,"CA"],"Robin Bos":[3064,"NL"],"Roger Jolly":[2624,"KR"],"Rong Yu":[3104,"CN"],"Ruben Messelink":[2634,"NL"],"Ruifeng Li":[3298,"CA"],"Sergei Sazonov":[3322,"US"],"Silver Zhu":[3287,"CN"],"Simon Pudsey":[2986,"UK"],"Stan Kaatee":[2709,"NL"],"Ted Livermore":[2745,"US"],"Tim Engelhardt":[3209,"DE"],"Tim Furrow":[2762,"US"],"Tomas Tvaroh":[2780,"CZ"],"Tomasz Babicz":[2781,"PL"],"Travis Steele":[3035,"US"],"Urmas Yanis":[3243,"US"],"Weiran Xie":[2886,"CN"],"Yauheni Mashkouski":[3157,"BY"],"Yongjun Park":[2850,"KR"],"Zhuang Yan":[3084,"CN"],"Ziemowit Pazderski":[2878,"PL"],"Zihang Zhou":[3170,"CN"]};
 Object.assign(TS_PLAYERS,{"Peiyi Sun":[3057,"CN"],"Sheng Wei Qin":[2688,"CN"],"Tomáš Tvaroh":[2780,"CZ"],"Youngbae Park":[2853,"KR"],"Mathieu Latendresse":[2395,"CA"],"Janusz Szulc":[2079,"LI"],"Shackleton":[0,"US"]});
 
 const COUNTRY={"AU":"Australia","BE":"Belgium","BR":"Brazil","BY":"Belarus","CA":"Canada","CAT":"Catalonia","CN":"China","CZ":"Czech Republic","DE":"Germany","DK":"Denmark","ES":"Spain","EUS":"Basque Country","FR":"France","GR":"Greece","HK":"Hong Kong","HU":"Hungary","IT":"Italy","KR":"South Korea","KZ":"Kazakhstan","NL":"Netherlands","NO":"Norway","PL":"Poland","RO":"Romania","RU":"Russia","SE":"Sweden","SK":"Slovakia","TR":"Turkey","UK":"United Kingdom","US":"United States"};
@@ -1267,7 +1277,7 @@ function noteHtml(note,tier){
 }
 
 const state={tier:"all",q:"",view:{},mode:"div",gf:{},arch:"2026-A",av:{},ps:{col:"name",dir:1}};
-try{const m=localStorage.getItem("rtsl-mode");if(m==="level"||m==="div"||m==="hof"||m==="po"||m==="stats"||m==="arch"||m==="perf"||m==="res")state.mode=m}catch(e){}
+try{const m=localStorage.getItem("rtsl-mode");if(m==="level"||m==="div"||m==="hof"||m==="po"||m==="stats"||m==="arch"||m==="perf"||m==="res"||m==="reg")state.mode=m}catch(e){}
 try{const s=localStorage.getItem("rtsl-tier");if(s)state.tier=s}catch(e){}
 
 // ---- games list (division tabs of the sheet: code, sides, played tick; results joined by code) ----
@@ -1546,6 +1556,19 @@ function hofSection(){
     </div></section>`;
 }
 function fallbackCopy(v){try{const t=document.createElement("textarea");t.value=v;t.style.position="fixed";t.style.opacity="0";document.body.appendChild(t);t.select();document.execCommand("copy");t.remove()}catch(_){}}
+// ---- registered players for the next edition (tournament page on twilight-struggle.com, refreshed hourly) ----
+function regSection(){
+  const q=state.q.toLowerCase(),cur={};DIVS.forEach(d=>d.h.forEach(n=>cur[n]=d));
+  const link=(n,id)=>TS_PLAYERS[n]?plink(n):`<a class="plink" href="https://twilight-struggle.com/userprofile/${id}" target="_blank" rel="noopener"><span>${esc(n)}</span></a>`;
+  let t;try{t=new Date(REG.updated).toLocaleString(undefined,{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"})}catch(_){t=""}
+  const rows=REG.players.map(([n,id],i)=>{const d=cur[n],hit=q&&n.toLowerCase().includes(q);
+    return `<tr class="${hit?"hit":""}"><td class="code">${i+1}</td><td class="name">${link(n,id)}</td><td class="l lvlc">${d?`${LVL_ICON[d.tier]||""} Level ${d.tier} · ${esc(d.name)}`:`<span class="new">new struggler</span>`}</td></tr>`}).join("");
+  const nNew=REG.players.filter(([n])=>!cur[n]).length;
+  return `<section class="tier"><div class="tier-head"><h2>Registered players · 2027-A</h2><span class="label">${REG.players.length} players · ${nNew} new struggler${nNew===1?"":"s"}${t?" · checked "+esc(t):""}</span><span class="rule"></span></div>
+  <div class="grid solo"><div class="card"><div class="scroll"><table class="st gm regtbl"><thead><tr><th>#</th><th class="l">Player</th><th class="l">2026-B</th></tr></thead><tbody>${rows}</tbody></table></div>
+  <p class="lvnote">In order of registration, as listed on the <a href="${esc(REG.url)}" target="_blank" rel="noopener">tournament page</a>. Registration is open there; the season starts 18 December 2026.</p></div></div></section>`;
+}
+document.addEventListener("click",e=>{if(!e.target.closest("#regbtn"))return;state.mode=state.mode==="reg"?"div":"reg";try{localStorage.setItem("rtsl-mode",state.mode)}catch(_){}render();});
 let render=function(){
   const tiers=[1,2,3,4];
   document.getElementById("mode").innerHTML=[[["div","Divisions"],["level","Levels"],["res","Results"],["po","Playoffs"],["stats","Statistics"]],[["hof","Hall of Fame"],["arch","Archive"],["perf","Performance"]]].map((g,i)=>`<span class="mgrp${i?" hist":""}" role="group" aria-label="${i?"History":"Current season"}">${g.map(([v,l])=>`<button data-mode="${v}" aria-pressed="${state.mode===v}">${l}</button>`).join("")}</span>`).join("");
@@ -1553,23 +1576,28 @@ let render=function(){
     .map(([v,l])=>`<button data-tier="${v}" aria-pressed="${state.tier===v}">${v==="all"?"":(LVL_ICON[v]||"")+" "}${l}</button>`).join("");
   const q=state.q.toLowerCase();
   let html="";
-  document.getElementById("tabs").hidden=state.mode==="hof"||state.mode==="po"||state.mode==="stats"||state.mode==="arch"||state.mode==="perf"||state.mode==="res";
+  document.getElementById("tabs").hidden=state.mode==="hof"||state.mode==="po"||state.mode==="stats"||state.mode==="arch"||state.mode==="perf"||state.mode==="res"||state.mode==="reg";
+  {const rb=document.getElementById("regbtn");if(rb){rb.setAttribute("aria-pressed",String(state.mode==="reg"));document.getElementById("regn").textContent="("+REG.players.length+")";}}
   document.getElementById("results").hidden=state.mode!=="res";
   if(state.mode==="res"){document.getElementById("main").innerHTML="";return;}
+  if(state.mode==="reg"){document.getElementById("main").innerHTML=regSection();return;}
   if(state.mode==="perf"){document.getElementById("main").innerHTML=perfSection();return;}
   if(state.mode==="arch"){document.getElementById("main").innerHTML=archSection();return;}
   if(state.mode==="stats"){document.getElementById("main").innerHTML=statsSection();return;}
   if(state.mode==="po"){
-    // Playoff structure: each match is best of 3; game IDs run P001, P002, … in this order.
-    let gid=0;const nextIds=()=>[1,2,3].map(()=>"P"+String(++gid).padStart(3,"0"));
-    const po=[[1,"Champions League qualification","👽",["Match"]],[1,"Stalin relegation playoff","👽 → 👹",["Match"]],
-      [2,"Div 2 promotion playoff","👹 → 👽",["Semifinal 1","Semifinal 2","Final"]],[2,"Div 2 relegation playoff","👹 → 🤖",["Match"]]]
-      .map(([t,title,ic,ms])=>[t,title,ic,ms.map(m=>[m,nextIds()])]);
+    // Playoff structure follows the sheet's Playoffs tab. Game IDs as in the sheet; ids:null = not numbered in the sheet yet.
+    const ids=(a,b)=>{const r=[];for(let i=a;i<=b;i++)r.push("P"+String(i).padStart(3,"0"));return r};
+    const po=[[1,"Champions League qualification","👽",[{n:"Match",bo:3,ids:null}]],
+      [1,"Stalin relegation playoff","👽 → 👹",[{n:"Match",bo:3,ids:null}]],
+      [2,"Div 2 promotion playoff","👹 → 👽",[{n:"Semifinal 1",bo:3,ids:ids(1,3)},{n:"Semifinal 2",bo:3,ids:ids(4,6)},{n:"Final",bo:3,ids:ids(7,9)}]],
+      [2,"Div 2 relegation playoff","👹 → 🤖",[{n:"Match",bo:null,ids:ids(10,12),p:[["Dylan Provencher","Level 2 · 13th"],["Mark Overstreet","Level 2 · 14th"]]}]]];
     const tbd=`<span class="ptbd">To be decided</span>`;
-    const match=([name,ids])=>`<div class="pmatch"><div class="pmhead"><b>${esc(name)}</b><span>best of 3</span></div>
-      <div class="pvs">${tbd}<span class="vs">vs</span>${tbd}</div>
+    const pl=x=>x?`<span class="pp">${plink(x[0])}<small>${esc(x[1])}</small></span>`:tbd;
+    const match=m=>{const set=!!m.p,ids=m.ids||[1,2,3].slice(0,m.bo||3).map(()=>"–");
+      return `<div class="pmatch"><div class="pmhead"><b>${esc(m.n)}</b><span>${m.bo?"best of "+m.bo:"format to be decided"}</span></div>
+      <div class="pvs">${pl(m.p&&m.p[0])}<span class="vs">vs</span>${pl(m.p&&m.p[1])}</div>
       <table class="st gm"><thead><tr><th class="l">Game</th><th class="l">USA</th><th class="l">USSR</th><th class="l">Result</th></tr></thead><tbody>
-      ${ids.map((id,i)=>`<tr><td class="code">${id}</td><td>–</td><td>–</td><td class="gres">${i===2?"if needed":"not played"}</td></tr>`).join("")}</tbody></table></div>`;
+      ${ids.map((id,i)=>`<tr><td class="code">${id}</td><td>–</td><td>–</td><td class="gres">${m.bo&&i>=(m.bo===1?1:2)?"if needed":"not played"}</td></tr>`).join("")}</tbody></table>${m.ids?"":`<p class="lvnote">Game IDs follow when the sheet assigns them.</p>`}</div>`};
     document.getElementById("main").innerHTML=`<section class="tier"><div class="tier-head"><h2>Playoffs</h2><span class="label">after the regular season · Nov 23</span><span class="rule"></span></div>
       <div class="grid">${po.map(([t,title,ic,ms])=>`<div class="card" data-tier="${t}"><div class="card-head"><h3>${esc(title)}</h3><span class="poic">${ic}</span></div>${ms.map(match).join("")}</div>`).join("")}</div></section>`;
     return;
@@ -1713,6 +1741,7 @@ const DATA_URL=(()=>{const h=location.hostname;return /\.netlify\.app$/i.test(h)
       if(d.updated&&UPDATED&&d.updated<=UPDATED)return;
       DIVS=d.divs;if(Array.isArray(d.res))RES=d.res;if(Array.isArray(d.lev))LEV=d.lev;
       if(d.matches&&typeof d.matches==="object")MATCHES=d.matches;
+      if(d.reg&&Array.isArray(d.reg.players)&&typeof REG!=="undefined")REG=d.reg;
       if(d.updated)UPDATED=d.updated;
       PERF_ROWS=null;
       drawClock();render();stamp();
